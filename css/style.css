@@ -472,6 +472,10 @@ table {
     background: #eee; }
 
 .post-toc {
+  overflow: auto;
+  min-height: calc(50vh);
+  -webkit-transition: width .3s ease;
+  transition: width .3s ease;
   width: 240px;
   padding: 0 10px;
   font-family: Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -486,9 +490,9 @@ table {
     padding: 7px 0;
     color: #0e83cd; }
   .post-toc .toc-link {
+    overflow: auto;
     width: 100%;
     text-overflow: ellipsis;
-    overflow: hidden;
     white-space: nowrap;
     font-family: inherit;
     padding: 7px 0;
