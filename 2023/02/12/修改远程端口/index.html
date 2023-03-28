@@ -131,7 +131,7 @@
 
 </li>
 <li><p>将刚才修改的端口添加到防火墙规则</p>
- <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --zone=public --add-port=222/tcp --permanent  <span class="comment"># 这里222修改成自己设置的端口</span></span><br></pre></td></tr></table></figure>
+ <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --zone=public --add-port=22/tcp --permanent  <span class="comment"># 这里222修改成自己设置的端口</span></span><br></pre></td></tr></table></figure>
 </li>
 <li><p>重新加载防火墙策略</p>
  <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --reload</span><br></pre></td></tr></table></figure>

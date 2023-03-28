@@ -586,7 +586,7 @@
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">BOOTPROTO=static</span><br><span class="line">ONBOOT=<span class="built_in">yes</span></span><br></pre></td></tr></table></figure>
 
 <p>并在后面添加如下内容(以下内容根据自己网络情况配置)</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">IPADDR=192.168.131.130</span><br><span class="line">NETMASK=255.255.255.0</span><br><span class="line">GATEWAY=192.168.131.255</span><br><span class="line">DNS1=114.114.114.114</span><br><span class="line">DNS2=8.8.8.8 </span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">IPADDR=106.60.78.187</span><br><span class="line">NETMASK=255.255.255.192</span><br><span class="line">GATEWAY=106.60.78.129</span><br><span class="line">DNS1=114.114.114.114</span><br><span class="line">DNS2=8.8.8.8 </span><br></pre></td></tr></table></figure>
 
 
 </li>
@@ -620,7 +620,7 @@
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@s25linux yum.repos.d]<span class="comment"># ls</span></span><br><span class="line">CentOS-Base.repo  epel.repo  repobak</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>生成yum源缓存并更新yum源</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum makecache</span><br><span class="line">yum update</span><br></pre></td></tr></table></figure></li>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum makecache</span><br><span class="line">yum -y update</span><br></pre></td></tr></table></figure></li>
 </ol>
 <h2 id="虚拟机安装tools"><a href="#虚拟机安装tools" class="headerlink" title="虚拟机安装tools"></a>虚拟机安装tools</h2><ol>
 <li><p>虚拟机管理平台挂载tools</p>
