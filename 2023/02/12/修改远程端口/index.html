@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <title>小邵的个人博客</title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    
+<link rel="stylesheet" href="/css/gitment.css">
+
+    <link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_859455_eaq7v6w8ktj.css">
+<meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+</head>
+<body>
+<header class="header">
+    <div class="header-inner">
+        <div class="header-title">
+
+        </div>
+        <nav class="header-nav">
+            
+            <a href="/" class="header-nav-link">
+                首页
+            </a>
+            
+
+            
+            <a href="/archive" class="header-nav-link">
+                归档
+            </a>
+            
+
+            
+            <a href="/tag" class="header-nav-link">
+                标签
+            </a>
+            
+
+            
+            <a href="/about/" class="header-nav-link">
+                关于
+            </a>
+            
+        </nav>
+    </div>
+</header>
+<header class="mobile-header">
+    <div class="mobile-nav">
+        <div class="mobile-nav-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="mobile-nav-title">
+            <a href="/" class="mobile-nav-title-link">'s Blog</a>
+        </div>
+
+    </div>
+    <nav class="mobile-menu">
+        <ul class="mobile-menu-list">
+            <li class="mobile-menu-item">
+                <i class="iconfont icon-home"></i>
+                <a href="/" class="mobile-nav-link">首页</a>
+            </li>
+            <li class="mobile-menu-item">
+                <i class="iconfont icon-archive"></i>
+                <a href="/" class="mobile-nav-link">归档</a>
+            </li>
+            <li class="mobile-menu-item">
+                <i class="iconfont icon-tag"></i>
+                <a href="/" class="mobile-nav-link">标签</a>
+            </li>
+            <li class="mobile-menu-item">
+                <i class="iconfont icon-about"></i>
+                <a href="about/" class="mobile-nav-link">关于</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<div class="main">
+    <div class="content-inner">
+        <div class="posts">
+    <article class="post-whole">
+        <div class="post-title">
+            <h2 class="title">修改远程端口</h2>
+            <div class="post-meta">
+                <span class="post-time">2023-02-12</span>
+                
+                <span class="post-category">
+                    
+                    <a class="category" href="/category/%E4%B8%AA%E4%BA%BA%E7%AC%94%E8%AE%B0/">个人笔记</a>
+                    
+                </span>
+                
+                <span class="post-visit"> 阅读次数：<span id="busuanzi_value_page_pv"></span></span>
+            </div>
+        </div>
+        <div class="post-toc" id="post-toc">
+    <strong class="post-toc-title">目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">Linux</span></a></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-text">Windows</span></a></li></ol>
+    <div class="back-to-top" id="back-to-top">
+        <a href="javascript:void(0);">回到顶部</a>
+    </div>
+</div>
+        <div class="post-content">
+            <p>端口修改</p>
+<span id="more"></span>
+<h1>Linux</h1>
+<ol>
+<li>
+<p>编辑ssh配置文件</p>
+ <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/ssh/sshd_config</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>修改端口</p>
+ <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Port 222 <span class="comment"># 这里修改成自己设置的端口</span></span><br><span class="line"><span class="comment">#Port 22</span></span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>添加ssh监听端口</p>
+ <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">semanage port -a -t ssh_port_t -p tcp 222</span><br></pre></td></tr></table></figure>
+<p>若报错，安装policycoreutils-python软件包</p>
+ <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install policycoreutils-python -y</span><br></pre></td></tr></table></figure>
+<p>安装完成再次执行添加ssh监听端口</p>
+</li>
+<li>
+<p>查看端口是否添加成功</p>
+ <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">semanage port -l|grep ssh</span><br></pre></td></tr></table></figure>
+<p>结果如下</p>
+ <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh_port_t                     tcp      222, 22</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>将刚才修改的端口添加到防火墙规则</p>
+ <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --zone=public --add-port=22/tcp --permanent  <span class="comment"># 这里222修改成自己设置的端口</span></span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>重新加载防火墙策略</p>
+ <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --reload</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>重启SSH服务和防火墙，最好也重启下服务器：</p>
+</li>
+</ol>
+  <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart sshd</span><br><span class="line">systemctl restart firewalld.service</span><br><span class="line">reb</span><br><span class="line">shutdown -r now</span><br></pre></td></tr></table></figure>
+<ol start="8">
+<li>重新ssh连接测试</li>
+</ol>
+<h1>Windows</h1>
+<ol>
+<li>
+<p><strong>方法一</strong><br>
+通过远程桌面客户端连接到计算机（Windows 客户端或 Windows Server）时，计算机上的远程桌面功能会通过定义的侦听端口（默认情况下为 3389）“侦听”连接请求。 可以通过修改注册表来更改 Windows 计算机上的侦听端口。</p>
+<ol>
+<li>启动注册表编辑器。 （在“搜索”框中键入 regedit。）</li>
+<li>导航到以下注册表子项：<strong>HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp</strong></li>
+<li>查找端口号</li>
+<li>单击“编辑”“修改”，然后单击“十进制”。</li>
+<li>键入新端口号，然后单击“确定” 。</li>
+<li>关闭注册表编辑器，然后重新启动计算机。</li>
+</ol>
+</li>
+<li>
+<p><strong>方法二</strong></p>
+<ol>
+<li>
+<p>可运行以下 PowerShell 命令(以管理员方式)来查看当前端口：</p>
+ <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Get-ItemProperty</span> <span class="literal">-Path</span> <span class="string">&#x27;HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp&#x27;</span> <span class="literal">-name</span> <span class="string">&quot;PortNumber&quot;</span></span><br></pre></td></tr></table></figure>
+<p>例如：</p>
+ <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">PortNumber   : <span class="number">3389</span></span><br><span class="line">PSPath       : Microsoft.PowerShell.Core\Registry::HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP<span class="literal">-Tcp</span></span><br><span class="line">PSParentPath : Microsoft.PowerShell.Core\Registry::HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations</span><br><span class="line">PSChildName  : RDP<span class="literal">-Tcp</span></span><br><span class="line">PSDrive      : HKLM</span><br><span class="line">PSProvider   : Microsoft.PowerShell.Core\Registry</span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>还可运行以下 PowerShell 命令来更改 RDP 端口。 在此命令中，我们会将新的 RDP 端口指定为 53389。</p>
+<p>若要向注册表添加新的 RDP 端口：</p>
+ <figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$portvalue</span> = <span class="number">53389</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Set-ItemProperty</span> <span class="literal">-Path</span> <span class="string">&#x27;HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp&#x27;</span> <span class="literal">-name</span> <span class="string">&quot;PortNumber&quot;</span> <span class="literal">-Value</span> <span class="variable">$portvalue</span> </span><br><span class="line"></span><br><span class="line"><span class="built_in">New-NetFirewallRule</span> <span class="literal">-DisplayName</span> <span class="string">&#x27;RDPPORTLatest-TCP-In&#x27;</span> <span class="literal">-Profile</span> <span class="string">&#x27;Public&#x27;</span> <span class="literal">-Direction</span> Inbound <span class="literal">-Action</span> Allow <span class="literal">-Protocol</span> TCP <span class="literal">-LocalPort</span> <span class="variable">$portvalue</span> </span><br><span class="line"><span class="built_in">New-NetFirewallRule</span> <span class="literal">-DisplayName</span> <span class="string">&#x27;RDPPORTLatest-UDP-In&#x27;</span> <span class="literal">-Profile</span> <span class="string">&#x27;Public&#x27;</span> <span class="literal">-Direction</span> Inbound <span class="literal">-Action</span> Allow <span class="literal">-Protocol</span> UDP <span class="literal">-LocalPort</span> <span class="variable">$portvalue</span></span><br></pre></td></tr></table></figure>
+</li>
+<li>
+<p>重启电脑即可</p>
+</li>
+</ol>
+</li>
+<li>
+<p><strong>方法三</strong></p>
+<ol>
+<li>
+<p>打开远程<br>
+右键我的电脑——&gt;属性——&gt;启用远程</p>
+</li>
+<li>
+<p>使用以下脚本一键修改<br>
+新建bat文件——&gt;复制以下文——&gt;粘贴——&gt;保存——&gt;以管理员方式运行——&gt;按照提示输入自定义端口——&gt;按提示等待完成即可</p>
+ <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"></span><br><span class="line">color f0</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> 修改远程桌面3389端口(支持Windows 2003 2008 2008R2 2012 2012R2 7 8 10 )</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> 自动添加防火墙规则</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> %<span class="built_in">date</span>%   %time%</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> 建议设置为不常用端口</span><br><span class="line"></span><br><span class="line"><span class="built_in">set</span> /p c= 请输入新的端口:</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> <span class="string">&quot;%c%&quot;</span>==<span class="string">&quot;&quot;</span> goto end</span><br><span class="line"></span><br><span class="line">goto edit</span><br><span class="line"></span><br><span class="line">:edit</span><br><span class="line"></span><br><span class="line">netsh advfirewall firewall add rule name=<span class="string">&quot;Remote PortNumber&quot;</span> <span class="built_in">dir</span>=<span class="keyword">in</span> action=allow protocol=TCP localport=<span class="string">&quot;%c%&quot;</span></span><br><span class="line"></span><br><span class="line">netsh advfirewall firewall add rule name=<span class="string">&quot;Remote PortNumber&quot;</span> <span class="built_in">dir</span>=<span class="keyword">in</span> action=allow protocol=TCP localport=<span class="string">&quot;%c%&quot;</span></span><br><span class="line"></span><br><span class="line">reg add <span class="string">&quot;HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server\Wds\rdpwd\Tds\tcp&quot;</span> /v <span class="string">&quot;PortNumber&quot;</span> /t REG_DWORD /d <span class="string">&quot;%c%&quot;</span> /f</span><br><span class="line"></span><br><span class="line">reg add <span class="string">&quot;HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp&quot;</span> /v <span class="string">&quot;PortNumber&quot;</span> /t REG_DWORD /d <span class="string">&quot;%c%&quot;</span> /f</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> 修改成功</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> 重启后生效，按任意键重启</span><br><span class="line"></span><br><span class="line">pause</span><br><span class="line"></span><br><span class="line">shutdown /r /t 0</span><br><span class="line"></span><br><span class="line"><span class="built_in">exit</span></span><br><span class="line"></span><br><span class="line">:end</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> 修改失败</span><br><span class="line"></span><br><span class="line">pause</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+</li>
+<li>
+<p><strong>注意</strong>：下次使用远程桌面连接连接到此计算机时，必须键入新端口。 如果正在使用防火墙，请确保将防火墙配置为允许连接到新端口号。</p>
+</li>
+</ol>
+
+        </div>
+        
+        <div class="post-tag">
+            
+            <a class="tag" href="/tag/%E7%AB%AF%E5%8F%A3/" title="端口">端口</a>
+            
+        </div>
+        
+    </article>
+</div>
+<div class="paginator">
+    
+        
+            <a class="prev" href="/2023/03/21/%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%93%8D%E4%BD%9C%E6%89%8B%E5%86%8C/">
+                <i class="iconfont icon-prev"></i>
+                <span class="nav-default">虚拟机操作手册</span>
+                <span class="nav-mobile">上一篇</span>
+            </a>
+        
+        
+            <a class="next" href="/2020/01/01/HelloWorld/">
+                <span class="nav-default">Hello World</span>
+                <span class="nav-mobile">下一篇</span>
+                <i class="iconfont icon-next"></i>
+            </a>
+        
+    
+</div>
+<div id="comment-container"></div>
+    </div>
+</div>
+<footer class="footer-social">
+
+    
+        <a class="social-link" target="_blank" href="https://github.com/syx9527">
+            <i class="iconfont icon-github"></i>
+        </a>
+    
+
+    
+        <a class="social-link" target="_blank" href="https://www.zhihu.com/people/#">
+            <i class="iconfont icon-zhihu"></i>
+        </a>
+    
+
+    
+        <a class="social-link" target="_blank" href="http://weibo.com/#">
+            <i class="iconfont icon-weibo"></i>
+        </a>
+    
+
+    
+
+        <a class="social-link" target="_blank" href="https://gitee.com/shaoyuexin">
+            <i class="iconfont icon-gitee"></i>
+        </a>
+    
+
+    <div class="footer-copyright">
+        <p class="time-line">
+            &copy;
+            
+            
+                2017 -
+            
+            2023
+            &nbsp;<i class="iconfont icon-heart"></i>&nbsp;
+            <a target="_blank" href="https://github.com/syx9527">shaoyx</a>
+        </p>
+        <p class="theme-info">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a> | Theme -
+            <a target="_blank" href="https://github.com/iJinxin/hexo-theme-sky">Sky</a>
+        </p>
+    </div>
+</footer>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/js/index.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+    
+
+</script>
+</html>
