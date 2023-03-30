@@ -1,109 +1,252 @@
 <!DOCTYPE html>
-<html>
-<head>
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
-    <title>小邵的个人博客</title>
-    
-<link rel="stylesheet" href="/css/style.css">
+<html  lang="zh-CN" >
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, minimum-scale=1, initial-scale=1, maximum-scale=5, viewport-fit=cover">
+    <title>零成本搭建个人博客 | Hexo</title>
+    <meta name="description" content="通过hexo搭建个人博客">
+<meta property="og:type" content="article">
+<meta property="og:title" content="零成本搭建个人博客">
+<meta property="og:url" content="https://yuexinshao.cn/2023/03/23/%E9%9B%B6%E6%88%90%E6%9C%AC%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="通过hexo搭建个人博客">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://yuexinshao.cn/2023/03/23/%E9%9B%B6%E6%88%90%E6%9C%AC%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/image-20230323151531222.png">
+<meta property="og:image" content="https://yuexinshao.cn/2023/03/23/%E9%9B%B6%E6%88%90%E6%9C%AC%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/image-20230323151723704.png">
+<meta property="og:image" content="https://yuexinshao.cn/2023/03/23/%E9%9B%B6%E6%88%90%E6%9C%AC%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/image-20230323151746964.png">
+<meta property="og:image" content="https://yuexinshao.cn/2023/03/23/%E9%9B%B6%E6%88%90%E6%9C%AC%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/image-20230323152623323.png">
+<meta property="og:image" content="https://yuexinshao.cn/2023/03/23/%E9%9B%B6%E6%88%90%E6%9C%AC%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/image-20230323152734699.png">
+<meta property="og:image" content="https://yuexinshao.cn/2023/03/23/%E9%9B%B6%E6%88%90%E6%9C%AC%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/dd6fab0c1ae049729a7df0105c8951f4.png">
+<meta property="og:image" content="https://yuexinshao.cn/2023/03/23/%E9%9B%B6%E6%88%90%E6%9C%AC%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/image-20230323154831981.png">
+<meta property="og:image" content="https://yuexinshao.cn/2023/03/23/%E9%9B%B6%E6%88%90%E6%9C%AC%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/image-20230323160033116.png">
+<meta property="og:image" content="https://yuexinshao.cn/2023/03/23/%E9%9B%B6%E6%88%90%E6%9C%AC%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/image-20230323160251648.png">
+<meta property="og:image" content="https://yuexinshao.cn/2023/03/23/%E9%9B%B6%E6%88%90%E6%9C%AC%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/image-20230323161315835.png">
+<meta property="og:image" content="https://yuexinshao.cn/2023/03/23/%E9%9B%B6%E6%88%90%E6%9C%AC%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/image-20230323161504848.png">
+<meta property="og:image" content="https://yuexinshao.cn/2023/03/23/%E9%9B%B6%E6%88%90%E6%9C%AC%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/image-20230323161648692.png">
+<meta property="og:image" content="https://yuexinshao.cn/2023/03/23/%E9%9B%B6%E6%88%90%E6%9C%AC%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/image-20230323163021686.png">
+<meta property="og:image" content="https://yuexinshao.cn/2023/03/23/%E9%9B%B6%E6%88%90%E6%9C%AC%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/image-20230323163417141.png">
+<meta property="og:image" content="https://yuexinshao.cn/2023/03/23/%E9%9B%B6%E6%88%90%E6%9C%AC%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/image-20230323163447847.png">
+<meta property="article:published_time" content="2023-03-23T06:47:25.000Z">
+<meta property="article:modified_time" content="2023-03-24T00:56:22.010Z">
+<meta property="article:author" content="Shaoyx">
+<meta property="article:tag" content="博客">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://yuexinshao.cn/2023/03/23/%E9%9B%B6%E6%88%90%E6%9C%AC%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/image-20230323151531222.png">
 
     
-<link rel="stylesheet" href="/css/gitment.css">
+    <link rel="icon" href="/images/favicon.ico" type="image/x-icon">
 
-    <link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_859455_eaq7v6w8ktj.css">
+    
+<link rel="stylesheet" href="/css/common.min.css">
+
+
+
+    
+    
+    
+    
+        <link href="//cdn.jsdelivr.net/npm/lightgallery.js@1.1.3/dist/css/lightgallery.min.css" rel="stylesheet">
+    
+    
+    
+<link rel="stylesheet" href="/css/iconfont.min.css">
+
+    
 <meta name="generator" content="Hexo 6.3.0"></head>
-<body>
-<header class="header">
-    <div class="header-inner">
-        <div class="header-title">
 
+    <body>
+        <header class="header header-fixture">
+    <div class="profile-search-wrap flex sm:block">
+        
+        
+        <div class="profile sm:text-center md:px-1 lg:px-3 sm:pb-4 sm:pt-6">
+            <a id="avatar" role="link" href="https://github.com/syx9527" class="inline-block lg:w-16 lg:h-16 w-8 h-8 m-2" target="_blank" rel="noopener" rel="noreferrer" >
+                <img src="https://www.gravatar.com/avatar/c7d9dcf1dab25e1735bb96c8c7a1e7a3?s=128" class="rounded-full" alt="avatar">
+            </a>
+            <h2 id="name" class="hidden lg:block">xiaoshao</h2>
+            <h3 id="title" class="hidden lg:block">Student &amp; Coder</h3>
+            
+            <small id="location" class="hidden lg:block">
+                <i class="iconfont icon-map-icon"></i>
+                Yunnan, China
+            </small>
+            
         </div>
-        <nav class="header-nav">
-            
-            <a href="/" class="header-nav-link">
-                首页
+        
+        
+<div class="search flex-1 flex lg:inline-block sm:hidden lg:px-4 lg:mt-2 lg:mb-4 lg:w-full">
+    <form id="search-form" class="my-auto flex-1 lg:border lg:border-solid lg:border-gray-200">
+        <div class="input-group table bg-gray-100 lg:bg-white w-full">
+            <input id="search-input" type="text" placeholder="搜索" class="inline-block w-full bg-gray-100 lg:bg-white p-1">
+            <span class="table-cell">
+                <button name="search tigger button" disabled>
+                    <i class="iconfont icon-search m-2"></i>
+                </button>
+            </span>
+        </div>
+    </form>
+        
+<div id="content-json" data-placeholder="搜索" class="invisible hidden">/content.json</div>
+<script id="search-teamplate" type="text/html" data-path="/content.json">
+    <div>
+        <div class="search-header bg-gray-400">
+            <input id="actual-search-input" model="keyword" ref="input" class="inline-block w-full h-10 px-2 py-1" placeholder="搜索" type="text">
+        </div>
+        <div class="search-result bg-gray-200">
+            {{#each searchPosts}}
+            <a href="/{{ path }}" class="result-item block px-2 pb-3 mb-1 pt-1 hover:bg-indigo-100">
+                <i class="iconfont icon-file"></i>
+                <h1 class="result-title inline font-medium text-lg">{{ title }}</h1>
+                <p class="result-content text-gray-600 text-sm">{{{ text }}}</p>
             </a>
-            
-
-            
-            <a href="/archives" class="header-nav-link">
-                归档
-            </a>
-            
-
-            
-            <a href="/tags" class="header-nav-link">
-                标签
-            </a>
-            
-
-            
-            <a href="/about/" class="header-nav-link">
-                关于
-            </a>
-            
-        </nav>
+            {{/each}}
+        </div>
     </div>
-</header>
-<header class="mobile-header">
-    <div class="mobile-nav">
-        <div class="mobile-nav-icon">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-        <div class="mobile-nav-title">
-            <a href="/" class="mobile-nav-title-link">'s Blog</a>
-        </div>
+</script>
 
+</div>
+
+
+        <button name="menu toogle button" id="menu-toggle-btn" class="block sm:hidden p-3" role="button" aria-expanded="false">
+            <i class="iconfont icon-hamburger"></i>
+        </button>
     </div>
-    <nav class="mobile-menu">
-        <ul class="mobile-menu-list">
-            <li class="mobile-menu-item">
-                <i class="iconfont icon-home"></i>
-                <a href="/" class="mobile-nav-link">首页</a>
-            </li>
-            <li class="mobile-menu-item">
-                <i class="iconfont icon-archive"></i>
-                <a href="/" class="mobile-nav-link">归档</a>
-            </li>
-            <li class="mobile-menu-item">
-                <i class="iconfont icon-tag"></i>
-                <a href="/" class="mobile-nav-link">标签</a>
-            </li>
-            <li class="mobile-menu-item">
-                <i class="iconfont icon-about"></i>
-                <a href="about/" class="mobile-nav-link">关于</a>
-            </li>
-        </ul>
+    <nav id="menu-nav" class="hidden sm:flex flex-col">
+        
+        
+            <div class="menu-item menu-home" role="menuitem">
+                <a href="/.">
+                    <i class="iconfont icon-home" aria-hidden="true"></i>
+                    <span class="menu-title">首页</span>
+                </a>
+            </div>
+        
+        
+            <div class="menu-item menu-archives" role="menuitem">
+                <a href="/archives">
+                    <i class="iconfont icon-archive" aria-hidden="true"></i>
+                    <span class="menu-title">归档</span>
+                </a>
+            </div>
+        
+        
+            <div class="menu-item menu-categories" role="menuitem">
+                <a href="/categories">
+                    <i class="iconfont icon-folder" aria-hidden="true"></i>
+                    <span class="menu-title">分类</span>
+                </a>
+            </div>
+        
+        
+            <div class="menu-item menu-tags" role="menuitem">
+                <a href="/tags">
+                    <i class="iconfont icon-tag" aria-hidden="true"></i>
+                    <span class="menu-title">标签</span>
+                </a>
+            </div>
+        
+        
+            <div class="menu-item menu-repository" role="menuitem">
+                <a href="/repository">
+                    <i class="iconfont icon-project" aria-hidden="true"></i>
+                    <span class="menu-title">项目</span>
+                </a>
+            </div>
+        
+        
+            <div class="menu-item menu-links" role="menuitem">
+                <a href="/links">
+                    <i class="iconfont icon-friend" aria-hidden="true"></i>
+                    <span class="menu-title">友链</span>
+                </a>
+            </div>
+        
+        
+            <div class="menu-item menu-about" role="menuitem">
+                <a href="/about">
+                    <i class="iconfont icon-cup" aria-hidden="true"></i>
+                    <span class="menu-title">关于</span>
+                </a>
+            </div>
+        
+        
+<div class="social-links flex sm:flex-col lg:hidden mt-5">
+    
+        <span class="social-item text-center">
+            <a target="_blank" rel="noopener" href="https://github.com/syx9527">
+                <i class="iconfont social-icon icon-github"></i>
+                <span class="menu-title hidden lg:inline">menu.github</span>
+            </a>
+        </span>
+    
+        <span class="social-item text-center">
+            <a href="/atom.xml">
+                <i class="iconfont social-icon icon-rss"></i>
+                <span class="menu-title hidden lg:inline">menu.rss</span>
+            </a>
+        </span>
+    
+</div>
+
+
     </nav>
 </header>
-<div class="main">
-    <div class="content-inner">
-        <div class="posts">
-    <article class="post-whole">
-        <div class="post-title">
-            <h2 class="title">零成本搭建个人博客</h2>
-            <div class="post-meta">
-                <span class="post-time">2023-03-23</span>
+
+        <section class="main-section">
+            
+    <main class="flex-1 px-4 py-14 md:px-5 lg:px-8 lg:py-4 relative min-h-screen">
+    
+
+    <article class="content article article-archives article-type-list" itemscope="">
+        <header class="article-header">
+            
+    
+        <h1 class="article-title text-lg" itemprop="name">
+            零成本搭建个人博客
+        </h1>
+    
+
+
+
+            <p class="article-meta mb-3 text-xs">
+                <span class="article-date">
+    <i class="iconfont icon-calendar-check"></i>
+	<a href="/2023/03/23/%E9%9B%B6%E6%88%90%E6%9C%AC%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" class="article-date">
+	  <time datetime="2023-03-23T06:47:25.000Z" itemprop="datePublished">3月 23</time>
+	</a>
+</span>
+
                 
-                <span class="post-category">
-                    
-                    <a class="category" href="/categories/%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/">经验分享</a>
-                    
+    <span class="article-category">
+    <i class="iconfont icon-folder"></i>
+    <a class="article-category-link" href="/categories/%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/">经验分享</a>
+  </span>
+
+
+                
+    <span class="article-tags">
+    <i class="iconfont icon-tag"></i>
+    <a class="article-tag-none-link" href="/tags/%E5%8D%9A%E5%AE%A2/" rel="tag">博客</a>
+  </span>
+
+
+                <span class="_partial/post-comment"><i class="icon icon-comment"></i>
+                    <a href="/2023/03/23/%E9%9B%B6%E6%88%90%E6%9C%AC%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/#comments" class="article-comment-link">
+                        评论
+                    </a>
                 </span>
                 
-                <span class="post-visit"> 阅读次数：<span id="busuanzi_value_page_pv"></span></span>
-            </div>
-        </div>
-        <div class="post-toc" id="post-toc">
-    <strong class="post-toc-title">目录</strong>
-    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%9B%B6%E6%88%90%E6%9C%AC%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2"><span class="toc-text">零成本搭建个人博客</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85node-js"><span class="toc-text">安装node.js</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85git"><span class="toc-text">安装git</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85hexo"><span class="toc-text">安装hexo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%A8%E5%86%8Cgithub%E6%88%96%E8%80%85gitee"><span class="toc-text">注册github或者gitee</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98"><span class="toc-text">常见问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E5%85%B6%E4%BB%96%E6%A0%B7%E5%BC%8F%EF%BC%88%E4%B8%BB%E9%A2%98%EF%BC%89"><span class="toc-text">如何使用其他样式（主题）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BD%91%E7%AB%99%E6%97%A0%E6%B3%95%E6%AD%A3%E7%A1%AE%E6%98%BE%E7%A4%BA%E5%9B%BE%E7%89%87"><span class="toc-text">网站无法正确显示图片</span></a></li></ol></li></ol></li></ol>
-    <div class="back-to-top" id="back-to-top">
-        <a href="javascript:void(0);">回到顶部</a>
-    </div>
-</div>
-        <div class="post-content">
+    
+        <span class="post-wordcount" itemprop="wordCount">字数统计: 811(字)</span>
+    
+    
+        <span class="post-readcount" itemprop="timeRequired">阅读时长: 3(分)</span>
+    
+
+
+            </p>
+        </header>
+        <div class="marked-body article-body">
             <p>通过hexo搭建个人博客</p>
 <span id="more"></span>
 
@@ -213,88 +356,74 @@
 
         </div>
         
-        <div class="post-tag">
-            
-            <a class="tag" href="/tags/%E5%8D%9A%E5%AE%A2/" title="博客">博客</a>
-            
-        </div>
-        
+<blockquote class="copyright">
+    <p><strong>本文链接 : </strong><a class="permalink" href="https://yuexinshao.cn/2023/03/23/%E9%9B%B6%E6%88%90%E6%9C%AC%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/">https://yuexinshao.cn/2023/03/23/零成本搭建个人博客/</a></p>
+    <p><strong>This article is available under <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank" rel="noopener noreferrer">Attribution-NonCommercial-ShareAlike 4.0 International (CC BY-NC-SA 4.0)</a> License</strong></p>
+</blockquote>
+
+
     </article>
-</div>
-<div class="paginator">
     
+    <section id="comments">
         
-            <a class="prev" href="/2023/03/24/Exchangis%E6%90%AD%E5%BB%BA%E5%AE%89%E8%A3%85/">
-                <i class="iconfont icon-prev"></i>
-                <span class="nav-default">Exchangis搭建安装</span>
-                <span class="nav-mobile">上一篇</span>
+    </section>
+
+
+    
+
+</main>
+
+
+<aside style="" id="sidebar" class="aside aside-fixture">
+    <div class="toc-sidebar">
+        <nav id="toc" class="article-toc">
+            <h3 class="toc-title">文章目录</h3>
+            <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E9%9B%B6%E6%88%90%E6%9C%AC%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2"><span class="toc-number">1.</span> <span class="toc-text">零成本搭建个人博客</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85node-js"><span class="toc-number">1.1.</span> <span class="toc-text">安装node.js</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85git"><span class="toc-number">1.2.</span> <span class="toc-text">安装git</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%89%E8%A3%85hexo"><span class="toc-number">1.3.</span> <span class="toc-text">安装hexo</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B3%A8%E5%86%8Cgithub%E6%88%96%E8%80%85gitee"><span class="toc-number">1.4.</span> <span class="toc-text">注册github或者gitee</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B8%B8%E8%A7%81%E9%97%AE%E9%A2%98"><span class="toc-number">1.5.</span> <span class="toc-text">常见问题</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8%E5%85%B6%E4%BB%96%E6%A0%B7%E5%BC%8F%EF%BC%88%E4%B8%BB%E9%A2%98%EF%BC%89"><span class="toc-number">1.5.1.</span> <span class="toc-text">如何使用其他样式（主题）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BD%91%E7%AB%99%E6%97%A0%E6%B3%95%E6%AD%A3%E7%A1%AE%E6%98%BE%E7%A4%BA%E5%9B%BE%E7%89%87"><span class="toc-number">1.5.2.</span> <span class="toc-text">网站无法正确显示图片</span></a></li></ol></li></ol></li></ol>
+        </nav>
+    </div>
+</aside>
+
+
+
+
+
+        </section>
+        <footer class="hidden lg:block fixed bottom-0 left-0 sm:w-1/12 lg:w-1/6 bg-gray-100 z-40">
+    
+    <div class="footer-social-links">
+        
+            <a target="_blank" rel="noopener" href="https://github.com/syx9527">
+                <i class="iconfont icon-github"></i>
             </a>
         
-        
-            <a class="next" href="/2023/03/21/%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%93%8D%E4%BD%9C%E6%89%8B%E5%86%8C/">
-                <span class="nav-default">虚拟机操作手册</span>
-                <span class="nav-mobile">下一篇</span>
-                <i class="iconfont icon-next"></i>
+            <a href="/atom.xml">
+                <i class="iconfont icon-rss"></i>
             </a>
         
-    
-</div>
-<div id="comment-container"></div>
     </div>
-</div>
-<footer class="footer-social">
-
     
-        <a class="social-link" target="_blank" href="https://github.com/syx9527">
-            <i class="iconfont icon-github"></i>
-        </a>
     
-
-    
-        <a class="social-link" target="_blank" href="https://www.zhihu.com/people/#">
-            <i class="iconfont icon-zhihu"></i>
-        </a>
-    
-
-    
-        <a class="social-link" target="_blank" href="http://weibo.com/#">
-            <i class="iconfont icon-weibo"></i>
-        </a>
-    
-
-    
-
-        <a class="social-link" target="_blank" href="https://gitee.com/shaoyuexin">
-            <i class="iconfont icon-gitee"></i>
-        </a>
-    
-
-    <div class="footer-copyright">
-        <p class="time-line">
-            &copy;
-            
-            
-                2017 -
-            
-            2023
-            &nbsp;<i class="iconfont icon-heart"></i>&nbsp;
-            <a target="_blank" href="https://github.com/syx9527">shaoyx</a>
-        </p>
-        <p class="theme-info">
-            Powered by <a target="_blank" href="https://hexo.io">Hexo</a> | Theme -
-            <a target="_blank" href="https://github.com/iJinxin/hexo-theme-sky">Sky</a>
-        </p>
-    </div>
 </footer>
-</body>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-<script src="/js/index.js"></script>
+        <div id="mask" class="hidden mask fixed inset-0 bg-gray-900 opacity-75 z-40"></div>
+        <div id="search-view-container" class="hidden shadow-xl"></div>
+        
+<script src="/js/dom-event.min.js"></script>
 
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
-<script>
+
+
+<script src="/js/local-search.min.js"></script>
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/lightgallery.js@1.1.3/dist/js/lightgallery.min.js"></script>
     
+<script src="/js/light-gallery.min.js"></script>
 
-</script>
+
+
+
+
+
+    </body>
 </html>
