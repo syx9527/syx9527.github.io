@@ -81,110 +81,75 @@
             <div class="article-body">
                 <p>通过hexo搭建个人博客</p>
 <span id="more"></span>
-
-
-
-<h1 id="零成本搭建个人博客"><a href="#零成本搭建个人博客" class="headerlink" title="零成本搭建个人博客"></a>零成本搭建个人博客</h1><h2 id="安装node-js"><a href="#安装node-js" class="headerlink" title="安装node.js"></a>安装node.js</h2><p>进入Node.js官网下载 node.js(<a target="_blank" rel="noopener" href="https://nodejs.org/zh-cn/download">https://nodejs.org/zh-cn/download</a>)</p>
+<h1>零成本搭建个人博客</h1>
+<h2 id="安装node-js">安装node.js</h2>
+<p>进入Node.js官网下载 node.js(<a target="_blank" rel="noopener" href="https://nodejs.org/zh-cn/download">https://nodejs.org/zh-cn/download</a>)</p>
 <p>根据自己系统下载，如：windows 64位选择</p>
 <img src="/article/2402532594/image-20230323151531222.png" alt="image-20230323151531222" style="zoom: 35%;">
-
-
-
 <p>下载完成后安装，</p>
 <img src="/article/2402532594/image-20230323151723704.png" alt="image-20230323151723704" style="zoom: 80%;">
-
 <p>此处选择自己需要的安装位置</p>
 <img src="/article/2402532594/image-20230323151746964.png" alt="image-20230323151746964" style="zoom: 80%;">
-
-
-
-
-
 <p>剩余连续下一步，安装即可。</p>
 <p>验证安装,打开命令窗口运行：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">node -v</span><br><span class="line">npm -v</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
 <p>如下：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">C:\&gt;node -v</span><br><span class="line">v18.13.0</span><br><span class="line"></span><br><span class="line">C:\&gt;npm -v</span><br><span class="line">8.19.3</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="安装git"><a href="#安装git" class="headerlink" title="安装git"></a>安装git</h2><p>进去git官网(<a target="_blank" rel="noopener" href="https://git-scm.com/)%EF%BC%8C%E4%B8%8B%E8%BD%BD">https://git-scm.com/)，下载</a>,</p>
+<h2 id="安装git">安装git</h2>
+<p>进去git官网(<a target="_blank" rel="noopener" href="https://git-scm.com/">https://git-scm.com/</a>)，下载,</p>
 <img src="/article/2402532594/image-20230323152623323.png" alt="image-20230323152623323" style="zoom: 50%;">
-
 <img src="/article/2402532594/image-20230323152734699.png" alt="image-20230323152734699" style="zoom:50%;">
-
 <p>打开下载好的安装程序，进行安装，到如下界面选择需要安装的位置，剩下连续下一步直至安装完成</p>
 <img src="/article/2402532594/dd6fab0c1ae049729a7df0105c8951f4.png" alt="在这里插入图片描述" style="zoom:100%;">
-
 <p>等待安装完成</p>
 <p>配置git</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">git config --global user.email &quot;写你邮箱&quot;</span><br><span class="line"></span><br><span class="line">git config --global user.name &quot;写你的用户名&quot;</span><br></pre></td></tr></table></figure>
-
 <p>生成公钥,连续按三次回车即可</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen</span><br></pre></td></tr></table></figure>
-
-<p>生成后的文件，保存在 C:\Users\Administrator.ssh文件夹下，”.pub”结尾文件，记事本打开，即为你的密钥，后续会用到；</p>
-<h2 id="安装hexo"><a href="#安装hexo" class="headerlink" title="安装hexo"></a>安装hexo</h2><p>安装之前需要新建一个文件夹，根据个人需要，这里我的为 (D:\temp)，新建完成后进入该文件夹</p>
+<p>生成后的文件，保存在 C:\Users\Administrator.ssh文件夹下，&quot;.pub&quot;结尾文件，记事本打开，即为你的密钥，后续会用到；</p>
+<h2 id="安装hexo">安装hexo</h2>
+<p>安装之前需要新建一个文件夹，根据个人需要，这里我的为 (D:\temp)，新建完成后进入该文件夹</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">d:</span><br><span class="line"><span class="built_in">cd</span> D:\temp</span><br></pre></td></tr></table></figure>
-
-<p>打开 Hexo官网：(<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/index.html)%EF%BC%8C%E6%8C%89%E7%85%A7%E5%AE%98%E7%BD%91%E6%8F%90%E7%A4%BA%EF%BC%8C%E5%AE%89%E8%A3%85">https://hexo.io/zh-cn/index.html)，按照官网提示，安装</a></p>
+<p>打开 Hexo官网：(<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/index.html">https://hexo.io/zh-cn/index.html</a>)，按照官网提示，安装</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br><span class="line">hexo init blog</span><br><span class="line"><span class="built_in">cd</span> blog</span><br><span class="line">npm install</span><br><span class="line">hexo server</span><br></pre></td></tr></table></figure>
-
-<p>打开 (<a target="_blank" rel="noopener" href="http://localhost:4000/)%E6%AD%A3%E5%B8%B8%E6%98%BE%E7%A4%BA%E7%BD%91%E9%A1%B5%E5%8D%B3%E4%BB%A3%E8%A1%A8%E6%88%90%E5%8A%9F">http://localhost:4000/)正常显示网页即代表成功</a></p>
+<p>打开 (<a target="_blank" rel="noopener" href="http://localhost:4000/">http://localhost:4000/</a>)正常显示网页即代表成功</p>
 <img src="/article/2402532594/image-20230323154831981.png" alt="image-20230323154831981" style="zoom: 40%;">
-
-
-
 <p>创建自己的文章，根据个人需要创建</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash">hexo new <span class="built_in">test</span></span></span><br><span class="line">hexo new 文章标题</span><br></pre></td></tr></table></figure>
-
 <p>完成后，会在文件夹(blog\source_posts)下生成 <code>文章标题.md</code>文件，将可以继续编写该md文件或复制其他md文件内容进去其中即可，要求自己需要对markdown语法有一定了解，或使用相关markdown编辑软件进行编写。</p>
-<p>重新运行 </p>
+<p>重新运行</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo server</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
 <p>刷新浏览器即可看到自己新增内容</p>
-<h2 id="注册github或者gitee"><a href="#注册github或者gitee" class="headerlink" title="注册github或者gitee"></a>注册github或者gitee</h2><p>github国内用户可能访问比较慢，gitee为国内，能正常访问，二者相差不大，gitee需要实名才能使用pages服务，因此以下步骤均为github，gitee上面操作类似，请自行参考选择。</p>
+<h2 id="注册github或者gitee">注册github或者gitee</h2>
+<p>github国内用户可能访问比较慢，gitee为国内，能正常访问，二者相差不大，gitee需要实名才能使用pages服务，因此以下步骤均为github，gitee上面操作类似，请自行参考选择。</p>
 <p>点击屏幕右上角加号 + ——&gt; new repository 新建一个仓库</p>
 <p><img src="/article/2402532594/image-20230323160033116.png" alt="image-20230323160033116"></p>
-<p><strong>重要：</strong>名称应为自己”GitHub用户名.github.io”，设为public，</p>
+<p>**重要：**名称应为自己&quot;<a target="_blank" rel="noopener" href="http://xn--GitHub-8h6jw94g4v9a.github.io">GitHub用户名.github.io</a>&quot;，设为public，</p>
 <img src="/article/2402532594/image-20230323160251648.png" alt="image-20230323160251648" style="zoom:33%;">
-
-
-
 <p>添加密钥</p>
 <img src="/article/2402532594/image-20230323161315835.png" alt="image-20230323161315835" style="zoom:80%;">
-
-
-
 <p>回到项目位置，复制该ssh地址</p>
 <p><img src="/article/2402532594/image-20230323161504848.png" alt="image-20230323161504848"></p>
 <p>回到项目根目录，“blog目录下”，打开配置文件</p>
 <img src="/article/2402532594/image-20230323161648692.png" alt="image-20230323161648692" style="zoom:67%;">
-
-
-
 <p>找到如下 deploy配置，按照下面修改并保存</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">&#x27;git&#x27;</span></span><br><span class="line">  <span class="attr">repository:</span> <span class="string">粘贴你刚才复制的ssh地址</span></span><br></pre></td></tr></table></figure>
-
 <p>上传至仓库，</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo d</span><br></pre></td></tr></table></figure>
-
 <p>发布服务，回到GitHub仓库，</p>
 <p><img src="/article/2402532594/image-20230323163021686.png" alt="image-20230323163021686"></p>
 <p>为一下显示即为成功，即可拥有自己的个人仓库</p>
-<h2 id="常见问题"><a href="#常见问题" class="headerlink" title="常见问题"></a>常见问题</h2><h3 id="如何使用其他样式（主题）"><a href="#如何使用其他样式（主题）" class="headerlink" title="如何使用其他样式（主题）"></a>如何使用其他样式（主题）</h3><p>进入hexo官网，</p>
+<h2 id="常见问题">常见问题</h2>
+<h3 id="如何使用其他样式（主题）">如何使用其他样式（主题）</h3>
+<p>进入hexo官网，</p>
 <p><img src="/article/2402532594/image-20230323163417141.png" alt="image-20230323163417141"></p>
 <p><img src="/article/2402532594/image-20230323163447847.png" alt="image-20230323163447847"></p>
 <p>点击图片即可预览主题，点击名称即可进入项目地址，不通主题按照相关主题项目对应修改即可</p>
-<h3 id="网站无法正确显示图片"><a href="#网站无法正确显示图片" class="headerlink" title="网站无法正确显示图片"></a>网站无法正确显示图片</h3><p>修改根目录文件，图片引用为在md文件同级目录创建同名文件夹，将图片放置该文件夹，markdown图片采用相对地址引用</p>
+<h3 id="网站无法正确显示图片">网站无法正确显示图片</h3>
+<p>修改根目录文件，图片引用为在md文件同级目录创建同名文件夹，将图片放置该文件夹，markdown图片采用相对地址引用</p>
 <figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">post_asset_folder:</span> <span class="literal">true</span> <span class="comment"># 这里修改为true</span></span><br><span class="line"><span class="comment"># 以下为新增内容</span></span><br><span class="line"><span class="attr">marked:</span></span><br><span class="line">  <span class="attr">prependRoot:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">postAsset:</span> <span class="literal">true</span></span><br></pre></td></tr></table></figure>
-
 <p>修改后，重新生成上传</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">hexo clean</span><br><span class="line">hexo g -d</span><br></pre></td></tr></table></figure>
-
-
-
 
                 
                 <p class="end">__END__</p>
