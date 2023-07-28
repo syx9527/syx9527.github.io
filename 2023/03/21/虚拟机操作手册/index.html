@@ -1,0 +1,1022 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>虚拟机操作手册 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="常见虚拟机操作，不定时更新">
+<meta property="og:type" content="article">
+<meta property="og:title" content="虚拟机操作手册">
+<meta property="og:url" content="https://yuexinshao.cn/2023/03/21/%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%93%8D%E4%BD%9C%E6%89%8B%E5%86%8C/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="常见虚拟机操作，不定时更新">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://yuexinshao.cn/2023/03/21/%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%93%8D%E4%BD%9C%E6%89%8B%E5%86%8C/image-20221125100658139.png">
+<meta property="article:published_time" content="2023-03-21T01:22:15.000Z">
+<meta property="article:modified_time" content="2023-07-07T03:29:58.990Z">
+<meta property="article:author" content="Shaoyx">
+<meta property="article:tag" content="虚拟机">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://yuexinshao.cn/2023/03/21/%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%93%8D%E4%BD%9C%E6%89%8B%E5%86%8C/image-20221125100658139.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS 订阅"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="搜索"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://yuexinshao.cn"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-虚拟机操作手册" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/03/21/%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%93%8D%E4%BD%9C%E6%89%8B%E5%86%8C/" class="article-date">
+  <time class="dt-published" datetime="2023-03-21T01:22:15.000Z" itemprop="datePublished">2023-03-21</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/category/%E4%B8%AA%E4%BA%BA%E7%AC%94%E8%AE%B0/">个人笔记</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      虚拟机操作手册
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>常见虚拟机操作，不定时更新</p>
+<span id="more"></span>
+
+<h1 id="虚拟机操作手册"><a href="#虚拟机操作手册" class="headerlink" title="虚拟机操作手册"></a>虚拟机操作手册</h1><h1 id="Cent-OS-7常用命令"><a href="#Cent-OS-7常用命令" class="headerlink" title="Cent OS 7常用命令"></a>Cent OS 7常用命令</h1><h2 id="系统命令"><a href="#系统命令" class="headerlink" title="系统命令"></a>系统命令</h2><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>su</strong></td>
+<td>切换到root权限（与su有区别）</td>
+</tr>
+<tr>
+<td><strong>shutdown -h now</strong></td>
+<td>关机</td>
+</tr>
+<tr>
+<td><strong>shutdown -r now</strong></td>
+<td>重启</td>
+</tr>
+<tr>
+<td><strong>top</strong></td>
+<td>列出使用CPU资源最多的linux任务 （输入q退出）</td>
+</tr>
+<tr>
+<td><strong>pstree</strong></td>
+<td>以树状图显示程序</td>
+</tr>
+<tr>
+<td><strong>man ping</strong></td>
+<td>查看参考手册（例如ping 命令）</td>
+</tr>
+<tr>
+<td><strong>passwd</strong></td>
+<td>修改密码</td>
+</tr>
+<tr>
+<td><strong>df -h</strong></td>
+<td>显示磁盘的使用情况</td>
+</tr>
+<tr>
+<td><strong>cal -3</strong></td>
+<td>显示前一个月，当前月以及下一个月的月历</td>
+</tr>
+<tr>
+<td><strong>cal 4 1994</strong></td>
+<td>显示指定月，年的月历（当前显示 1994年4月）</td>
+</tr>
+<tr>
+<td><strong>date –date ‘1970-01-01 UTC 1427888888 seconds’</strong></td>
+<td>把一相对于1970-01-01 00:00的秒数转换成时间</td>
+</tr>
+</tbody></table>
+<h2 id="网络命令"><a href="#网络命令" class="headerlink" title="网络命令"></a>网络命令</h2><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>ifconfig eth0</strong></td>
+<td>显示一个以太网卡的配置</td>
+</tr>
+<tr>
+<td><strong>iwconfig eth1</strong></td>
+<td>显示一个无线网卡的配置</td>
+</tr>
+<tr>
+<td><strong>ifconfig eth0 192.168.1.1 netmask 255.255.255.0</strong></td>
+<td>配置网卡的IP地址</td>
+</tr>
+<tr>
+<td><strong>iwlist scan</strong></td>
+<td>显示无线网络</td>
+</tr>
+<tr>
+<td><strong>ifdown eth0</strong></td>
+<td>禁用 ‘eth0’ 网络设备</td>
+</tr>
+<tr>
+<td><strong>ip addr show</strong></td>
+<td>显示网卡的IP地址</td>
+</tr>
+<tr>
+<td><strong>ifup eth0</strong></td>
+<td>启用 ‘eth0’ 网络设备</td>
+</tr>
+</tbody></table>
+<h2 id="文件目录"><a href="#文件目录" class="headerlink" title="文件目录"></a>文件目录</h2><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>cd &#x2F;home</strong></td>
+<td>进入 ‘&#x2F;home’ 目录</td>
+</tr>
+<tr>
+<td><strong>cd ..</strong></td>
+<td>返回上一级目录</td>
+</tr>
+<tr>
+<td><strong>cd ..&#x2F;..</strong></td>
+<td>返回上两级目录</td>
+</tr>
+<tr>
+<td><strong>cd –</strong></td>
+<td>返回上次所在目录</td>
+</tr>
+<tr>
+<td><strong>cp file1 file2</strong></td>
+<td>将file1复制为file2</td>
+</tr>
+<tr>
+<td><strong>cp -a dir1 dir2</strong></td>
+<td>复制一个目录</td>
+</tr>
+<tr>
+<td><strong>cp -a &#x2F;tmp&#x2F;dir1 .</strong></td>
+<td>复制一个目录到当前工作目录（.代表当前目录）</td>
+</tr>
+<tr>
+<td><strong>ls</strong></td>
+<td>查看目录中的文件</td>
+</tr>
+<tr>
+<td><strong>ls -a</strong></td>
+<td>显示隐藏文件</td>
+</tr>
+<tr>
+<td><strong>ls -l</strong></td>
+<td>显示详细信息</td>
+</tr>
+<tr>
+<td><strong>ls -lrt</strong></td>
+<td>按时间显示文件（l表示详细列表，r表示反向排序，t表示按时间排序）</td>
+</tr>
+<tr>
+<td><strong>pwd</strong></td>
+<td>显示工作路径</td>
+</tr>
+<tr>
+<td><strong>mkdir dir1</strong></td>
+<td>创建 ‘dir1’ 目录</td>
+</tr>
+<tr>
+<td><strong>mkdir dir1 dir2</strong></td>
+<td>同时创建两个目录</td>
+</tr>
+<tr>
+<td>mkdir -p &#x2F;tmp&#x2F;dir1&#x2F;dir2</td>
+<td>创建一个目录树</td>
+</tr>
+<tr>
+<td><strong>mv dir1 dir2</strong></td>
+<td>移动&#x2F;重命名一个目录</td>
+</tr>
+<tr>
+<td><strong>rm -f file1</strong></td>
+<td>删除 ‘file1’</td>
+</tr>
+<tr>
+<td><strong>rm -rf dir1</strong></td>
+<td>删除 ‘dir1’ 目录及其子目录内容</td>
+</tr>
+</tbody></table>
+<ul>
+<li>**cd **是 change directory 的缩写，改变当前所在路径。</li>
+<li>**ls **是 list 的缩写，查看文件目录的属性。</li>
+<li>**pwd **是 print working directory 缩写，显示当前所在路径。</li>
+<li>**mv **是 move 缩写，移动文件或者文件夹，也可以用来更改文件名</li>
+<li>**mv file &#x2F; **把文件file移动到根目录中</li>
+<li>**mv file file_test **把文件file重命名为file_test</li>
+<li>**rm **是 remove缩写，删除目录</li>
+<li>**rm ‐f ‐‐force  **强制删除，不询问是否要删除</li>
+<li>**rm ‐r ‐‐recursive **递归删除，包括文件夹中的内容</li>
+</ul>
+<h2 id="文本内容处理"><a href="#文本内容处理" class="headerlink" title="文本内容处理"></a>文本内容处理</h2><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>grep str &#x2F;tmp&#x2F;test</strong></td>
+<td>在文件 ‘&#x2F;tmp&#x2F;test’ 中查找 “str”</td>
+</tr>
+<tr>
+<td><strong>grep ^str &#x2F;tmp&#x2F;test</strong></td>
+<td>在文件 ‘&#x2F;tmp&#x2F;test’ 中查找以 “str” 开始的行</td>
+</tr>
+<tr>
+<td><strong>grep [0-9] &#x2F;tmp&#x2F;test</strong></td>
+<td>查找 ‘&#x2F;tmp&#x2F;test’ 文件中所有包含数字的行</td>
+</tr>
+<tr>
+<td><strong>grep str -r &#x2F;tmp&#x2F;*</strong></td>
+<td>在目录 ‘&#x2F;tmp’ 及其子目录中查找 “str”</td>
+</tr>
+<tr>
+<td><strong>diff file1 file2</strong></td>
+<td>找出两个文件的不同处</td>
+</tr>
+<tr>
+<td><strong>sdiff file1 file2</strong></td>
+<td>以对比的方式显示两个文件的不同</td>
+</tr>
+<tr>
+<td><strong>vi file i</strong></td>
+<td>进入编辑文本模式</td>
+</tr>
+<tr>
+<td><strong>vi file Esc</strong></td>
+<td>退出编辑文本模式</td>
+</tr>
+<tr>
+<td><strong>vi file :w</strong></td>
+<td>保存当前修改</td>
+</tr>
+<tr>
+<td><strong>vi file :q</strong></td>
+<td>不保存退出vi</td>
+</tr>
+</tbody></table>
+<ul>
+<li><strong>grep</strong> 命令是 搜索内容中是否包含指定的字符串，并打印该行。</li>
+<li><strong>grep ‐i  ‐‐ignore‐case</strong>  忽略字符大小写的差别</li>
+<li><strong>grep ‐v</strong> 输出没有指定字符串的文件</li>
+<li><strong>grep ‐c</strong> 只输出匹配行的计数</li>
+<li><strong>grep ‐R</strong> 连同子目录中所有文件一起查找</li>
+</ul>
+<h2 id="查看文件"><a href="#查看文件" class="headerlink" title="查看文件"></a>查看文件</h2><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>cat file1</strong></td>
+<td>从第一个字节开始正向查看文件的内容</td>
+</tr>
+<tr>
+<td><strong>head -2 file1</strong></td>
+<td>查看一个文件的前两行</td>
+</tr>
+<tr>
+<td><strong>more file1</strong></td>
+<td>查看一个长文件的内容</td>
+</tr>
+<tr>
+<td><strong>tac file1</strong></td>
+<td>从最后一行开始反向查看一个文件的内容</td>
+</tr>
+<tr>
+<td><strong>tail -3 file1</strong></td>
+<td>查看一个文件的最后三行</td>
+</tr>
+<tr>
+<td><strong>vi file</strong></td>
+<td>打开并浏览文件</td>
+</tr>
+</tbody></table>
+<ul>
+<li><strong>cat</strong> 是 concatenate 缩写，用来查看文件内容，以及将几个文件连成一个文件。</li>
+<li><strong>cat file1 file2 &gt; file3</strong> 将文件file1 file2连成file3文件</li>
+<li><strong>more</strong> 是最常用的工具之一，用来显示输出的内容，根据窗口的大小进行分页显示，并且提示文件的百分比。</li>
+<li><strong>more +num</strong>  从第num行开始显示</li>
+<li><strong>more ‐num</strong>  定义每屏显示num行</li>
+</ul>
+<h2 id="查询"><a href="#查询" class="headerlink" title="查询"></a>查询</h2><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>find &#x2F; -name file1</strong></td>
+<td>从 ‘&#x2F;’ 开始进入根文件系统查找文件和目录</td>
+</tr>
+<tr>
+<td><strong>find &#x2F; -user user1</strong></td>
+<td>查找属于用户 ‘user1’ 的文件和目录</td>
+</tr>
+<tr>
+<td><strong>find &#x2F;home&#x2F;user1 -name *.bin</strong></td>
+<td>在目录 ‘&#x2F; home&#x2F;user1’ 中查找以 ‘.bin’ 结尾的文件</td>
+</tr>
+<tr>
+<td><strong>find &#x2F;usr&#x2F;bin -type f -atime +100</strong></td>
+<td>查找在过去100天内未被使用过的执行文件</td>
+</tr>
+<tr>
+<td><strong>find &#x2F;usr&#x2F;bin -type f -mtime -10</strong></td>
+<td>查找在10天内被创建或者修改过的文件</td>
+</tr>
+<tr>
+<td><strong>locate *.ps</strong></td>
+<td>寻找以 ‘.ps’ 结尾的文件，先运行 ‘updatedb’ 命令</td>
+</tr>
+<tr>
+<td><strong>find -name ‘*.[ch]’ | xargs grep -E ‘expr’</strong></td>
+<td>在当前目录及其子目录所有.c和.h文件中查找 ‘expr’</td>
+</tr>
+<tr>
+<td><strong>find -type f -print0 | xargs -r0 grep -F ‘expr’</strong></td>
+<td>在当前目录及其子目录的常规文件中查找 ‘expr’</td>
+</tr>
+<tr>
+<td><strong>find -maxdepth 1 -type f | xargs grep -F ‘expr’</strong></td>
+<td>在当前目录中查找 ‘expr’</td>
+</tr>
+</tbody></table>
+<ol>
+<li><strong>find</strong>命令 直接在全文件系统上搜寻，功能强大，速度慢。使用格式：<ol>
+<li><strong>find [path] [‐option] [ ‐print ‐exec ‐ok command ] {} \ </strong>;</li>
+</ol>
+</li>
+<li><strong>path</strong> 要执行查找的目录<ol>
+<li><strong>‐option</strong> 查找的具体方法</li>
+<li><strong>‐print find</strong> 命令将匹配的文件输出到标准输出</li>
+<li><strong>‐exec find</strong> 命令对匹配的文件执行该参数所给出的shell命令。相应命令的形式为’command’ {} ;，注意{}和\；之间的空格</li>
+<li><strong>‐ok</strong> <strong>和‐exec</strong> 的作用相同，只不过以一种更为安全的模式来执行该参数所给出的shell命令，在执行每一个命令之前，都会给出提示，让用户来确定是否执行。</li>
+</ol>
+</li>
+</ol>
+<h2 id="压缩、解压"><a href="#压缩、解压" class="headerlink" title="压缩、解压"></a>压缩、解压</h2><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>bzip2 file1</strong></td>
+<td>压缩 file1</td>
+</tr>
+<tr>
+<td><strong>bunzip2 file1.bz2</strong></td>
+<td>解压 file1.bz2</td>
+</tr>
+<tr>
+<td><strong>gzip file1</strong></td>
+<td>压缩 file1</td>
+</tr>
+<tr>
+<td><strong>gzip -9 file1</strong></td>
+<td>最大程度压缩 file1</td>
+</tr>
+<tr>
+<td><strong>gunzip file1.gz</strong></td>
+<td>解压 file1.gz</td>
+</tr>
+<tr>
+<td><strong>tar -cvf archive.tar file1</strong></td>
+<td>把file1打包成 archive.tar（-c: 建立压缩档案；-v: 显示所有过程； -f: 使用档案名字，是必须的，是最后一个参数）</td>
+</tr>
+<tr>
+<td><strong>tar -cvf archive.tar file1 dir1</strong></td>
+<td>把 file1，dir1 打包成 archive.tar</td>
+</tr>
+<tr>
+<td><strong>tar -tf archive.tar</strong></td>
+<td>显示一个包中的内容</td>
+</tr>
+<tr>
+<td><strong>tar -xvf archive.tar</strong></td>
+<td>释放一个包</td>
+</tr>
+<tr>
+<td><strong>tar -xvf archive.tar -C &#x2F;tmp</strong></td>
+<td>把压缩包释放到 &#x2F;tmp目录下</td>
+</tr>
+<tr>
+<td><strong>zip file1.zip file1</strong></td>
+<td>创建一个zip格式的压缩包</td>
+</tr>
+<tr>
+<td><strong>zip -r file1.zip file1 dir1</strong></td>
+<td>把文件和目录压缩成一个zip格式的压缩包</td>
+</tr>
+<tr>
+<td><strong>unzip file1.zip</strong></td>
+<td>解压一个zip格式的压缩包到当前目录</td>
+</tr>
+<tr>
+<td><strong>unzip test.zip -d &#x2F;tmp&#x2F;</strong></td>
+<td>解压一个zip格式的压缩包到 &#x2F;tmp 目录</td>
+</tr>
+</tbody></table>
+<h2 id="yum安装器"><a href="#yum安装器" class="headerlink" title="yum安装器"></a>yum安装器</h2><table>
+<thead>
+<tr>
+<th>命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><strong>yum -y install [package]</strong></td>
+<td>下载并安装一个rpm包</td>
+</tr>
+<tr>
+<td><strong>yum localinstall [package.rpm]</strong></td>
+<td>安装一个rpm包，使用你自己的软件仓库解决所有依赖关系</td>
+</tr>
+<tr>
+<td><strong>yum -y update</strong></td>
+<td>更新当前系统中安装的所有rpm包</td>
+</tr>
+<tr>
+<td><strong>yum update [package]</strong></td>
+<td>更新一个rpm包</td>
+</tr>
+<tr>
+<td><strong>yum remove [package]</strong></td>
+<td>删除一个rpm包</td>
+</tr>
+<tr>
+<td><strong>yum list</strong></td>
+<td>列出当前系统中安装的所有包</td>
+</tr>
+<tr>
+<td><strong>yum search [package]</strong></td>
+<td>在rpm仓库中搜寻软件包</td>
+</tr>
+<tr>
+<td><strong>yum clean [package]</strong></td>
+<td>清除缓存目录（&#x2F;var&#x2F;cache&#x2F;yum）下的软件包</td>
+</tr>
+<tr>
+<td><strong>yum clean headers</strong></td>
+<td>删除所有头文件</td>
+</tr>
+<tr>
+<td><strong>yum clean all</strong></td>
+<td>删除所有缓存的包和头文件</td>
+</tr>
+</tbody></table>
+<h2 id="systemctl命令"><a href="#systemctl命令" class="headerlink" title="systemctl命令"></a>systemctl命令</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 开机运行服务：</span></span><br><span class="line">systemctl <span class="built_in">enable</span> *.service</span><br><span class="line"><span class="comment"># 取消开机运行</span></span><br><span class="line">systemctl <span class="built_in">disable</span> *.service</span><br><span class="line"><span class="comment"># 启动服务</span></span><br><span class="line">systemctl start *.service</span><br><span class="line"><span class="comment"># 停止服务</span></span><br><span class="line">systemctl stop *.service</span><br><span class="line"><span class="comment"># 重启服务</span></span><br><span class="line">systemctl restart *.service</span><br><span class="line"><span class="comment"># 重新加载服务配置文件</span></span><br><span class="line">systemctl reload *.service</span><br><span class="line"><span class="comment"># 查询服务运行状态</span></span><br><span class="line">systemctl status *.service</span><br><span class="line"><span class="comment"># 显示启动失败的服务</span></span><br><span class="line">systemctl --failed</span><br></pre></td></tr></table></figure>
+
+<h2 id="防火墙命令"><a href="#防火墙命令" class="headerlink" title="防火墙命令"></a>防火墙命令</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 开启防火墙</span></span><br><span class="line">systemctl start firewalld</span><br><span class="line"><span class="comment"># 查看版本：</span></span><br><span class="line">firewall-cmd --version</span><br><span class="line"><span class="comment"># 查看帮助：</span></span><br><span class="line">firewall-cmd --<span class="built_in">help</span></span><br><span class="line"><span class="comment"># 显示状态：</span></span><br><span class="line">firewall-cmd --state</span><br><span class="line"><span class="comment"># 查看端口：</span></span><br><span class="line">firewall-cmd --list-port</span><br><span class="line"><span class="comment"># 开放端口：</span></span><br><span class="line">firewall-cmd --add-port=3307/tcp --permanent</span><br><span class="line">firewall-cmd --add-port=5672/tcp --permanent</span><br><span class="line">firewall-cmd --add-port=6379/tcp --permanent</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">firewall-cmd --add-port=20000-20010/tcp --permanent</span><br><span class="line"><span class="comment"># 禁用端口：</span></span><br><span class="line">firewall-cmd --remove-port=80/tcp --permanent</span><br><span class="line">firewall-cmd --remove-port=20000-20010/tcp --permanent</span><br><span class="line"><span class="comment"># 查看端口号是否开放成功，输出yes开放成功，no则失败</span></span><br><span class="line">firewall-cmd --zone=public --query-port=27017/tcp</span><br><span class="line"></span><br><span class="line"><span class="comment"># 重新加载防火墙规则：</span></span><br><span class="line">firewall-cmd --reload</span><br><span class="line"><span class="comment"># 开放/关闭服务端口：</span></span><br><span class="line"><span class="comment"># 打开FTP服务：</span></span><br><span class="line">firewall-cmd --add-service=ftp --permanent</span><br><span class="line"><span class="comment"># 关闭FTP服务：</span></span><br><span class="line">firewall-cmd --remove-service=ftp --permanent</span><br><span class="line"></span><br><span class="line"><span class="comment">## 参数 --permanent，表示永久生效</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="权限设置命令"><a href="#权限设置命令" class="headerlink" title="权限设置命令"></a>权限设置命令</h2><p>Linux 系统中，文件的基本权限由 9 个字符组成，以 rwxrw-r-x 为例，我们可以使用数字来代表各个权限，各个权限与数字的对应关系如下：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">r --&gt; 4</span><br><span class="line">w --&gt; 2</span><br><span class="line">x --&gt; 1</span><br></pre></td></tr></table></figure>
+
+<p>由于这 9 个字符分属 3 类用户，因此每种用户身份包含 3 个权限（r、w、x），通过将 3 个权限对应的数字累加，最终得到的值即可作为每种用户所具有的权限。</p>
+<p>拿 rwxrw-r-x 来说，所有者、所属组和其他人分别对应的权限值为：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">所有者 = rwx = 4+2+1 = 7</span><br><span class="line">所属组 = rw- = 4+2 = 6</span><br><span class="line">其他人 = r-x = 4+1 = 5</span><br></pre></td></tr></table></figure>
+
+<p>所以，此权限对应的权限值就是 765。</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">chmod</span> [-R] 权限值 文件名</span><br></pre></td></tr></table></figure>
+
+<p>-R（注意是大写）选项表示连同子目录中的所有文件，也都修改设定的权限。</p>
+<h2 id="写入空白到文件"><a href="#写入空白到文件" class="headerlink" title="写入空白到文件"></a>写入空白到文件</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /data1/tomcat8/tomcat/log</span><br><span class="line"><span class="built_in">echo</span> -n  <span class="string">&quot; &quot;</span> &gt; catalina.out</span><br></pre></td></tr></table></figure>
+
+<h1 id="CentOS-7虚拟机部署操作"><a href="#CentOS-7虚拟机部署操作" class="headerlink" title="CentOS 7虚拟机部署操作"></a>CentOS 7虚拟机部署操作</h1><h2 id="修改网卡"><a href="#修改网卡" class="headerlink" title="修改网卡"></a>修改网卡</h2><ol>
+<li><p>查看所有网卡信息</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ip a</span><br></pre></td></tr></table></figure>
+
+<p>如下：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">1: lo: &lt;LOOPBACK,UP,LOWER_UP&gt; mtu 65536 qdisc noqueue state UNKNOWN group default qlen 1000</span><br><span class="line">    <span class="built_in">link</span>/loopback 00:00:00:00:00:00 brd 00:00:00:00:00:00</span><br><span class="line">    inet 127.0.0.1/8 scope host lo</span><br><span class="line">       valid_lft forever preferred_lft forever</span><br><span class="line">    inet6 ::1/128 scope host </span><br><span class="line">       valid_lft forever preferred_lft forever</span><br><span class="line">2: ens33: &lt;BROADCAST,MULTICAST,UP,LOWER_UP&gt; mtu 1500 qdisc pfifo_fast state UP group default qlen 1000  <span class="built_in">link</span>/ether 00:0c:29:46:fa:ef brd  ff:ff:ff:ff:ff:ff</span><br><span class="line">    inet 192.168.220.129/24 brd 192.168.220.255 scope global noprefixroute dynamic ens33</span><br><span class="line">       valid_lft 1348sec preferred_lft 1348sec</span><br><span class="line">    inet6 fe80::20bd:8254:8e89:8a50/64 scope <span class="built_in">link</span> noprefixroute </span><br><span class="line">       valid_lft forever preferred_lft forever</span><br></pre></td></tr></table></figure>
+
+<p>这里以第二张网卡<code>ens33</code>进行示例</p>
+</li>
+<li><p>修改对应网卡配置文件</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/sysconfig/network-scripts/ifcfg-ens33</span><br></pre></td></tr></table></figure>
+
+<p>内容如下</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">TYPE=Ethernet</span><br><span class="line">PROXY_METHOD=none</span><br><span class="line">BROWSER_ONLY=no</span><br><span class="line">BOOTPROTO=dhcp</span><br><span class="line">DEFROUTE=<span class="built_in">yes</span></span><br><span class="line">IPV4_FAILURE_FATAL=no</span><br><span class="line">IPV6INIT=<span class="built_in">yes</span></span><br><span class="line">IPV6_AUTOCONF=<span class="built_in">yes</span></span><br><span class="line">IPV6_DEFROUTE=<span class="built_in">yes</span></span><br><span class="line">IPV6_FAILURE_FATAL=no</span><br><span class="line">IPV6_ADDR_GEN_MODE=stable-privacy</span><br><span class="line">NAME=ens33</span><br><span class="line">UUID=fd92ff57-ba9a-41c9-8545-0f61c519ba0c</span><br><span class="line">DEVICE=ens33</span><br><span class="line">ONBOOT=no</span><br></pre></td></tr></table></figure>
+
+<p>修改下列两个选项</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">BOOTPROTO=static</span><br><span class="line">ONBOOT=<span class="built_in">yes</span></span><br></pre></td></tr></table></figure>
+
+<p>并在后面添加如下内容(以下内容根据自己网络情况配置)</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">IPADDR=106.60.78.168</span><br><span class="line">NETMASK=255.255.255.192</span><br><span class="line">GATEWAY=106.60.78.129</span><br><span class="line">DNS1=222.172.200.68</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>重启网络服务</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart network</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>测试是否配置成功</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ip a</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="更换yum源"><a href="#更换yum源" class="headerlink" title="更换yum源"></a>更换yum源</h2><p><strong>yum源的默认仓库文件夹是 <code>/etc/yum.repos.d/</code>，只有在这个目录<code>第一层</code>的*.repo结尾的文件，才会被yum读取</strong></p>
+<ol>
+<li><p>下载<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=wget&spm=1001.2101.3001.7020">wget</a>命令</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install wget -y    <span class="comment"># wget命令就是在线下载一个url的静态资源</span></span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>备份旧的<a target="_blank" rel="noopener" href="https://so.csdn.net/so/search?q=yum&spm=1001.2101.3001.7020">yum</a>仓库源</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span>  /etc/yum.repos.d</span><br><span class="line"><span class="built_in">mkdir</span>  repobak  <span class="comment"># 创建文件夹，保存备份文件</span></span><br><span class="line"><span class="built_in">mv</span> *.repo   repobak  <span class="comment">#备份repo文件到文件</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>清理旧包</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum clean all</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>下载新的阿里的yum源仓库</p>
+<p>阿里的开源镜像：<code>https://developer.aliyun.com/mirror/</code></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.aliyun.com/repo/Centos-7.repo</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>继续下载第二个仓库 epel仓库</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget -O /etc/yum.repos.d/epel.repo http://mirrors.aliyun.com/repo/epel-7.repo</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>此时已经配置完毕，2个新的yum仓库，可以下载软件</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[root@s25linux yum.repos.d]<span class="comment"># ls</span></span><br><span class="line">CentOS-Base.repo  epel.repo  repobak</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>生成yum源缓存并更新yum源</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">yum makecache</span><br><span class="line">yum -y update</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="虚拟机安装tools"><a href="#虚拟机安装tools" class="headerlink" title="虚拟机安装tools"></a>虚拟机安装tools</h2><ol>
+<li><p>虚拟机管理平台挂载tools</p>
+</li>
+<li><p>创建挂在文件夹</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> /root/nmt/</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>挂载镜像至刚才创建的文件夹下</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mount /dev/sr0 /root/nmt/</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看挂载文件</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /root/nmt/</span><br><span class="line"><span class="built_in">ls</span></span><br></pre></td></tr></table></figure>
+
+
+
+<p>内容如下</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">manifest.txt     VMwareTools-10.3.10-13959562.tar.gz  vmware-tools-upgrader-64</span><br><span class="line">run_upgrader.sh  vmware-tools-upgrader-32</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>将安装包复制到该文件夹<code>/root/</code>下</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cp</span> vmtools-3.0.0.011.tar.bz2 /root/</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>进入<code>/root/</code>文件夹下解压文件</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /root/</span><br><span class="line"><span class="comment"># tar -zxvf VMwareTools-10.3.10-13959562.tar.gz</span></span><br><span class="line"><span class="comment"># 若为Fusion Compute平台则使用下面命令解压文件</span></span><br><span class="line">tar -xjvf vmtools-3.0.0.011.tar.bz2</span><br></pre></td></tr></table></figure>
+
+<p>解压报错建议更新yum源并安装tar包</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">yum -y update</span><br><span class="line">yum -y install tar</span><br><span class="line">yum -y install perl</span><br><span class="line">yum -y install bzip2</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>解压目录并安装</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> vmtools</span><br><span class="line">sh install</span><br><span class="line"><span class="comment"># cd .. </span></span><br><span class="line"><span class="comment"># cd vmware-tools-distrib</span></span><br><span class="line"><span class="comment"># sudo ./vmware-install.pl</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>重启电脑即可</p>
+ <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash"></span></span><br><span class="line"><span class="language-bash"><span class="built_in">mkdir</span> /root/nmt/</span></span><br><span class="line"></span><br><span class="line">mount /dev/sr0 /root/nmt/</span><br><span class="line"></span><br><span class="line">cd /root/nmt/</span><br><span class="line">ls</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">cp vmtools-3.0.0.011.tar.bz2 /root/</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">cd /root/</span><br><span class="line">tar -xjvf vmtools-3.0.0.011.tar.bz2</span><br><span class="line"></span><br><span class="line">cd vmtools</span><br><span class="line"></span><br><span class="line">sh install</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="修改ssh端口"><a href="#修改ssh端口" class="headerlink" title="修改ssh端口"></a>修改ssh端口</h2><ol>
+<li><p>编辑ssh配置文件</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/ssh/sshd_config</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>修改端口</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Port 222 <span class="comment"># 这里修改成自己设置的端口</span></span><br><span class="line"><span class="comment">#Port 22</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>添加ssh监听端口</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">semanage port -a -t ssh_port_t -p tcp 222</span><br></pre></td></tr></table></figure>
+
+<p>若报错，安装policycoreutils-python软件包</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install policycoreutils-python -y</span><br></pre></td></tr></table></figure>
+
+<p>安装完成再次执行添加ssh监听端口</p>
+</li>
+<li><p>查看端口是否添加成功</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">semanage port -l|grep ssh</span><br></pre></td></tr></table></figure>
+
+<p>结果如下</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh_port_t                     tcp      222, 22</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>将刚才修改的端口添加到防火墙规则</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --zone=public --add-port=222/tcp --permanent  <span class="comment"># 这里222修改成自己设置的端口</span></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>重新加载防火墙策略</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --reload</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>重启SSH服务和防火墙，最好也重启下服务器：</p>
+</li>
+</ol>
+  <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart sshd</span><br><span class="line">systemctl restart firewalld.service</span><br><span class="line">reb</span><br><span class="line">shutdown -r now</span><br></pre></td></tr></table></figure>
+
+<ol start="8">
+<li>重新ssh连接测试</li>
+</ol>
+<h2 id="新增硬盘扩容至根目录"><a href="#新增硬盘扩容至根目录" class="headerlink" title="新增硬盘扩容至根目录"></a>新增硬盘扩容至根目录</h2><ol>
+<li><p>查看分区状况</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># df -h</span></span><br><span class="line">文件系统                 容量  已用  可用 已用% 挂载点</span><br><span class="line">/dev/mapper/centos-root  100G  5.0G   96G    5% /</span><br><span class="line">devtmpfs                  16G     0   16G    0% /dev</span><br><span class="line">tmpfs                     16G     0   16G    0% /dev/shm</span><br><span class="line">tmpfs                     16G   97M   16G    1% /run</span><br><span class="line">tmpfs                     16G     0   16G    0% /sys/fs/cgroup</span><br><span class="line">/dev/vda1               1014M  208M  807M   21% /boot</span><br><span class="line">/dev/mapper/centos-home   92G   37M   92G    1% /home</span><br><span class="line">tmpfs                    3.2G   32K  3.2G    1% /run/user/0</span><br></pre></td></tr></table></figure>
+
+<p>根目录为<code>/dev/mapper/centos-root</code></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# lsblk</span><br><span class="line">NAME            MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT</span><br><span class="line">sr0              11:0    1  422K  0 rom  </span><br><span class="line">vda             252:0    0  200G  0 disk </span><br><span class="line">├─vda1          252:1    0    1G  0 part /boot</span><br><span class="line">└─vda2          252:2    0  199G  0 part </span><br><span class="line">  ├─centos-root 253:0    0  100G  0 lvm  /</span><br><span class="line">  ├─centos-swap 253:1    0  7.9G  0 lvm  [SWAP]</span><br><span class="line">  └─centos-home 253:2    0 91.1G  0 lvm  /home</span><br><span class="line">vdb             252:16   0  200G  0 disk</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>新建分区，并将id改为8e</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# fdisk /dev/vdb</span><br><span class="line">欢迎使用 fdisk (util-linux 2.23.2)。</span><br><span class="line"></span><br><span class="line">更改将停留在内存中，直到您决定将更改写入磁盘。</span><br><span class="line">使用写入命令前请三思。</span><br><span class="line"></span><br><span class="line">Device does not contain a recognized partition table</span><br><span class="line">使用磁盘标识符 0x227b5082 创建新的 DOS 磁盘标签。</span><br><span class="line"></span><br><span class="line">命令(输入 m 获取帮助)：n</span><br><span class="line">Partition type:</span><br><span class="line">   p   primary (0 primary, 0 extended, 4 free)</span><br><span class="line">   e   extended</span><br><span class="line">Select (default p): p</span><br><span class="line">分区号 (1-4，默认 1)：</span><br><span class="line">起始 扇区 (2048-419430399，默认为 2048)：</span><br><span class="line">将使用默认值 2048</span><br><span class="line">Last 扇区, +扇区 or +size&#123;K,M,G&#125; (2048-419430399，默认为 419430399)：</span><br><span class="line">将使用默认值 419430399</span><br><span class="line">分区 1 已设置为 Linux 类型，大小设为 200 GiB</span><br><span class="line"></span><br><span class="line">命令(输入 m 获取帮助)：t</span><br><span class="line">已选择分区 1</span><br><span class="line">Hex 代码(输入 L 列出所有代码)：l</span><br><span class="line"></span><br><span class="line"> 0  空              24  NEC DOS         81  Minix / 旧 Linu bf  Solaris        </span><br><span class="line"> 1  FAT12           27  隐藏的 NTFS Win 82  Linux 交换 / So c1  DRDOS/sec (FAT-</span><br><span class="line"> 2  XENIX root      39  Plan 9          83  Linux           c4  DRDOS/sec (FAT-</span><br><span class="line"> 3  XENIX usr       3c  PartitionMagic  84  OS/2 隐藏的 C:  c6  DRDOS/sec (FAT-</span><br><span class="line"> 4  FAT16 &lt;32M      40  Venix 80286     85  Linux 扩展      c7  Syrinx         </span><br><span class="line"> 5  扩展            41  PPC PReP Boot   86  NTFS 卷集       da  非文件系统数据 </span><br><span class="line"> 6  FAT16           42  SFS             87  NTFS 卷集       db  CP/M / CTOS / .</span><br><span class="line"> 7  HPFS/NTFS/exFAT 4d  QNX4.x          88  Linux 纯文本    de  Dell 工具      </span><br><span class="line"> 8  AIX             4e  QNX4.x 第2部分  8e  Linux LVM       df  BootIt         </span><br><span class="line"> 9  AIX 可启动      4f  QNX4.x 第3部分  93  Amoeba          e1  DOS 访问       </span><br><span class="line"> a  OS/2 启动管理器 50  OnTrack DM      94  Amoeba BBT      e3  DOS R/O        </span><br><span class="line"> b  W95 FAT32       51  OnTrack DM6 Aux 9f  BSD/OS          e4  SpeedStor      </span><br><span class="line"> c  W95 FAT32 (LBA) 52  CP/M            a0  IBM Thinkpad 休 eb  BeOS fs        </span><br><span class="line"> e  W95 FAT16 (LBA) 53  OnTrack DM6 Aux a5  FreeBSD         ee  GPT            </span><br><span class="line"> f  W95 扩展 (LBA)  54  OnTrackDM6      a6  OpenBSD         ef  EFI (FAT-12/16/</span><br><span class="line">10  OPUS            55  EZ-Drive        a7  NeXTSTEP        f0  Linux/PA-RISC  </span><br><span class="line">11  隐藏的 FAT12    56  Golden Bow      a8  Darwin UFS      f1  SpeedStor      </span><br><span class="line">12  Compaq 诊断     5c  Priam Edisk     a9  NetBSD          f4  SpeedStor      </span><br><span class="line">14  隐藏的 FAT16 &lt;3 61  SpeedStor       ab  Darwin 启动     f2  DOS 次要       </span><br><span class="line">16  隐藏的 FAT16    63  GNU HURD or Sys af  HFS / HFS+      fb  VMware VMFS    </span><br><span class="line">17  隐藏的 HPFS/NTF 64  Novell Netware  b7  BSDI fs         fc  VMware VMKCORE </span><br><span class="line">18  AST 智能睡眠    65  Novell Netware  b8  BSDI swap       fd  Linux raid 自动</span><br><span class="line">1b  隐藏的 W95 FAT3 70  DiskSecure 多启 bb  Boot Wizard 隐  fe  LANstep        </span><br><span class="line">1c  隐藏的 W95 FAT3 75  PC/IX           be  Solaris 启动    ff  BBT            </span><br><span class="line">1e  隐藏的 W95 FAT1 80  旧 Minix       </span><br><span class="line">Hex 代码(输入 L 列出所有代码)：8e</span><br><span class="line">已将分区“Linux”的类型更改为“Linux LVM”</span><br><span class="line"></span><br><span class="line">命令(输入 m 获取帮助)：w</span><br><span class="line">The partition table has been altered!</span><br><span class="line"></span><br><span class="line">Calling ioctl() to re-read partition table.</span><br><span class="line">正在同步磁盘。</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>刷新并查看sdb1是否存在</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# partprobe</span><br><span class="line">[root@localhost ~]# lsblk</span><br><span class="line">NAME            MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT</span><br><span class="line">sr0              11:0    1  422K  0 rom  </span><br><span class="line">vda             252:0    0  200G  0 disk </span><br><span class="line">├─vda1          252:1    0    1G  0 part /boot</span><br><span class="line">└─vda2          252:2    0  199G  0 part </span><br><span class="line">  ├─centos-root 253:0    0  100G  0 lvm  /</span><br><span class="line">  ├─centos-swap 253:1    0  7.9G  0 lvm  [SWAP]</span><br><span class="line">  └─centos-home 253:2    0 91.1G  0 lvm  /home</span><br><span class="line">vdb             252:16   0  200G  0 disk </span><br><span class="line">└─vdb1          252:17   0  200G  0 part </span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用lvm命令新建卷&#x2F;dev&#x2F;vdb1,并将其加载到卷组centos中</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# lvm</span><br><span class="line"><span class="meta prompt_">lvm&gt; </span><span class="language-bash">pvcreate /dev/vdb1</span></span><br><span class="line">  Physical volume &quot;/dev/vdb1&quot; successfully created.</span><br><span class="line"><span class="meta prompt_">lvm&gt; </span><span class="language-bash">pvdisplay</span></span><br><span class="line">  --- Physical volume ---</span><br><span class="line">  PV Name               /dev/vda2</span><br><span class="line">  VG Name               centos</span><br><span class="line">  PV Size               &lt;199.00 GiB / not usable 3.00 MiB</span><br><span class="line">  Allocatable           yes </span><br><span class="line">  PE Size               4.00 MiB</span><br><span class="line">  Total PE              50943</span><br><span class="line">  Free PE               1</span><br><span class="line">  Allocated PE          50942</span><br><span class="line">  PV UUID               C4fWly-FXW2-0YNu-sCiK-96RD-yyfJ-TdmKn9</span><br><span class="line">   </span><br><span class="line">  &quot;/dev/vdb1&quot; is a new physical volume of &quot;&lt;200.00 GiB&quot;</span><br><span class="line">  --- NEW Physical volume ---</span><br><span class="line">  PV Name               /dev/vdb1</span><br><span class="line">  VG Name               </span><br><span class="line">  PV Size               &lt;200.00 GiB</span><br><span class="line">  Allocatable           NO</span><br><span class="line">  PE Size               0   </span><br><span class="line">  Total PE              0</span><br><span class="line">  Free PE               0</span><br><span class="line">  Allocated PE          0</span><br><span class="line">  PV UUID               sQkrz3-twIl-IXZk-k2xV-8C5c-bAKf-syXCRD</span><br><span class="line">   </span><br><span class="line"><span class="meta prompt_">lvm&gt; </span><span class="language-bash">vgdisplay</span></span><br><span class="line">  --- Volume group ---</span><br><span class="line">  VG Name               centos</span><br><span class="line">  System ID             </span><br><span class="line">  Format                lvm2</span><br><span class="line">  Metadata Areas        1</span><br><span class="line">  Metadata Sequence No  4</span><br><span class="line">  VG Access             read/write</span><br><span class="line">  VG Status             resizable</span><br><span class="line">  MAX LV                0</span><br><span class="line">  Cur LV                3</span><br><span class="line">  Open LV               3</span><br><span class="line">  Max PV                0</span><br><span class="line">  Cur PV                1</span><br><span class="line">  Act PV                1</span><br><span class="line">  VG Size               &lt;199.00 GiB</span><br><span class="line">  PE Size               4.00 MiB</span><br><span class="line">  Total PE              50943</span><br><span class="line">  Alloc PE / Size       50942 / 198.99 GiB</span><br><span class="line">  Free  PE / Size       1 / 4.00 MiB</span><br><span class="line">  VG UUID               p6KwrN-dHe7-5tT0-6lo9-mOPO-qtUh-jHthEp</span><br><span class="line">   </span><br><span class="line"><span class="meta prompt_">lvm&gt; </span><span class="language-bash">vgextend centos /dev/vdb1</span></span><br><span class="line">  Volume group &quot;centos&quot; successfully extended</span><br><span class="line"><span class="meta prompt_">lvm&gt; </span><span class="language-bash">vgdisplay</span></span><br><span class="line">  --- Volume group ---</span><br><span class="line">  VG Name               centos</span><br><span class="line">  System ID             </span><br><span class="line">  Format                lvm2</span><br><span class="line">  Metadata Areas        2</span><br><span class="line">  Metadata Sequence No  5</span><br><span class="line">  VG Access             read/write</span><br><span class="line">  VG Status             resizable</span><br><span class="line">  MAX LV                0</span><br><span class="line">  Cur LV                3</span><br><span class="line">  Open LV               3</span><br><span class="line">  Max PV                0</span><br><span class="line">  Cur PV                2</span><br><span class="line">  Act PV                2</span><br><span class="line">  VG Size               398.99 GiB</span><br><span class="line">  PE Size               4.00 MiB</span><br><span class="line">  Total PE              102142</span><br><span class="line">  Alloc PE / Size       50942 / 198.99 GiB</span><br><span class="line">  Free  PE / Size       51200 / 200.00 GiB</span><br><span class="line">  VG UUID               p6KwrN-dHe7-5tT0-6lo9-mOPO-qtUh-jHthEp</span><br><span class="line">   </span><br><span class="line"><span class="meta prompt_">lvm&gt; </span><span class="language-bash">lvextend -l +100%FREE /dev/centos/root</span></span><br><span class="line">  Size of logical volume centos/root changed from 100.00 GiB (25600 extents) to 300.00 GiB (76800 extents).</span><br><span class="line">  Logical volume centos/root successfully resized.</span><br><span class="line"><span class="meta prompt_">lvm&gt; </span><span class="language-bash"><span class="built_in">exit</span></span></span><br><span class="line">  Exiting.</span><br></pre></td></tr></table></figure>
+
+<p>这里的&#x2F;dev&#x2F;centos&#x2F;root不能随便改成centos-root。LVM逻辑卷管理，根文件系统建立在卷组（VG）centos上的逻辑卷（LV）上，逻辑卷名是root而不是直接建在硬盘分区上</p>
+</li>
+<li><p>之前只是对逻辑卷扩容，还要同步到文件系统，实现对根目录的扩容</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]#  xfs_growfs /dev/centos/root</span><br><span class="line">meta-data=/dev/mapper/centos-root isize=512    agcount=4, agsize=6553600 blks</span><br><span class="line">         =                       sectsz=512   attr=2, projid32bit=1</span><br><span class="line">         =                       crc=1        finobt=0 spinodes=0</span><br><span class="line">data     =                       bsize=4096   blocks=26214400, imaxpct=25</span><br><span class="line">         =                       sunit=0      swidth=0 blks</span><br><span class="line">naming   =version 2              bsize=4096   ascii-ci=0 ftype=1</span><br><span class="line">log      =internal               bsize=4096   blocks=12800, version=2</span><br><span class="line">         =                       sectsz=512   sunit=0 blks, lazy-count=1</span><br><span class="line">realtime =none                   extsz=4096   blocks=0, rtextents=0</span><br><span class="line">data blocks changed from 26214400 to 78643200</span><br><span class="line"></span><br><span class="line">[root@localhost ~]# df -h</span><br><span class="line">文件系统                 容量  已用  可用 已用% 挂载点</span><br><span class="line">/dev/mapper/centos-root  300G  5.0G  296G    2% /</span><br><span class="line">devtmpfs                  16G     0   16G    0% /dev</span><br><span class="line">tmpfs                     16G     0   16G    0% /dev/shm</span><br><span class="line">tmpfs                     16G   97M   16G    1% /run</span><br><span class="line">tmpfs                     16G     0   16G    0% /sys/fs/cgroup</span><br><span class="line">/dev/vda1               1014M  208M  807M   21% /boot</span><br><span class="line">/dev/mapper/centos-home   92G   37M   92G    1% /home</span><br><span class="line">tmpfs                    3.2G   32K  3.2G    1% /run/user/0</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>检查对比</p>
+<p>以下为扩容前后文件系统详情</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# df -h</span><br><span class="line">文件系统                 容量  已用  可用 已用% 挂载点</span><br><span class="line">/dev/mapper/centos-root  100G  5.0G   96G    5% /</span><br><span class="line">devtmpfs                  16G     0   16G    0% /dev</span><br><span class="line">tmpfs                     16G     0   16G    0% /dev/shm</span><br><span class="line">tmpfs                     16G   97M   16G    1% /run</span><br><span class="line">tmpfs                     16G     0   16G    0% /sys/fs/cgroup</span><br><span class="line">/dev/vda1               1014M  208M  807M   21% /boot</span><br><span class="line">/dev/mapper/centos-home   92G   37M   92G    1% /home</span><br><span class="line">tmpfs                    3.2G   32K  3.2G    1% /run/user/0</span><br><span class="line"></span><br><span class="line">[root@localhost ~]# df -h</span><br><span class="line">文件系统                 容量  已用  可用 已用% 挂载点</span><br><span class="line">/dev/mapper/centos-root  300G  5.0G  296G    2% /</span><br><span class="line">devtmpfs                  16G     0   16G    0% /dev</span><br><span class="line">tmpfs                     16G     0   16G    0% /dev/shm</span><br><span class="line">tmpfs                     16G   97M   16G    1% /run</span><br><span class="line">tmpfs                     16G     0   16G    0% /sys/fs/cgroup</span><br><span class="line">/dev/vda1               1014M  208M  807M   21% /boot</span><br><span class="line">/dev/mapper/centos-home   92G   37M   92G    1% /home</span><br><span class="line">tmpfs                    3.2G   32K  3.2G    1% /run/user/0</span><br></pre></td></tr></table></figure>
+
+<p>根目录容量已从100G扩容至300G</p>
+</li>
+</ol>
+<h1 id="CentOS-7-常用软件安装"><a href="#CentOS-7-常用软件安装" class="headerlink" title="CentOS 7 常用软件安装"></a>CentOS 7 常用软件安装</h1><h2 id="基本命令"><a href="#基本命令" class="headerlink" title="基本命令"></a>基本命令</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">clear    |清屏|</span><br><span class="line"><span class="built_in">pwd</span>    |显示当前路径|</span><br><span class="line">more    |显示文本文档|</span><br><span class="line"><span class="built_in">uname</span> -a    |查看当前核心版本号|</span><br><span class="line">free    |查看剩余内存|</span><br><span class="line"><span class="built_in">df</span> -h    |[查看磁盘剩余空间]|</span><br><span class="line"><span class="built_in">du</span> -sh &lt;<span class="built_in">dir</span>&gt;    |查看文件夹名<span class="string">&quot;dir&quot;</span>占用的空间|</span><br><span class="line">lsof -i:8080    |查看8080端口是否被占用|</span><br><span class="line">find . -name <span class="string">&quot;filename.txt&quot;</span>    |搜索当前目录下filename.txt文件，包括各级子目录|</span><br><span class="line">groupadd abc    |创建一个名为abc的用户组|</span><br><span class="line">useradd -g abc abc    |在abc组里添加一个名为abc的用户|</span><br><span class="line"><span class="built_in">chown</span> sammy ~/dir    |将目录<span class="built_in">dir</span>的拥有者设为用户sammy|</span><br><span class="line"><span class="built_in">cut</span> -d : -f 1 /etc/passwd    |查看所有用户|</span><br><span class="line"><span class="built_in">cat</span> /etc/grou    |查看所有用户组|</span><br><span class="line"><span class="built_in">tail</span> -n 20 filename    |显示filename最后20行|</span><br><span class="line"><span class="built_in">chmod</span> -R 777 <span class="built_in">dir</span>    |将目录<span class="built_in">dir</span>整体变为777|</span><br><span class="line"><span class="built_in">rm</span> -rf <span class="built_in">dir</span>    |整体删除<span class="built_in">dir</span>|</span><br><span class="line"><span class="built_in">cp</span> -r -a ./* /dir    |将当前路径下所有文件包括子目录全部拷贝到<span class="built_in">dir</span>|</span><br><span class="line">tar -xvzf filename    |解压缩gz文件|</span><br><span class="line">gzip -d filename    |解压缩gz文件|</span><br><span class="line">unzip -x filename    |解压缩zip文件|</span><br><span class="line">zip -r filename.zip ./*    |压缩当前目录下全部内容|</span><br><span class="line">rpm -ivh filename    |安装一个包|</span><br><span class="line">rpm -Uvh filename    |升级一个包|</span><br><span class="line">rpm -e &lt;filename&gt;    |卸载一个包|</span><br><span class="line"><span class="built_in">nohup</span> cmds &gt;/dev/null 2&gt;&amp;1 &amp;    |无任何输出或<span class="built_in">log</span>，在后台运行一个cmds指令|</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="前置操作"><a href="#前置操作" class="headerlink" title="前置操作"></a>前置操作</h2><ol>
+<li><p>系统安装部署</p>
+</li>
+<li><p>ip设置</p>
+</li>
+<li><p>换源<br>如果阿里源出错，可换成网易源</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo wget -O /etc/yum.repos.d/CentOS-Base.repo http://mirrors.163.com/.help/CentOS7-Base-163.repo</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>更新</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 刷新缓存</span></span><br><span class="line">sudo yum makecache</span><br><span class="line">sudo yum -y update</span><br><span class="line">sudo yum -y upgrade</span><br></pre></td></tr></table></figure></li>
+</ol>
+<h2 id="安装Apache"><a href="#安装Apache" class="headerlink" title="安装Apache:"></a>安装Apache:</h2><figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装</span></span><br><span class="line">yum install httpd.x86_64 </span><br><span class="line"><span class="comment"># 启动</span></span><br><span class="line">systemctl start httpd.service </span><br><span class="line"><span class="comment"># 自启</span></span><br><span class="line">systemctl <span class="built_in">enable</span> httpd.service</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>然后到浏览器那边测试一下：http:&#x2F;&#x2F;服务器ip</p>
+<p>会出现一个Testing 1.2.3的测试页。</p>
+<p>Apache的主页默认路径： &#x2F;var&#x2F;www&#x2F;html&#x2F;</p>
+<p>Apache的主设置文件路径：&#x2F;etc&#x2F;httpd&#x2F;conf&#x2F;httpd.conf</p>
+<p>如果打不开尝试放开80端口后，再次刷新网页即可。</p>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --zone=public --add-port=80/tcp --permanent</span><br><span class="line">firewall-cmd --reload</span><br><span class="line">systemctl restart firewalld.service</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="安装MySQL8"><a href="#安装MySQL8" class="headerlink" title="安装MySQL8"></a>安装MySQL8</h2><ol>
+<li><p>卸载mariadb</p>
+<blockquote>
+<p>mariadb 这个是 Linux 系统自带的数据库系统，跟 MySQL 冲突，所以一般先卸载这个没用的数据库。</p>
+</blockquote>
+<p>查看 mariadb</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm -qa | grep mariadb</span><br></pre></td></tr></table></figure>
+
+<p>结果如下：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mariadb-libs-5.5.68-1.el7.x86_64</span><br></pre></td></tr></table></figure>
+
+
+
+<p>卸载</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm -ev --nodeps mariadb-libs-5.5.68-1.el7.x86_64</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>下载MySQL</p>
+<ul>
+<li><p>官网下载</p>
+<blockquote>
+<p>官网地址：</p>
+<p><a target="_blank" rel="noopener" href="https://dev.mysql.com/downloads/mysql/">MySQL :: Download MySQL Community Server</a></p>
+<img src="/2023/03/21/%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%93%8D%E4%BD%9C%E6%89%8B%E5%86%8C/image-20221125100658139.png" alt="image-20221125100658139" style="zoom: 40%;">
+</blockquote>
+</li>
+<li><p>wget下载</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://downloads.mysql.com/archives/get/p/23/file/mysql-8.0.22-1.el7.x86_64.rpm-bundle.tar</span><br></pre></td></tr></table></figure></li>
+</ul>
+</li>
+<li><p>安装MySQL</p>
+<blockquote>
+<p>创建安装目录并上传下载好的包到安装目录(&#x2F;usr&#x2F;local&#x2F;mysql)解压</p>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /usr/local/</span><br><span class="line"><span class="built_in">mkdir</span> mysql</span><br><span class="line"><span class="built_in">cd</span> mysql</span><br><span class="line">ll</span><br><span class="line"><span class="comment"># mysql-8.0.22-1.el7.x86_64.rpm-bundle.tar</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 如果没有下载的下载,以下载或上传至此文件夹的不用执行下一步</span></span><br><span class="line">wget https://downloads.mysql.com/archives/get/p/23/file/mysql-8.0.22-1.el7.x86_64.rpm-bundle.tar</span><br><span class="line"></span><br><span class="line">tar -xvf mysql-8.0.22-1.el7.x86_64.rpm-bundle.tar</span><br><span class="line"></span><br><span class="line"><span class="comment"># mysql-community-client-8.0.22-1.el7.x86_64.rpm</span></span><br><span class="line"><span class="comment"># mysql-community-client-plugins-8.0.22-1.el7.x86_64.rpm</span></span><br><span class="line"><span class="comment"># mysql-community-common-8.0.22-1.el7.x86_64.rpm</span></span><br><span class="line"><span class="comment"># mysql-community-devel-8.0.22-1.el7.x86_64.rpm</span></span><br><span class="line"><span class="comment"># mysql-community-embedded-compat-8.0.22-1.el7.x86_64.rpm</span></span><br><span class="line"><span class="comment"># mysql-community-libs-8.0.22-1.el7.x86_64.rpm</span></span><br><span class="line"><span class="comment"># mysql-community-libs-compat-8.0.22-1.el7.x86_64.rpm</span></span><br><span class="line"><span class="comment"># mysql-community-server-8.0.22-1.el7.x86_64.rpm</span></span><br><span class="line"><span class="comment"># mysql-community-test-8.0.22-1.el7.x86_64.rpm</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>注意：需要按照以下安装顺序进行安装，否则会出问题<br>安装顺序：COMMON  –&gt;  LIB  –&gt;  LIB-COMPAT  –&gt;  CLIENT  –&gt; SERVER<br>依次执行以下命令，提示100%字样表示安装成功</p>
+</blockquote>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">rpm -ivh mysql-community-common-8.0.22-1.el7.x86_64.rpm --nodeps --force</span><br><span class="line">rpm -ivh mysql-community-libs-8.0.22-1.el7.x86_64.rpm --nodeps --force</span><br><span class="line">rpm -ivh mysql-community-libs-compat-8.0.22-1.el7.x86_64.rpm --nodeps --force</span><br><span class="line">rpm -ivh mysql-community-client-8.0.22-1.el7.x86_64.rpm --nodeps --force</span><br><span class="line">rpm -ivh mysql-community-server-8.0.22-1.el7.x86_64.rpm --nodeps --force</span><br><span class="line"></span><br><span class="line">rpm -qa | grep mysql</span><br><span class="line"><span class="comment"># mysql-community-libs-8.0.22-1.el7.x86_64</span></span><br><span class="line"><span class="comment"># mysql-community-common-8.0.22-1.el7.x86_64</span></span><br><span class="line"><span class="comment"># mysql-community-libs-compat-8.0.22-1.el7.x86_64</span></span><br><span class="line"><span class="comment"># mysql-community-server-8.0.22-1.el7.x86_64</span></span><br><span class="line"><span class="comment"># mysql-community-client-8.0.22-1.el7.x86_64</span></span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>初始化</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">mysqld --initialize;</span><br><span class="line"><span class="built_in">chown</span> mysql:mysql /var/lib/mysql -R;</span><br><span class="line">systemctl start mysqld.service;</span><br><span class="line">systemctl <span class="built_in">enable</span> mysqld;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>修改MySQL密码</p>
+<p>查看数据库默认随记密码</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cat</span> /var/log/mysqld.log | grep password</span><br></pre></td></tr></table></figure>
+
+<p>使用随记密码登录 MySQL</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -uroot -p</span><br></pre></td></tr></table></figure>
+
+<p>修改 MySQL 密码,“yourPassword” 记得修改为自己的密码</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ALTER USER &#x27;root&#x27;@&#x27;localhost&#x27; IDENTIFIED WITH mysql_native_password BY &#x27;yourPassword&#x27;;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>设置远程登录</p>
+<p>选择mysql数据库</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">use mysql;</span><br></pre></td></tr></table></figure>
+
+<p>修改user表使其root用户可以通过远程连接</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">update user set host = &#x27;%&#x27; where user = &#x27;root&#x27;;</span><br></pre></td></tr></table></figure>
+
+<p>刷新权限并退出</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">flush privileges;</span><br><span class="line">\q;</span><br></pre></td></tr></table></figure>
+
+
+</li>
+<li><p>开放防火墙端口</p>
+<p>开放端口进行远程链接</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --zone=public --add-port=3306/tcp --permanent</span><br><span class="line"></span><br><span class="line">firewall-cmd --reload</span><br></pre></td></tr></table></figure>
+
+<p>查看开放端口</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">firewall-cmd --list-ports</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>测试连接是否正常</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -uroot -p -h 192.168.220.2  <span class="comment"># 192.168.220.2 修改为该主机ip</span></span><br></pre></td></tr></table></figure></li>
+</ol>
+<h1 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h1><h2 id="修改远程桌面端口"><a href="#修改远程桌面端口" class="headerlink" title="修改远程桌面端口"></a>修改远程桌面端口</h2><ol>
+<li><p><strong>方法一</strong><br>通过远程桌面客户端连接到计算机（Windows 客户端或 Windows Server）时，计算机上的远程桌面功能会通过定义的侦听端口（默认情况下为 3389）“侦听”连接请求。 可以通过修改注册表来更改 Windows 计算机上的侦听端口。</p>
+<ol>
+<li>启动注册表编辑器。 （在“搜索”框中键入 regedit。）</li>
+<li>导航到以下注册表子项：<strong>HKEY_LOCAL_MACHINE\System\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp</strong></li>
+<li>查找端口号</li>
+<li>单击“编辑”“修改”，然后单击“十进制”。</li>
+<li>键入新端口号，然后单击“确定” 。</li>
+<li>关闭注册表编辑器，然后重新启动计算机。</li>
+</ol>
+</li>
+<li><p><strong>方法二</strong></p>
+<ol>
+<li><p>可运行以下 PowerShell 命令(以管理员方式)来查看当前端口：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Get-ItemProperty</span> <span class="literal">-Path</span> <span class="string">&#x27;HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp&#x27;</span> <span class="literal">-name</span> <span class="string">&quot;PortNumber&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>例如：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">PortNumber   : <span class="number">3389</span></span><br><span class="line">PSPath       : Microsoft.PowerShell.Core\Registry::HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP<span class="literal">-Tcp</span></span><br><span class="line">PSParentPath : Microsoft.PowerShell.Core\Registry::HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations</span><br><span class="line">PSChildName  : RDP<span class="literal">-Tcp</span></span><br><span class="line">PSDrive      : HKLM</span><br><span class="line">PSProvider   : Microsoft.PowerShell.Core\Registry</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>还可运行以下 PowerShell 命令来更改 RDP 端口。 在此命令中，我们会将新的 RDP 端口指定为 53389。</p>
+<p>若要向注册表添加新的 RDP 端口：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="variable">$portvalue</span> = <span class="number">53389</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">Set-ItemProperty</span> <span class="literal">-Path</span> <span class="string">&#x27;HKLM:\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp&#x27;</span> <span class="literal">-name</span> <span class="string">&quot;PortNumber&quot;</span> <span class="literal">-Value</span> <span class="variable">$portvalue</span> </span><br><span class="line"></span><br><span class="line"><span class="built_in">New-NetFirewallRule</span> <span class="literal">-DisplayName</span> <span class="string">&#x27;RDPPORTLatest-TCP-In&#x27;</span> <span class="literal">-Profile</span> <span class="string">&#x27;Public&#x27;</span> <span class="literal">-Direction</span> Inbound <span class="literal">-Action</span> Allow <span class="literal">-Protocol</span> TCP <span class="literal">-LocalPort</span> <span class="variable">$portvalue</span> </span><br><span class="line"><span class="built_in">New-NetFirewallRule</span> <span class="literal">-DisplayName</span> <span class="string">&#x27;RDPPORTLatest-UDP-In&#x27;</span> <span class="literal">-Profile</span> <span class="string">&#x27;Public&#x27;</span> <span class="literal">-Direction</span> Inbound <span class="literal">-Action</span> Allow <span class="literal">-Protocol</span> UDP <span class="literal">-LocalPort</span> <span class="variable">$portvalue</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>重启电脑即可</p>
+</li>
+</ol>
+</li>
+<li><p><strong>方法三</strong></p>
+<ol>
+<li><p>打开远程<br>右键我的电脑——&gt;属性——&gt;启用远程</p>
+</li>
+<li><p>使用以下脚本一键修改<br>新建bat文件——&gt;复制以下文——&gt;粘贴——&gt;保存——&gt;以管理员方式运行——&gt;按照提示输入自定义端口——&gt;按提示等待完成即可</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br></pre></td><td class="code"><pre><span class="line">@<span class="built_in">echo</span> off</span><br><span class="line"></span><br><span class="line">color f0</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> 修改远程桌面3389端口(支持Windows 2003 2008 2008R2 2012 2012R2 7 8 10 )</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> 自动添加防火墙规则</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> %<span class="built_in">date</span>%   %time%</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> 建议设置为不常用端口</span><br><span class="line"></span><br><span class="line"><span class="built_in">set</span> /p c= 请输入新的端口:</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> <span class="string">&quot;%c%&quot;</span>==<span class="string">&quot;&quot;</span> goto end</span><br><span class="line"></span><br><span class="line">goto edit</span><br><span class="line"></span><br><span class="line">:edit</span><br><span class="line"></span><br><span class="line">netsh advfirewall firewall add rule name=<span class="string">&quot;Remote PortNumber&quot;</span> <span class="built_in">dir</span>=<span class="keyword">in</span> action=allow protocol=TCP localport=<span class="string">&quot;%c%&quot;</span></span><br><span class="line"></span><br><span class="line">netsh advfirewall firewall add rule name=<span class="string">&quot;Remote PortNumber&quot;</span> <span class="built_in">dir</span>=<span class="keyword">in</span> action=allow protocol=TCP localport=<span class="string">&quot;%c%&quot;</span></span><br><span class="line"></span><br><span class="line">reg add <span class="string">&quot;HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server\Wds\rdpwd\Tds\tcp&quot;</span> /v <span class="string">&quot;PortNumber&quot;</span> /t REG_DWORD /d <span class="string">&quot;%c%&quot;</span> /f</span><br><span class="line"></span><br><span class="line">reg add <span class="string">&quot;HKEY_LOCAL_MACHINE\SYSTEM\CurrentControlSet\Control\Terminal Server\WinStations\RDP-Tcp&quot;</span> /v <span class="string">&quot;PortNumber&quot;</span> /t REG_DWORD /d <span class="string">&quot;%c%&quot;</span> /f</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> 修改成功</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> 重启后生效，按任意键重启</span><br><span class="line"></span><br><span class="line">pause</span><br><span class="line"></span><br><span class="line">shutdown /r /t 0</span><br><span class="line"></span><br><span class="line"><span class="built_in">exit</span></span><br><span class="line"></span><br><span class="line">:end</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> 修改失败</span><br><span class="line"></span><br><span class="line">pause</span><br></pre></td></tr></table></figure></li>
+</ol>
+</li>
+<li><p><strong>注意</strong>：下次使用远程桌面连接连接到此计算机时，必须键入新端口。 如果正在使用防火墙，请确保将防火墙配置为允许连接到新端口号。</p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://yuexinshao.cn/2023/03/21/%E8%99%9A%E6%8B%9F%E6%9C%BA%E6%93%8D%E4%BD%9C%E6%89%8B%E5%86%8C/" data-id="clkm26alm000qlgie2yts7tgr" data-title="虚拟机操作手册" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/" rel="tag">虚拟机</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2023/03/23/%E9%9B%B6%E6%88%90%E6%9C%AC%E6%90%AD%E5%BB%BA%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">前一篇</strong>
+      <div class="article-nav-title">
+        
+          零成本搭建个人博客
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/02/12/%E4%BF%AE%E6%94%B9%E8%BF%9C%E7%A8%8B%E7%AB%AF%E5%8F%A3/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">修改远程端口</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/category/%E4%B8%AA%E4%BA%BA%E7%AC%94%E8%AE%B0/">个人笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/category/%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/">经验分享</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Exchangis/" rel="tag">Exchangis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/centos-7/" rel="tag">centos 7</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/idea/" rel="tag">idea</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8D%9A%E5%AE%A2/" rel="tag">博客</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AB%AF%E5%8F%A3/" rel="tag">端口</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/" rel="tag">虚拟机</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Exchangis/" style="font-size: 10px;">Exchangis</a> <a href="/tags/centos-7/" style="font-size: 10px;">centos 7</a> <a href="/tags/idea/" style="font-size: 10px;">idea</a> <a href="/tags/%E5%8D%9A%E5%AE%A2/" style="font-size: 10px;">博客</a> <a href="/tags/%E7%AB%AF%E5%8F%A3/" style="font-size: 10px;">端口</a> <a href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/" style="font-size: 10px;">虚拟机</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archive/2023/07/">七月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archive/2023/03/">三月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archive/2023/02/">二月 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/07/28/CentOS-7-%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/">CentOS 7 常用软件安装</a>
+          </li>
+        
+          <li>
+            <a href="/2023/07/17/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2023/07/13/angfeng-protal%E4%BC%81%E4%B8%9A%E9%97%A8%E6%88%B7%E7%BD%91%E7%AB%99/">angfeng-protal企业门户网站</a>
+          </li>
+        
+          <li>
+            <a href="/2023/07/11/Idea%E5%90%AF%E5%8A%A8%E7%AB%AF%E5%8F%A3%E5%8D%A0%E7%94%A8/">Idea启动端口占用</a>
+          </li>
+        
+          <li>
+            <a href="/2023/07/07/%E6%B4%BB%E5%8A%A8%E7%AE%A1%E7%90%86%E4%BA%91%E7%AB%AF%E7%B3%BB%E7%BB%9F/">活动管理云端系统</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 Shaoyx<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

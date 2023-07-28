@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Idea启动端口占用 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="idea端口占用 IDEA错误java.util.concurrent.CompletionException: java.net.BindException: Address already in use:bind">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Idea启动端口占用">
+<meta property="og:url" content="https://yuexinshao.cn/2023/07/11/Idea%E5%90%AF%E5%8A%A8%E7%AB%AF%E5%8F%A3%E5%8D%A0%E7%94%A8/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="idea端口占用 IDEA错误java.util.concurrent.CompletionException: java.net.BindException: Address already in use:bind">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://yuexinshao.cn/2023/07/11/Idea%E5%90%AF%E5%8A%A8%E7%AB%AF%E5%8F%A3%E5%8D%A0%E7%94%A8/af593c42dc1e497888fe6a6596fe0084.jpeg">
+<meta property="og:image" content="https://yuexinshao.cn/2023/07/11/Idea%E5%90%AF%E5%8A%A8%E7%AB%AF%E5%8F%A3%E5%8D%A0%E7%94%A8/eb236593100849a1fd587b354cfb96db.png">
+<meta property="og:image" content="https://yuexinshao.cn/2023/07/11/Idea%E5%90%AF%E5%8A%A8%E7%AB%AF%E5%8F%A3%E5%8D%A0%E7%94%A8/025e30f28abc48a8bf126c322a6e019a.jpeg">
+<meta property="og:image" content="https://yuexinshao.cn/2023/07/11/Idea%E5%90%AF%E5%8A%A8%E7%AB%AF%E5%8F%A3%E5%8D%A0%E7%94%A8/d6a29d3bd7ee4dd69d6f98ea423133b7.png">
+<meta property="article:published_time" content="2023-07-11T08:11:32.000Z">
+<meta property="article:modified_time" content="2023-07-11T08:25:31.221Z">
+<meta property="article:author" content="Shaoyx">
+<meta property="article:tag" content="idea">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://yuexinshao.cn/2023/07/11/Idea%E5%90%AF%E5%8A%A8%E7%AB%AF%E5%8F%A3%E5%8D%A0%E7%94%A8/af593c42dc1e497888fe6a6596fe0084.jpeg">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS 订阅"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="搜索"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://yuexinshao.cn"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-Idea启动端口占用" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/07/11/Idea%E5%90%AF%E5%8A%A8%E7%AB%AF%E5%8F%A3%E5%8D%A0%E7%94%A8/" class="article-date">
+  <time class="dt-published" datetime="2023-07-11T08:11:32.000Z" itemprop="datePublished">2023-07-11</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Idea启动端口占用
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>idea端口占用</p>
+<p>IDEA错误java.util.concurrent.CompletionException: java.net.BindException: Address already in use:bind</p>
+<span id="more"></span>
+
+<h1 id="idea端口占用"><a href="#idea端口占用" class="headerlink" title="idea端口占用"></a>idea端口占用</h1><p>IDEA无法打开，出现java.util.concurrent.CompletionException: java.net.BindException: Address already in use: bind的错误。</p>
+<p>今天启动IDEA时候，弹出了”Start Failed”错误提示窗口，关键内容如下：</p>
+<blockquote>
+<p>java.util.concurrent.CompletionException: java.net.BindException: Address already in use: bind</p>
+<p>…</p>
+<p>Caused by: java.net.BindException: Address already in use: bind</p>
+<p>…</p>
+</blockquote>
+<p>这里是错误提示的截图 ↓</p>
+<p><img src="/2023/07/11/Idea%E5%90%AF%E5%8A%A8%E7%AB%AF%E5%8F%A3%E5%8D%A0%E7%94%A8/af593c42dc1e497888fe6a6596fe0084.jpeg"></p>
+<p> 图：IDEA错误窗口截图</p>
+<p>遂搜索了一下解决方案，部分内容参考来自以下博客：</p>
+<ol>
+<li><p><a target="_blank" rel="noopener" href="https://www.cnblogs.com/masahiro/p/16080670.html" title="Idea无法正常启动问题排查 - 安培昌浩 - 博客园 (cnblogs.com)">Idea无法正常启动问题排查 - 安培昌浩 - 博客园 (cnblogs.com)</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="http://www.lzhpo.com/article/165" title="IDEA未正确关闭导致Address already in use: bind | 会打篮球的程序猿 (lzhpo.com)">IDEA未正确关闭导致Address already in use: bind | 会打篮球的程序猿 (lzhpo.com)</a></p>
+</li>
+</ol>
+<h2 id="1-问题分析"><a href="#1-问题分析" class="headerlink" title="1. 问题分析"></a>1. 问题分析</h2><p>根据博客（1），在Itellij IDEA官方论坛有相关问题的解释</p>
+<blockquote>
+<p>it tries to bind on the fires available port between 6942 and 6991,this exception is thrown if IDE was not able to bind on any of the ports in this range</p>
+<p>IDE启动时会尝试寻找端口号6942~6991之间的第一个可用端口并进行绑定，如果该范围中（50个端口号）的任何端口都无法绑定，则会报告该异常</p>
+</blockquote>
+<p><img src="/2023/07/11/Idea%E5%90%AF%E5%8A%A8%E7%AB%AF%E5%8F%A3%E5%8D%A0%E7%94%A8/eb236593100849a1fd587b354cfb96db.png"></p>
+<p>根据博客（2），发觉该错误其实就是 <strong>IDEA默认端口被占用</strong> 的问题。</p>
+<p>仔细回忆了一下，我上次使用电脑干了些啥，导致端口绑定失败：</p>
+<blockquote>
+<ol>
+<li>IDEA仍在运行时没正确关闭，就直接点了关机强制结束了（没正常关闭可能导致端口没放开？）</li>
+<li>下载安装了Mysql&#x2F;Docker容器（可能Hyper-V的启动会占用了端口？）</li>
+</ol>
+</blockquote>
+<h2 id="2-解决方案"><a href="#2-解决方案" class="headerlink" title="2. 解决方案"></a>2. 解决方案</h2><p>两步走解决这个问题：</p>
+<p><strong>1. 通过 管理员身份 运行 命令行窗口（cmd）</strong></p>
+<p><img src="/2023/07/11/Idea%E5%90%AF%E5%8A%A8%E7%AB%AF%E5%8F%A3%E5%8D%A0%E7%94%A8/025e30f28abc48a8bf126c322a6e019a.jpeg"></p>
+<p><strong>2. 执行命令 重置 winsock</strong></p>
+<p>在cmd窗口中（管理员身份）<strong>输入以下命令：</strong></p>
+<blockquote>
+<p>netsh winsock reset</p>
+</blockquote>
+<p>然后就会出现以下显示，示意你必须重启电脑，然后我们重启电脑再打开IDEA就可以了</p>
+<p><img src="/2023/07/11/Idea%E5%90%AF%E5%8A%A8%E7%AB%AF%E5%8F%A3%E5%8D%A0%E7%94%A8/d6a29d3bd7ee4dd69d6f98ea423133b7.png"></p>
+<p>注意：有的朋友此处可能会失败，可以再尝试一下 管理员身份执行以下命令：</p>
+<blockquote>
+<p>net stop winnat</p>
+<p>net start winnat</p>
+</blockquote>
+<p><strong>正常启动IDEA</strong>，大功告成！</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://yuexinshao.cn/2023/07/11/Idea%E5%90%AF%E5%8A%A8%E7%AB%AF%E5%8F%A3%E5%8D%A0%E7%94%A8/" data-id="clkm26alc0004lgie1d035xeu" data-title="Idea启动端口占用" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/idea/" rel="tag">idea</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2023/07/13/angfeng-protal%E4%BC%81%E4%B8%9A%E9%97%A8%E6%88%B7%E7%BD%91%E7%AB%99/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">前一篇</strong>
+      <div class="article-nav-title">
+        
+          angfeng-protal企业门户网站
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/07/07/%E6%B4%BB%E5%8A%A8%E7%AE%A1%E7%90%86%E4%BA%91%E7%AB%AF%E7%B3%BB%E7%BB%9F/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">活动管理云端系统</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/category/%E4%B8%AA%E4%BA%BA%E7%AC%94%E8%AE%B0/">个人笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/category/%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/">经验分享</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Exchangis/" rel="tag">Exchangis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/centos-7/" rel="tag">centos 7</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/idea/" rel="tag">idea</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8D%9A%E5%AE%A2/" rel="tag">博客</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AB%AF%E5%8F%A3/" rel="tag">端口</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/" rel="tag">虚拟机</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Exchangis/" style="font-size: 10px;">Exchangis</a> <a href="/tags/centos-7/" style="font-size: 10px;">centos 7</a> <a href="/tags/idea/" style="font-size: 10px;">idea</a> <a href="/tags/%E5%8D%9A%E5%AE%A2/" style="font-size: 10px;">博客</a> <a href="/tags/%E7%AB%AF%E5%8F%A3/" style="font-size: 10px;">端口</a> <a href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/" style="font-size: 10px;">虚拟机</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archive/2023/07/">七月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archive/2023/03/">三月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archive/2023/02/">二月 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/07/28/CentOS-7-%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/">CentOS 7 常用软件安装</a>
+          </li>
+        
+          <li>
+            <a href="/2023/07/17/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2023/07/13/angfeng-protal%E4%BC%81%E4%B8%9A%E9%97%A8%E6%88%B7%E7%BD%91%E7%AB%99/">angfeng-protal企业门户网站</a>
+          </li>
+        
+          <li>
+            <a href="/2023/07/11/Idea%E5%90%AF%E5%8A%A8%E7%AB%AF%E5%8F%A3%E5%8D%A0%E7%94%A8/">Idea启动端口占用</a>
+          </li>
+        
+          <li>
+            <a href="/2023/07/07/%E6%B4%BB%E5%8A%A8%E7%AE%A1%E7%90%86%E4%BA%91%E7%AB%AF%E7%B3%BB%E7%BB%9F/">活动管理云端系统</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 Shaoyx<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
