@@ -14,8 +14,9 @@
 <meta property="og:description" content="CentOS 7 常用软件安装">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://yuexinshao.cn/2023/07/28/CentOS-7-%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/image-20221125100658139.png">
+<meta property="og:image" content="https://yuexinshao.cn/2023/07/28/CentOS-7-%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/image-20230731105554752.png">
 <meta property="article:published_time" content="2023-07-28T03:44:18.000Z">
-<meta property="article:modified_time" content="2023-07-28T04:02:59.821Z">
+<meta property="article:modified_time" content="2023-07-31T03:06:25.638Z">
 <meta property="article:author" content="Shaoyx">
 <meta property="article:tag" content="centos 7">
 <meta name="twitter:card" content="summary">
@@ -212,74 +213,166 @@
 <li><p>测试连接是否正常</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql -uroot -p -h 192.168.220.2  <span class="comment"># 192.168.220.2 修改为该主机ip</span></span><br></pre></td></tr></table></figure></li>
 </ol>
-<h2 id="安装Nginx"><a href="#安装Nginx" class="headerlink" title="安装Nginx"></a>安装Nginx</h2><p>1.检查并安装所需的依赖软件</p>
-<p>(1).gcc:nginx编译依赖gcc环境</p>
-<p>(2).pcre:(Perl Compatible Regular Expressions)是一个Perl库，包括perl兼容的正则表达式库。nginx的http模块使用pcre来解析正则表达式.</p>
-<p>(3).zlib：该库提供了很多种压缩和解压缩的方式，nginx使用zlib对http包的内容进行gzip。</p>
-<p>(4).openssl:一个强大的安全套接字层密码库，囊括主要的密码算法、常用的密钥和证书封装管理功能及SSL协议，并提供丰富的应用程序供测试或其它目的使用。nginx不仅支持http协议，还支持https（即在ssl协议上传输http）.</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">yum install -y gcc-c++ </span><br><span class="line">yum install -y pcre pcre-devel</span><br><span class="line">yum install -y zlib zlib-devel</span><br><span class="line">yum install -y openssl openssl-devel</span><br></pre></td></tr></table></figure>
+<h2 id="安装Nginx"><a href="#安装Nginx" class="headerlink" title="安装Nginx"></a>安装Nginx</h2><ol>
+<li><p>环境准备</p>
+<p>虚拟机一台：</p>
+<p>centos8 </p>
+<p>IP:172.16.183.18</p>
+<p>关闭防火墙（为了测试）</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl status firewalld.service（查看防火墙状态）</span><br></pre></td></tr></table></figure>
 
-<p>2.下载nginx源码包</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget http://nginx.org/download/nginx-1.12.0.tar.gz</span><br></pre></td></tr></table></figure>
+<p><img src="/2023/07/28/CentOS-7-%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/image-20230731105554752.png" alt="image-20230731105554752"></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">systemctl stop firewalld.service （关闭防火墙）</span><br><span class="line">systemctl start firewalld.service （开启防火墙）</span><br><span class="line">systemctl <span class="built_in">disable</span> firewalld.service （禁止防火墙自启动）</span><br><span class="line">systemctl <span class="built_in">enable</span> firewalld.service （防火墙随系统开启启动）</span><br></pre></td></tr></table></figure>
 
-<p>3.解压缩源码包并进入</p>
-<p>(1).解压缩：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf nginx-1.12.0.tar.gz</span><br></pre></td></tr></table></figure>
+<p>#一次安装4个插件</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum -y install gcc pcre pcre-devel zlib zlib-devel openssl openssl-devel</span><br></pre></td></tr></table></figure>
 
-<p>(2).进入解压缩后文件夹：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> nginx-1.12.0</span><br></pre></td></tr></table></figure>
+<p>#一次安装如果有问题，可以试一下分开安装（上面命令执行成功了就就无需执行以下命令了）</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">yum install gcc-c++</span><br><span class="line"></span><br><span class="line">yum install -y pcre pcre-devel</span><br><span class="line"></span><br><span class="line">yum install -y zlib zlib-devel</span><br><span class="line"></span><br><span class="line">yum install -y openssl openssl-devel</span><br></pre></td></tr></table></figure>
 
-<p>4.配置编译参数命令:(可以使用.&#x2F;configure –help查询详细参数)</p>
-<p>注：安装之前需要手动创建上面指定的nginx文件夹，即&#x2F;var&#x2F;temp、&#x2F;var&#x2F;temp&#x2F;nginx、&#x2F;var&#x2F;run&#x2F;nginx&#x2F;文件夹，否则启动时报错</p>
-<p>5.编译并安装</p>
+<p>安装的插件的作用</p>
+<p>1.gcc 可以编译 C,C++,Ada,Object C和Java等语言（安装 nginx 需要先将官网下载的源码进行编译，编译依赖 gcc 环境）</p>
+<p>2.pcre pcre-devel pcre是一个perl库，包括perl兼容的正则表达式库，nginx的http模块使用pcre来解析正则表达式，所以需要安装pcre库</p>
+<p>3.zlib zlib-devel zlib库提供了很多种压缩和解压缩方式nginx使用zlib对http包的内容进行gzip，所以需要安装</p>
+<p>4.openssl openssl-devel OpenSSL 是一个强大的安全套接字层密码库，囊括主要的密码算法、常用的密钥和证书封装管理功能及 SSL 协议，并提供丰富的应用程序供测试或其它目的使用。</p>
+<p>5.nginx 不仅支持 http 协议，还支持 https（即在ssl协议上传输http），所以需要在 Centos 安装 OpenSSL 库</p>
+<p><strong>安装步骤</strong></p>
+<p>安装nginx</p>
+<p>方法一、 直接下载.tar.gz安装包<br><a target="_blank" rel="noopener" href="https://nginx.org/en/download.html">https://nginx.org/en/download.html</a></p>
+<p>方法二、使用wget命令下载（推荐）。确保系统已经安装了wget，如果没有安装，执行 yum install wget 安装。</p>
+<p>(注意：本示例使用方法一)</p>
+<ul>
+<li>下载包</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://nginx.org/download/nginx-1.21.6.tar.gz</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>解压</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">tar xvf nginx-1.21.6.tar.gz</span><br><span class="line"></span><br><span class="line"><span class="built_in">cd</span> nginx-1.21.6</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>配置（带有https模块）</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./configure --prefix=/usr/local/nginx --with-http_stub_status_module --with-http_ssl_module</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>编译和安装</li>
+</ul>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make &amp;&amp; make install</span><br></pre></td></tr></table></figure>
 
-<p>可以进入<code>/usr/local/nginx</code>查看文件是否存在conf、sbin、html文件夹，若存在则安装成功</p>
-<p>四、基本使用</p>
-<p>1.启动nginx</p>
-<p>(1).进入安装目录</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /usr/local/nginx/sbin/</span><br></pre></td></tr></table></figure>
+<ul>
+<li>查看安装路径</li>
+</ul>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">whereis nginx</span><br></pre></td></tr></table></figure>
 
-<p>(2).启动</p>
-<p><strong>.&#x2F;nginx</strong></p>
-<p>(3).若报错：<code>[emerg] open() &quot;/var/run/nginx/nginx.pid&quot; failed (2: No such file or directory)</code></p>
-<p>需要查看下是不是在&#x2F;var&#x2F;run文件夹下不存在nginx文件夹，不存在则新建</p>
-<p>(4).查看是否启动：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps -ef  grep nginx</span><br></pre></td></tr></table></figure>
+<ul>
+<li>设置开机启动</li>
+</ul>
+<p>编辑服务文件</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /lib/systemd/system/nginx.service</span><br></pre></td></tr></table></figure>
 
-<p>如果有master和worker两个进程证明启动成功</p>
-<p>注意：执行.&#x2F;nginx启动nginx，这里可以-c指定加载的nginx配置文件，如下：</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./nginx -c /usr/local/nginx/conf/nginx.conf</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description=nginx service</span><br><span class="line">After=network.target</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">Type=forking</span><br><span class="line">ExecStart=/usr/local/nginx/sbin/nginx</span><br><span class="line">ExecReload=/usr/local/nginx/sbin/nginx -s reload</span><br><span class="line">ExecStop=/usr/local/nginx/sbin/nginx -s stop</span><br><span class="line">PrivateTmp=<span class="literal">true</span></span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br></pre></td></tr></table></figure>
 
+<p>说明：</p>
+<p>Description:描述服务<br>After:描述服务类别<br>[Service]服务运行参数的设置<br>Type&#x3D;forking是后台运行的形式<br>ExecStart为服务的具体运行命令<br>ExecReload为重启命令<br>ExecStop为停止命令<br>PrivateTmp&#x3D;True表示给服务分配独立的临时空间<br>注意：[Service]的启动、重启、停止命令全部要求使用绝对路径<br>[Install]运行级别下服务安装的相关设置，可设置为多用户，即系统运行级别为3<br>保存退出</p>
+<p>加入开机自启动</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl <span class="built_in">enable</span> nginx.service</span><br></pre></td></tr></table></figure>
 
+<p>取消开机自启动</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl <span class="built_in">disable</span> nginx.service</span><br></pre></td></tr></table></figure>
 
-<p>如果不指定-c，nginx在启动时默认加载conf&#x2F;nginx.conf文件，此文件的地址也可以在编译安装nginx时指定.&#x2F;configure的参数(–conf-path&#x3D; 指向配置文件（nginx.conf）)</p>
-<p>2.停止</p>
-<p>(1).暴利kill(不推荐使用)</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">kill</span> -9 processId</span><br></pre></td></tr></table></figure>
+<p><strong>服务的启动&#x2F;停止&#x2F;刷新配置文件&#x2F;查看状态</strong></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#启动nginx服务</span></span><br><span class="line">systemctl start nginx.service</span><br><span class="line"></span><br><span class="line"><span class="comment">#停止服务</span></span><br><span class="line">systemctl stop nginx.service</span><br><span class="line">    </span><br><span class="line"> <span class="comment">#重新启动服务</span></span><br><span class="line">systemctl restart nginx.service</span><br><span class="line"> </span><br><span class="line"><span class="comment">#查看所有已启动的服务</span></span><br><span class="line">systemctl list-units --<span class="built_in">type</span>=service</span><br><span class="line"></span><br><span class="line"><span class="comment">#查看服务当前状态</span></span><br><span class="line">systemctl status nginx.service</span><br><span class="line"> </span><br><span class="line"> <span class="comment">#设置开机自启动</span></span><br><span class="line">systemctl <span class="built_in">enable</span> nginx.service</span><br><span class="line">    </span><br><span class="line"> <span class="comment"># 停止开机自启动</span></span><br><span class="line">systemctl <span class="built_in">disable</span> nginx.service</span><br></pre></td></tr></table></figure>
 
-<p>(2).快速停止</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /usr/local/nginx/sbin &amp;&amp; ./nginx -s stop</span><br></pre></td></tr></table></figure>
+<p><strong>nginx.conf https 配置</strong></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">    listen       443 ssl;</span><br><span class="line">    server_name  localhost;</span><br><span class="line">   </span><br><span class="line">    ssl_certificate      cert.pem;<span class="comment">#根证书地址（默认把证书放在conf目录）</span></span><br><span class="line">    ssl_certificate_key  cert.key;<span class="comment">#证书秘钥（默认把证书放在conf目录）</span></span><br><span class="line">   </span><br><span class="line">    ssl_session_cache    shared:SSL:1m;</span><br><span class="line">    ssl_session_timeout  5m;</span><br><span class="line">   </span><br><span class="line">    ssl_ciphers  HIGH:!aNULL:!MD5;</span><br><span class="line">    ssl_prefer_server_ciphers  on;</span><br><span class="line">   </span><br><span class="line">    location / &#123;</span><br><span class="line">        root   html;</span><br><span class="line">        index  index.html index.htm;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>此方式相当于先查出nginx进程id再使用kill命令强制杀掉进程</p>
-<p>(3).完整停止(建议使用)</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /usr/local/nginx/sbin &amp;&amp; ./nginx -s quit</span><br></pre></td></tr></table></figure>
+<p><strong>将 http 重定向 https</strong></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">server &#123;</span><br><span class="line">    listen 80;</span><br><span class="line">    server_name localhost;</span><br><span class="line">    <span class="comment">#将请求转成https</span></span><br><span class="line">    rewrite ^(.*) https://$server_name<span class="variable">$1</span> permanent;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>此方式停止步骤是待nginx进程处理任务完毕进行停止</p>
-<p>3.重启及重新加载配置</p>
-<p>(1).先停止再启动（建议使用）</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./nginx -s quit &amp;&amp; ./nginx</span><br></pre></td></tr></table></figure>
+<p><strong>查看nginx 进程命令</strong></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ps aux | grep nginx</span><br></pre></td></tr></table></figure>
 
-<p>(2).重新加载配置文件</p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./nginx -s reload</span><br></pre></td></tr></table></figure>
+<p><strong>html设置编码</strong></p>
+<p>html文件显示出来乱码，一般在文件头中设置网页编码即可，加入<meta charset="utf-8"></p>
+</li>
+</ol>
+<h2 id="安装Redis"><a href="#安装Redis" class="headerlink" title="安装Redis"></a>安装Redis</h2><ol>
+<li><p><strong>创建一个redis的安装目录</strong></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> -p /usr/local/src/redis</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>查看安装程序（若之前安装过redis，下次安装之前一定要删除干净）</strong></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rpm -qa | grep -i redis</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>下载安装包</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget http://download.redis.io/releases/redis-6.2.6.tar.gz</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>将下载下来的安装包移到新建的redis目录下</strong></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mv</span> redis-6.2.6.tar.gz  /usr/local/src/redis/</span><br><span class="line"><span class="built_in">cd</span> /usr/local/src/redis/</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>进行解压</strong></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf  redis-6.2.6.tar.gz</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>进入到解压后的目录进行编译和安装</strong></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make &amp;&amp; make install</span><br></pre></td></tr></table></figure>
 
-<p>4.测试</p>
-<p>nginx安装成功，启动nginx,即可通过ip地址来访问nginx:</p>
+<p>默认的安装路径是在 <code>/usr/local/bin</code>目录下，查看目录下的内容确保安装成功</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost redis-6.2.6]# ll /usr/local/bin</span><br><span class="line">total 18904</span><br><span class="line">-rwxr-xr-x. 1 root root 4829536 Jul 30 22:06 redis-benchmark</span><br><span class="line">lrwxrwxrwx. 1 root root      12 Jul 30 22:06 redis-check-aof -&gt; redis-server</span><br><span class="line">lrwxrwxrwx. 1 root root      12 Jul 30 22:06 redis-check-rdb -&gt; redis-server</span><br><span class="line">-rwxr-xr-x. 1 root root 5003816 Jul 30 22:06 redis-cli</span><br><span class="line">lrwxrwxrwx. 1 root root      12 Jul 30 22:06 redis-sentinel -&gt; redis-server</span><br><span class="line">-rwxr-xr-x. 1 root root 9518936 Jul 30 22:06 redis-server</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><strong>启动</strong></p>
+<p>redis的启动方式有很多种，例如默认启动，指定配置启动，开机自启<br>若要方便使用最好的方式就是配置开机自启</p>
+<ol>
+<li><strong>默认启动</strong></li>
+</ol>
+<p>   安装完成后，在任意目录输入redis-server命令即可启动Redis</p>
+   <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">redis-server</span><br></pre></td></tr></table></figure>
+
+<p>   如下：</p>
+   <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost redis-6.2.6]<span class="comment"># redis-server</span></span><br><span class="line">36707:C 30 Jul 2023 22:21:46.851 <span class="comment"># oO0OoO0OoO0Oo Redis is starting oO0OoO0OoO0Oo</span></span><br><span class="line">36707:C 30 Jul 2023 22:21:46.851 <span class="comment"># Redis version=6.2.6, bits=64, commit=00000000, modified=0, pid=36707, just started</span></span><br><span class="line">36707:C 30 Jul 2023 22:21:46.851 <span class="comment"># Warning: no config file specified, using the default config. In order to specify a config file use redis-server /path/to/redis.conf</span></span><br><span class="line">36707:M 30 Jul 2023 22:21:46.853 * Increased maximum number of open files to 10032 (it was originally <span class="built_in">set</span> to 1024).</span><br><span class="line">36707:M 30 Jul 2023 22:21:46.853 * monotonic clock: POSIX clock_gettime</span><br><span class="line">                _._                                                  </span><br><span class="line">           _.-``__ <span class="string">&#x27;&#x27;</span>-._                                             </span><br><span class="line">      _.-``    `.  `_.  <span class="string">&#x27;&#x27;</span>-._           Redis 6.2.6 (00000000/0) 64 bit</span><br><span class="line">  .-`` .-```.  ```\/    _.,_ <span class="string">&#x27;&#x27;</span>-._                                  </span><br><span class="line"> (    <span class="string">&#x27;      ,       .-`  | `,    )     Running in standalone mode</span></span><br><span class="line"><span class="string"> |`-._`-...-` __...-.``-._|&#x27;</span>` _.-<span class="string">&#x27;|     Port: 6379</span></span><br><span class="line"><span class="string"> |    `-._   `._    /     _.-&#x27;</span>    |     PID: 36707</span><br><span class="line">  `-._    `-._  `-./  _.-<span class="string">&#x27;    _.-&#x27;</span>                                   </span><br><span class="line"> |`-._`-._    `-.__.-<span class="string">&#x27;    _.-&#x27;</span>_.-<span class="string">&#x27;|                                  </span></span><br><span class="line"><span class="string"> |    `-._`-._        _.-&#x27;</span>_.-<span class="string">&#x27;    |           https://redis.io       </span></span><br><span class="line"><span class="string">  `-._    `-._`-.__.-&#x27;</span>_.-<span class="string">&#x27;    _.-&#x27;</span>                                   </span><br><span class="line"> |`-._`-._    `-.__.-<span class="string">&#x27;    _.-&#x27;</span>_.-<span class="string">&#x27;|                                  </span></span><br><span class="line"><span class="string"> |    `-._`-._        _.-&#x27;</span>_.-<span class="string">&#x27;    |                                  </span></span><br><span class="line"><span class="string">  `-._    `-._`-.__.-&#x27;</span>_.-<span class="string">&#x27;    _.-&#x27;</span>                                   </span><br><span class="line">      `-._    `-.__.-<span class="string">&#x27;    _.-&#x27;</span>                                       </span><br><span class="line">          `-._        _.-<span class="string">&#x27;                                           </span></span><br><span class="line"><span class="string">              `-.__.-&#x27;</span>                                               </span><br><span class="line"></span><br><span class="line">36707:M 30 Jul 2023 22:21:46.855 <span class="comment"># WARNING: The TCP backlog setting of 511 cannot be enforced because /proc/sys/net/core/somaxconn is set to the lower value of 128.</span></span><br><span class="line">36707:M 30 Jul 2023 22:21:46.855 <span class="comment"># Server initialized</span></span><br><span class="line">36707:M 30 Jul 2023 22:21:46.855 <span class="comment"># WARNING overcommit_memory is set to 0! Background save may fail under low memory condition. To fix this issue add &#x27;vm.overcommit_memory = 1&#x27; to /etc/sysctl.conf and then reboot or run the command &#x27;sysctl vm.overcommit_memory=1&#x27; for this to take effect.</span></span><br><span class="line">36707:M 30 Jul 2023 22:21:46.857 * Loading RDB produced by version 6.2.6</span><br><span class="line">36707:M 30 Jul 2023 22:21:46.857 * RDB age 627 seconds</span><br><span class="line">36707:M 30 Jul 2023 22:21:46.857 * RDB memory usage when created 0.77 Mb</span><br><span class="line">36707:M 30 Jul 2023 22:21:46.857 <span class="comment"># Done loading RDB, keys loaded: 0, keys expired: 0.</span></span><br><span class="line">36707:M 30 Jul 2023 22:21:46.857 * DB loaded from disk: 0.001 seconds</span><br><span class="line">36707:M 30 Jul 2023 22:21:46.857 * Ready to accept connections</span><br></pre></td></tr></table></figure>
+
+<ol start="2">
+<li><p><strong>指定配置启动</strong></p>
+<p>如果要让Redis以后台方式启动，则必须修改Redis配置文件，就在我们之前解压的redis安装包下（<code>/usr/local/src/redis-6.2.6</code>），名字叫redis.conf</p>
+<p>我们先将这个配置文件备份一份：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cp</span> redis.conf redis.conf.bck</span><br></pre></td></tr></table></figure>
+
+<p>然后修改redis.conf文件中的一些配置</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim redis.conf</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>#允许访问的地址，默认是127.0.0.1，会导致只能在本地访问。修改为0.0.0.0则可以在任意IP访问，生产环境不要设置为0.0.0.0<br>bind 0.0.0.0<br>#守护进程，修改为yes后即可后台运行<br>daemonize yes<br>#设置后访问Redis必须输入密码（可不用）<br>requirepass 123456</p>
+</blockquote>
+<p>其他的常见配置可以选择配置，比如监听的端口、工作目录、指定日志文件名开启日志的保存功能，不必要</p>
+<p>启动Redis</p>
+<p>进入redis安装目录<br><code>cd /usr/local/src/redis-6.2.6</code><br>启动<br><code>redis-server redis.conf</code></p>
+<p>查看运行状态</p>
+<p><code>ps -ef | grep redis</code></p>
+<p>通过杀死进程的方式（这里使用shutdown命令没有停止服务）</p>
+<p>XXX替换为进程id</p>
+<p><code>kill -9  XXXX</code>  </p>
+</li>
+<li><p><strong>开机启动</strong></p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/systemd/system/redis.service</span><br></pre></td></tr></table></figure>
+
+<p>内容如下：</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description=redis-server</span><br><span class="line">After=network.target</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">Type=forking</span><br><span class="line">ExecStart=/usr/local/bin/redis-server /usr/local/src/redis/redis-6.2.6/redis.conf</span><br><span class="line">PrivateTmp=<span class="literal">true</span></span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br></pre></td></tr></table></figure>
+
+<p>然后重载系统服务</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl daemon-reload</span><br></pre></td></tr></table></figure>
+
+<p>最后设置redis开机自启</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl <span class="built_in">enable</span> redis</span><br></pre></td></tr></table></figure></li>
+</ol>
+</li>
+<li><p>常用命令</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#启动</span></span><br><span class="line">systemctl start redis</span><br><span class="line"><span class="comment">#停止</span></span><br><span class="line">systemctl stop redis</span><br><span class="line"><span class="comment">#重启</span></span><br><span class="line">systemctl restart redis</span><br><span class="line"><span class="comment">#查看状态</span></span><br><span class="line">systemctl status redis</span><br></pre></td></tr></table></figure></li>
+</ol>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://yuexinshao.cn/2023/07/28/CentOS-7-%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/" data-id="clkm26alf0009lgie3ontctuh" data-title="CentOS 7 常用软件安装" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="https://yuexinshao.cn/2023/07/28/CentOS-7-%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/" data-id="clkqah4290008vkie21uyhqvt" data-title="CentOS 7 常用软件安装" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
