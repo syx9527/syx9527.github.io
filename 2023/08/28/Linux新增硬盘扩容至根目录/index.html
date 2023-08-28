@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>Linux新增硬盘扩容至根目录 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="新增硬盘扩容至根目录">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux新增硬盘扩容至根目录">
+<meta property="og:url" content="https://yuexinshao.cn/2023/08/28/Linux%E6%96%B0%E5%A2%9E%E7%A1%AC%E7%9B%98%E6%89%A9%E5%AE%B9%E8%87%B3%E6%A0%B9%E7%9B%AE%E5%BD%95/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="新增硬盘扩容至根目录">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-08-28T08:26:20.000Z">
+<meta property="article:modified_time" content="2023-08-28T08:27:23.735Z">
+<meta property="article:author" content="Shaoyx">
+<meta property="article:tag" content="linux">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS 订阅"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="搜索"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://yuexinshao.cn"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-Linux新增硬盘扩容至根目录" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/08/28/Linux%E6%96%B0%E5%A2%9E%E7%A1%AC%E7%9B%98%E6%89%A9%E5%AE%B9%E8%87%B3%E6%A0%B9%E7%9B%AE%E5%BD%95/" class="article-date">
+  <time class="dt-published" datetime="2023-08-28T08:26:20.000Z" itemprop="datePublished">2023-08-28</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      Linux新增硬盘扩容至根目录
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>新增硬盘扩容至根目录</p>
+<span id="more"></span>
+
+<h2 id="新增硬盘扩容至根目录"><a href="#新增硬盘扩容至根目录" class="headerlink" title="新增硬盘扩容至根目录"></a>新增硬盘扩容至根目录</h2><ol>
+<li><p>查看分区状况</p>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]<span class="comment"># df -h</span></span><br><span class="line">文件系统                 容量  已用  可用 已用% 挂载点</span><br><span class="line">/dev/mapper/centos-root  100G  5.0G   96G    5% /</span><br><span class="line">devtmpfs                  16G     0   16G    0% /dev</span><br><span class="line">tmpfs                     16G     0   16G    0% /dev/shm</span><br><span class="line">tmpfs                     16G   97M   16G    1% /run</span><br><span class="line">tmpfs                     16G     0   16G    0% /sys/fs/cgroup</span><br><span class="line">/dev/vda1               1014M  208M  807M   21% /boot</span><br><span class="line">/dev/mapper/centos-home   92G   37M   92G    1% /home</span><br><span class="line">tmpfs                    3.2G   32K  3.2G    1% /run/user/0</span><br></pre></td></tr></table></figure>
+
+<p>根目录为<code>/dev/mapper/centos-root</code></p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# lsblk</span><br><span class="line">NAME            MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT</span><br><span class="line">sr0              11:0    1  422K  0 rom  </span><br><span class="line">vda             252:0    0  200G  0 disk </span><br><span class="line">├─vda1          252:1    0    1G  0 part /boot</span><br><span class="line">└─vda2          252:2    0  199G  0 part </span><br><span class="line">  ├─centos-root 253:0    0  100G  0 lvm  /</span><br><span class="line">  ├─centos-swap 253:1    0  7.9G  0 lvm  [SWAP]</span><br><span class="line">  └─centos-home 253:2    0 91.1G  0 lvm  /home</span><br><span class="line">vdb             252:16   0  200G  0 disk</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>新建分区，并将id改为8e</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# fdisk /dev/vdb</span><br><span class="line">欢迎使用 fdisk (util-linux 2.23.2)。</span><br><span class="line"></span><br><span class="line">更改将停留在内存中，直到您决定将更改写入磁盘。</span><br><span class="line">使用写入命令前请三思。</span><br><span class="line"></span><br><span class="line">Device does not contain a recognized partition table</span><br><span class="line">使用磁盘标识符 0x227b5082 创建新的 DOS 磁盘标签。</span><br><span class="line"></span><br><span class="line">命令(输入 m 获取帮助)：n</span><br><span class="line">Partition type:</span><br><span class="line">   p   primary (0 primary, 0 extended, 4 free)</span><br><span class="line">   e   extended</span><br><span class="line">Select (default p): p</span><br><span class="line">分区号 (1-4，默认 1)：</span><br><span class="line">起始 扇区 (2048-419430399，默认为 2048)：</span><br><span class="line">将使用默认值 2048</span><br><span class="line">Last 扇区, +扇区 or +size&#123;K,M,G&#125; (2048-419430399，默认为 419430399)：</span><br><span class="line">将使用默认值 419430399</span><br><span class="line">分区 1 已设置为 Linux 类型，大小设为 200 GiB</span><br><span class="line"></span><br><span class="line">命令(输入 m 获取帮助)：t</span><br><span class="line">已选择分区 1</span><br><span class="line">Hex 代码(输入 L 列出所有代码)：l</span><br><span class="line"></span><br><span class="line"> 0  空              24  NEC DOS         81  Minix / 旧 Linu bf  Solaris        </span><br><span class="line"> 1  FAT12           27  隐藏的 NTFS Win 82  Linux 交换 / So c1  DRDOS/sec (FAT-</span><br><span class="line"> 2  XENIX root      39  Plan 9          83  Linux           c4  DRDOS/sec (FAT-</span><br><span class="line"> 3  XENIX usr       3c  PartitionMagic  84  OS/2 隐藏的 C:  c6  DRDOS/sec (FAT-</span><br><span class="line"> 4  FAT16 &lt;32M      40  Venix 80286     85  Linux 扩展      c7  Syrinx         </span><br><span class="line"> 5  扩展            41  PPC PReP Boot   86  NTFS 卷集       da  非文件系统数据 </span><br><span class="line"> 6  FAT16           42  SFS             87  NTFS 卷集       db  CP/M / CTOS / .</span><br><span class="line"> 7  HPFS/NTFS/exFAT 4d  QNX4.x          88  Linux 纯文本    de  Dell 工具      </span><br><span class="line"> 8  AIX             4e  QNX4.x 第2部分  8e  Linux LVM       df  BootIt         </span><br><span class="line"> 9  AIX 可启动      4f  QNX4.x 第3部分  93  Amoeba          e1  DOS 访问       </span><br><span class="line"> a  OS/2 启动管理器 50  OnTrack DM      94  Amoeba BBT      e3  DOS R/O        </span><br><span class="line"> b  W95 FAT32       51  OnTrack DM6 Aux 9f  BSD/OS          e4  SpeedStor      </span><br><span class="line"> c  W95 FAT32 (LBA) 52  CP/M            a0  IBM Thinkpad 休 eb  BeOS fs        </span><br><span class="line"> e  W95 FAT16 (LBA) 53  OnTrack DM6 Aux a5  FreeBSD         ee  GPT            </span><br><span class="line"> f  W95 扩展 (LBA)  54  OnTrackDM6      a6  OpenBSD         ef  EFI (FAT-12/16/</span><br><span class="line">10  OPUS            55  EZ-Drive        a7  NeXTSTEP        f0  Linux/PA-RISC  </span><br><span class="line">11  隐藏的 FAT12    56  Golden Bow      a8  Darwin UFS      f1  SpeedStor      </span><br><span class="line">12  Compaq 诊断     5c  Priam Edisk     a9  NetBSD          f4  SpeedStor      </span><br><span class="line">14  隐藏的 FAT16 &lt;3 61  SpeedStor       ab  Darwin 启动     f2  DOS 次要       </span><br><span class="line">16  隐藏的 FAT16    63  GNU HURD or Sys af  HFS / HFS+      fb  VMware VMFS    </span><br><span class="line">17  隐藏的 HPFS/NTF 64  Novell Netware  b7  BSDI fs         fc  VMware VMKCORE </span><br><span class="line">18  AST 智能睡眠    65  Novell Netware  b8  BSDI swap       fd  Linux raid 自动</span><br><span class="line">1b  隐藏的 W95 FAT3 70  DiskSecure 多启 bb  Boot Wizard 隐  fe  LANstep        </span><br><span class="line">1c  隐藏的 W95 FAT3 75  PC/IX           be  Solaris 启动    ff  BBT            </span><br><span class="line">1e  隐藏的 W95 FAT1 80  旧 Minix       </span><br><span class="line">Hex 代码(输入 L 列出所有代码)：8e</span><br><span class="line">已将分区“Linux”的类型更改为“Linux LVM”</span><br><span class="line"></span><br><span class="line">命令(输入 m 获取帮助)：w</span><br><span class="line">The partition table has been altered!</span><br><span class="line"></span><br><span class="line">Calling ioctl() to re-read partition table.</span><br><span class="line">正在同步磁盘。</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>刷新并查看sdb1是否存在</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# partprobe</span><br><span class="line">[root@localhost ~]# lsblk</span><br><span class="line">NAME            MAJ:MIN RM  SIZE RO TYPE MOUNTPOINT</span><br><span class="line">sr0              11:0    1  422K  0 rom  </span><br><span class="line">vda             252:0    0  200G  0 disk </span><br><span class="line">├─vda1          252:1    0    1G  0 part /boot</span><br><span class="line">└─vda2          252:2    0  199G  0 part </span><br><span class="line">  ├─centos-root 253:0    0  100G  0 lvm  /</span><br><span class="line">  ├─centos-swap 253:1    0  7.9G  0 lvm  [SWAP]</span><br><span class="line">  └─centos-home 253:2    0 91.1G  0 lvm  /home</span><br><span class="line">vdb             252:16   0  200G  0 disk </span><br><span class="line">└─vdb1          252:17   0  200G  0 part </span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用lvm命令新建卷&#x2F;dev&#x2F;vdb1,并将其加载到卷组centos中</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# lvm</span><br><span class="line"><span class="meta prompt_">lvm&gt; </span><span class="language-bash">pvcreate /dev/vdb1</span></span><br><span class="line">  Physical volume &quot;/dev/vdb1&quot; successfully created.</span><br><span class="line"><span class="meta prompt_">lvm&gt; </span><span class="language-bash">pvdisplay</span></span><br><span class="line">  --- Physical volume ---</span><br><span class="line">  PV Name               /dev/vda2</span><br><span class="line">  VG Name               centos</span><br><span class="line">  PV Size               &lt;199.00 GiB / not usable 3.00 MiB</span><br><span class="line">  Allocatable           yes </span><br><span class="line">  PE Size               4.00 MiB</span><br><span class="line">  Total PE              50943</span><br><span class="line">  Free PE               1</span><br><span class="line">  Allocated PE          50942</span><br><span class="line">  PV UUID               C4fWly-FXW2-0YNu-sCiK-96RD-yyfJ-TdmKn9</span><br><span class="line">   </span><br><span class="line">  &quot;/dev/vdb1&quot; is a new physical volume of &quot;&lt;200.00 GiB&quot;</span><br><span class="line">  --- NEW Physical volume ---</span><br><span class="line">  PV Name               /dev/vdb1</span><br><span class="line">  VG Name               </span><br><span class="line">  PV Size               &lt;200.00 GiB</span><br><span class="line">  Allocatable           NO</span><br><span class="line">  PE Size               0   </span><br><span class="line">  Total PE              0</span><br><span class="line">  Free PE               0</span><br><span class="line">  Allocated PE          0</span><br><span class="line">  PV UUID               sQkrz3-twIl-IXZk-k2xV-8C5c-bAKf-syXCRD</span><br><span class="line">   </span><br><span class="line"><span class="meta prompt_">lvm&gt; </span><span class="language-bash">vgdisplay</span></span><br><span class="line">  --- Volume group ---</span><br><span class="line">  VG Name               centos</span><br><span class="line">  System ID             </span><br><span class="line">  Format                lvm2</span><br><span class="line">  Metadata Areas        1</span><br><span class="line">  Metadata Sequence No  4</span><br><span class="line">  VG Access             read/write</span><br><span class="line">  VG Status             resizable</span><br><span class="line">  MAX LV                0</span><br><span class="line">  Cur LV                3</span><br><span class="line">  Open LV               3</span><br><span class="line">  Max PV                0</span><br><span class="line">  Cur PV                1</span><br><span class="line">  Act PV                1</span><br><span class="line">  VG Size               &lt;199.00 GiB</span><br><span class="line">  PE Size               4.00 MiB</span><br><span class="line">  Total PE              50943</span><br><span class="line">  Alloc PE / Size       50942 / 198.99 GiB</span><br><span class="line">  Free  PE / Size       1 / 4.00 MiB</span><br><span class="line">  VG UUID               p6KwrN-dHe7-5tT0-6lo9-mOPO-qtUh-jHthEp</span><br><span class="line">   </span><br><span class="line"><span class="meta prompt_">lvm&gt; </span><span class="language-bash">vgextend centos /dev/vdb1</span></span><br><span class="line">  Volume group &quot;centos&quot; successfully extended</span><br><span class="line"><span class="meta prompt_">lvm&gt; </span><span class="language-bash">vgdisplay</span></span><br><span class="line">  --- Volume group ---</span><br><span class="line">  VG Name               centos</span><br><span class="line">  System ID             </span><br><span class="line">  Format                lvm2</span><br><span class="line">  Metadata Areas        2</span><br><span class="line">  Metadata Sequence No  5</span><br><span class="line">  VG Access             read/write</span><br><span class="line">  VG Status             resizable</span><br><span class="line">  MAX LV                0</span><br><span class="line">  Cur LV                3</span><br><span class="line">  Open LV               3</span><br><span class="line">  Max PV                0</span><br><span class="line">  Cur PV                2</span><br><span class="line">  Act PV                2</span><br><span class="line">  VG Size               398.99 GiB</span><br><span class="line">  PE Size               4.00 MiB</span><br><span class="line">  Total PE              102142</span><br><span class="line">  Alloc PE / Size       50942 / 198.99 GiB</span><br><span class="line">  Free  PE / Size       51200 / 200.00 GiB</span><br><span class="line">  VG UUID               p6KwrN-dHe7-5tT0-6lo9-mOPO-qtUh-jHthEp</span><br><span class="line">   </span><br><span class="line"><span class="meta prompt_">lvm&gt; </span><span class="language-bash">lvextend -l +100%FREE /dev/mapper/centos-root</span></span><br><span class="line">  Size of logical volume centos/root changed from 100.00 GiB (25600 extents) to 300.00 GiB (76800 extents).</span><br><span class="line">  Logical volume centos/root successfully resized.</span><br><span class="line"><span class="meta prompt_">lvm&gt; </span><span class="language-bash"><span class="built_in">exit</span></span></span><br><span class="line">  Exiting.</span><br></pre></td></tr></table></figure>
+
+<p>这里的&#x2F;dev&#x2F;centos&#x2F;root不能随便改成centos-root。LVM逻辑卷管理，根文件系统建立在卷组（VG）centos上的逻辑卷（LV）上，逻辑卷名是root而不是直接建在硬盘分区上</p>
+</li>
+<li><p>之前只是对逻辑卷扩容，还要同步到文件系统，实现对根目录的扩容</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]#resize2fs /dev/dev/mapper/centos-root</span><br><span class="line">meta-data=/dev/mapper/centos-root isize=512    agcount=4, agsize=6553600 blks</span><br><span class="line">         =                       sectsz=512   attr=2, projid32bit=1</span><br><span class="line">         =                       crc=1        finobt=0 spinodes=0</span><br><span class="line">data     =                       bsize=4096   blocks=26214400, imaxpct=25</span><br><span class="line">         =                       sunit=0      swidth=0 blks</span><br><span class="line">naming   =version 2              bsize=4096   ascii-ci=0 ftype=1</span><br><span class="line">log      =internal               bsize=4096   blocks=12800, version=2</span><br><span class="line">         =                       sectsz=512   sunit=0 blks, lazy-count=1</span><br><span class="line">realtime =none                   extsz=4096   blocks=0, rtextents=0</span><br><span class="line">data blocks changed from 26214400 to 78643200</span><br><span class="line"></span><br><span class="line">[root@localhost ~]# df -h</span><br><span class="line">文件系统                 容量  已用  可用 已用% 挂载点</span><br><span class="line">/dev/mapper/centos-root  300G  5.0G  296G    2% /</span><br><span class="line">devtmpfs                  16G     0   16G    0% /dev</span><br><span class="line">tmpfs                     16G     0   16G    0% /dev/shm</span><br><span class="line">tmpfs                     16G   97M   16G    1% /run</span><br><span class="line">tmpfs                     16G     0   16G    0% /sys/fs/cgroup</span><br><span class="line">/dev/vda1               1014M  208M  807M   21% /boot</span><br><span class="line">/dev/mapper/centos-home   92G   37M   92G    1% /home</span><br><span class="line">tmpfs                    3.2G   32K  3.2G    1% /run/user/0</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>检查对比</p>
+<p>以下为扩容前后文件系统详情</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost ~]# df -h</span><br><span class="line">文件系统                 容量  已用  可用 已用% 挂载点</span><br><span class="line">/dev/mapper/centos-root  100G  5.0G   96G    5% /</span><br><span class="line">devtmpfs                  16G     0   16G    0% /dev</span><br><span class="line">tmpfs                     16G     0   16G    0% /dev/shm</span><br><span class="line">tmpfs                     16G   97M   16G    1% /run</span><br><span class="line">tmpfs                     16G     0   16G    0% /sys/fs/cgroup</span><br><span class="line">/dev/vda1               1014M  208M  807M   21% /boot</span><br><span class="line">/dev/mapper/centos-home   92G   37M   92G    1% /home</span><br><span class="line">tmpfs                    3.2G   32K  3.2G    1% /run/user/0</span><br><span class="line"></span><br><span class="line">[root@localhost ~]# df -h</span><br><span class="line">文件系统                 容量  已用  可用 已用% 挂载点</span><br><span class="line">/dev/mapper/centos-root  300G  5.0G  296G    2% /</span><br><span class="line">devtmpfs                  16G     0   16G    0% /dev</span><br><span class="line">tmpfs                     16G     0   16G    0% /dev/shm</span><br><span class="line">tmpfs                     16G   97M   16G    1% /run</span><br><span class="line">tmpfs                     16G     0   16G    0% /sys/fs/cgroup</span><br><span class="line">/dev/vda1               1014M  208M  807M   21% /boot</span><br><span class="line">/dev/mapper/centos-home   92G   37M   92G    1% /home</span><br><span class="line">tmpfs                    3.2G   32K  3.2G    1% /run/user/0</span><br></pre></td></tr></table></figure>
+
+<p>根目录容量已从100G扩容至300G</p>
+</li>
+</ol>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://yuexinshao.cn/2023/08/28/Linux%E6%96%B0%E5%A2%9E%E7%A1%AC%E7%9B%98%E6%89%A9%E5%AE%B9%E8%87%B3%E6%A0%B9%E7%9B%AE%E5%BD%95/" data-id="cllum9eti0007d0ieh77kat3g" data-title="Linux新增硬盘扩容至根目录" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/" rel="tag">linux</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2023/08/01/%E6%A3%80%E6%B5%8B%E5%AF%B9%E6%AF%94SQL/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">检测对比SQL</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/category/%E4%B8%AA%E4%BA%BA%E7%AC%94%E8%AE%B0/">个人笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/category/%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/">经验分享</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Exchangis/" rel="tag">Exchangis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/centos-7/" rel="tag">centos 7</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/idea/" rel="tag">idea</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8D%9A%E5%AE%A2/" rel="tag">博客</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AB%AF%E5%8F%A3/" rel="tag">端口</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/" rel="tag">虚拟机</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Exchangis/" style="font-size: 10px;">Exchangis</a> <a href="/tags/centos-7/" style="font-size: 10px;">centos 7</a> <a href="/tags/idea/" style="font-size: 10px;">idea</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/%E5%8D%9A%E5%AE%A2/" style="font-size: 10px;">博客</a> <a href="/tags/%E7%AB%AF%E5%8F%A3/" style="font-size: 10px;">端口</a> <a href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/" style="font-size: 10px;">虚拟机</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archive/2023/08/">八月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archive/2023/07/">七月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archive/2023/03/">三月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archive/2023/02/">二月 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/08/28/Linux%E6%96%B0%E5%A2%9E%E7%A1%AC%E7%9B%98%E6%89%A9%E5%AE%B9%E8%87%B3%E6%A0%B9%E7%9B%AE%E5%BD%95/">Linux新增硬盘扩容至根目录</a>
+          </li>
+        
+          <li>
+            <a href="/2023/08/01/%E6%A3%80%E6%B5%8B%E5%AF%B9%E6%AF%94SQL/">检测对比SQL</a>
+          </li>
+        
+          <li>
+            <a href="/2023/07/28/CentOS-7-%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/">CentOS 7 常用软件安装</a>
+          </li>
+        
+          <li>
+            <a href="/2023/07/13/angfeng-protal%E4%BC%81%E4%B8%9A%E9%97%A8%E6%88%B7%E7%BD%91%E7%AB%99/">angfeng-protal企业门户网站</a>
+          </li>
+        
+          <li>
+            <a href="/2023/07/11/Idea%E5%90%AF%E5%8A%A8%E7%AB%AF%E5%8F%A3%E5%8D%A0%E7%94%A8/">Idea启动端口占用</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 Shaoyx<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
