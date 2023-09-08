@@ -16,7 +16,7 @@
 <meta property="og:image" content="https://yuexinshao.cn/2023/07/28/CentOS-7-%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/image-20221125100658139.png">
 <meta property="og:image" content="https://yuexinshao.cn/2023/07/28/CentOS-7-%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/image-20230731105554752.png">
 <meta property="article:published_time" content="2023-07-28T03:44:18.000Z">
-<meta property="article:modified_time" content="2023-08-02T06:30:28.287Z">
+<meta property="article:modified_time" content="2023-08-29T01:48:28.527Z">
 <meta property="article:author" content="Shaoyx">
 <meta property="article:tag" content="centos 7">
 <meta name="twitter:card" content="summary">
@@ -315,7 +315,7 @@
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf  redis-6.2.6.tar.gz</span><br></pre></td></tr></table></figure>
 </li>
 <li><p><strong>进入到解压后的目录进行编译和安装</strong></p>
-<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">make &amp;&amp; make install</span><br></pre></td></tr></table></figure>
+<figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> redis-6.2.6</span><br><span class="line">make &amp;&amp; make install</span><br></pre></td></tr></table></figure>
 
 <p>默认的安装路径是在 <code>/usr/local/bin</code>目录下，查看目录下的内容确保安装成功</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">[root@localhost redis-6.2.6]# ll /usr/local/bin</span><br><span class="line">total 18904</span><br><span class="line">-rwxr-xr-x. 1 root root 4829536 Jul 30 22:06 redis-benchmark</span><br><span class="line">lrwxrwxrwx. 1 root root      12 Jul 30 22:06 redis-check-aof -&gt; redis-server</span><br><span class="line">lrwxrwxrwx. 1 root root      12 Jul 30 22:06 redis-check-rdb -&gt; redis-server</span><br><span class="line">-rwxr-xr-x. 1 root root 5003816 Jul 30 22:06 redis-cli</span><br><span class="line">lrwxrwxrwx. 1 root root      12 Jul 30 22:06 redis-sentinel -&gt; redis-server</span><br><span class="line">-rwxr-xr-x. 1 root root 9518936 Jul 30 22:06 redis-server</span><br></pre></td></tr></table></figure>
@@ -345,7 +345,7 @@
 </blockquote>
 <p>其他的常见配置可以选择配置，比如监听的端口、工作目录、指定日志文件名开启日志的保存功能，不必要</p>
 <p>启动Redis</p>
-<p>进入redis安装目录<br><code>cd /usr/local/src/redis-6.2.6</code><br>启动<br><code>redis-server redis.conf</code></p>
+<p>进入redis安装目录<br><code>cd /usr/local/src/redis/redis-6.2.6</code><br>启动<br><code>redis-server redis.conf</code></p>
 <p>查看运行状态</p>
 <p><code>ps -ef | grep redis</code></p>
 <p>通过杀死进程的方式（这里使用shutdown命令没有停止服务）</p>
@@ -359,6 +359,7 @@
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description=redis-server</span><br><span class="line">After=network.target</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">Type=forking</span><br><span class="line">ExecStart=/usr/local/bin/redis-server /usr/local/src/redis/redis-6.2.6/redis.conf</span><br><span class="line">PrivateTmp=<span class="literal">true</span></span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br></pre></td></tr></table></figure>
 
 <p>然后重载系统服务</p>
+<p>如果启动不了就把<code>Type=forking</code>删除</p>
 <figure class="highlight sh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl daemon-reload</span><br></pre></td></tr></table></figure>
 
 <p>最后设置redis开机自启</p>
@@ -372,7 +373,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://yuexinshao.cn/2023/07/28/CentOS-7-%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/" data-id="cllunufri00019gie2fsh7xxy" data-title="CentOS 7 常用软件安装" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="https://yuexinshao.cn/2023/07/28/CentOS-7-%E5%B8%B8%E7%94%A8%E8%BD%AF%E4%BB%B6%E5%AE%89%E8%A3%85/" data-id="clmabtkf7000680ieaare22sp" data-title="CentOS 7 常用软件安装" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
