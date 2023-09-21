@@ -4,21 +4,19 @@
   <meta charset="utf-8">
   
   
-  <title>小程序登录 | Hexo</title>
+  <title>docker安装minio | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="小程序登录">
+  <meta name="description" content="docker安装minio">
 <meta property="og:type" content="article">
-<meta property="og:title" content="小程序登录">
-<meta property="og:url" content="https://syx9527.github.io/2023/07/07/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%99%BB%E5%BD%95/index.html">
+<meta property="og:title" content="docker安装minio">
+<meta property="og:url" content="https://syx9527.github.io/2023/09/20/04.docker%E5%AE%89%E8%A3%85minio/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="小程序登录">
+<meta property="og:description" content="docker安装minio">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://syx9527.github.io/2023/07/07/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%99%BB%E5%BD%95/image-20230707112504718.png">
-<meta property="article:published_time" content="2023-07-07T03:22:39.000Z">
-<meta property="article:modified_time" content="2023-07-07T03:26:28.840Z">
+<meta property="article:published_time" content="2023-09-20T06:47:08.000Z">
+<meta property="article:modified_time" content="2023-09-20T06:51:09.602Z">
 <meta property="article:author" content="Shaoyx">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://syx9527.github.io/2023/07/07/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%99%BB%E5%BD%95/image-20230707112504718.png">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -77,10 +75,10 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-小程序登录" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-04.docker安装minio" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2023/07/07/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%99%BB%E5%BD%95/" class="article-date">
-  <time class="dt-published" datetime="2023-07-07T03:22:39.000Z" itemprop="datePublished">2023-07-07</time>
+    <a href="/2023/09/20/04.docker%E5%AE%89%E8%A3%85minio/" class="article-date">
+  <time class="dt-published" datetime="2023-09-20T06:47:08.000Z" itemprop="datePublished">2023-09-20</time>
 </a>
     
   </div>
@@ -91,7 +89,7 @@
         
   
     <h1 class="p-name article-title" itemprop="headline name">
-      小程序登录
+      docker安装minio
     </h1>
   
 
@@ -99,26 +97,35 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>小程序登录</p>
+        <p>docker安装minio</p>
 <span id="more"></span>
 
-<h2 id="小程序登录"><a href="#小程序登录" class="headerlink" title="# 小程序登录"></a><a href="#%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%99%BB%E5%BD%95">#</a> 小程序登录</h2><p>小程序可以通过微信官方提供的登录能力方便地获取微信提供的用户身份标识，快速建立小程序内的用户体系。</p>
-<h2 id="登录流程时序"><a href="#登录流程时序" class="headerlink" title="# 登录流程时序"></a><a href="#%E7%99%BB%E5%BD%95%E6%B5%81%E7%A8%8B%E6%97%B6%E5%BA%8F">#</a> 登录流程时序</h2><p><img src="/2023/07/07/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%99%BB%E5%BD%95/image-20230707112504718.png" alt="image-20230707112504718"></p>
-<h2 id="说明"><a href="#说明" class="headerlink" title="# 说明"></a><a href="#%E8%AF%B4%E6%98%8E">#</a> 说明</h2><ol>
-<li>调用 <a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/api/open-api/login/wx.login.html">wx.login()</a> 获取 <strong>临时登录凭证code</strong> ，并回传到开发者服务器。</li>
-<li>调用 <a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/OpenApiDoc/user-login/code2Session.html">auth.code2Session</a> 接口，换取 <strong>用户唯一标识 OpenID</strong> 、 用户在微信开放平台帐号下的<strong>唯一标识UnionID</strong>（若当前小程序已绑定到微信开放平台帐号） 和 <strong>会话密钥 session_key</strong>。</li>
-</ol>
-<p>之后开发者服务器可以根据用户标识来生成自定义登录态，用于后续业务逻辑中前后端交互时识别用户身份。</p>
-<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="# 注意事项"></a><a href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9">#</a> 注意事项</h2><ol>
-<li>会话密钥 <code>session_key</code> 是对用户数据进行 <a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/signature.html">加密签名</a> 的密钥。为了应用自身的数据安全，开发者服务器<strong>不应该把会话密钥下发到小程序，也不应该对外提供这个密钥</strong>。</li>
-<li>临时登录凭证 code 只能使用一次</li>
-<li></li>
+<h1 id="docker安装minio"><a href="#docker安装minio" class="headerlink" title="docker安装minio"></a>docker安装minio</h1><h2 id="一、简介"><a href="#一、简介" class="headerlink" title="一、简介"></a>一、简介</h2><p>MinIO 是在 GNU Affero 通用公共许可证 v3.0 下发布的高性能对象存储。 它是与 Amazon S3 云存储服务兼容的 API，非常适合于存储大容量非结构化的数据，例如图片、视频、日志文件、备份数据和容器&#x2F;虚拟机镜像等，而一个对象文件可以是任意大小，从几kb到最大5T不等</p>
+<ul>
+<li>文档：<a target="_blank" rel="noopener" href="http://docs.minio.org.cn/docs/">http://docs.minio.org.cn/docs/</a></li>
+</ul>
+<h2 id="二、docker安装"><a href="#二、docker安装" class="headerlink" title="二、docker安装"></a>二、docker安装</h2><ol>
+<li><p>安装镜像</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull minio/minio</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>新建目录</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">mkdir</span> -p /home/apps/minio/&#123;data,config&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>创建并启动</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">docker run \</span><br><span class="line">-d \</span><br><span class="line">--name minio \</span><br><span class="line">--restart=always \</span><br><span class="line">--privileged=<span class="literal">true</span> \</span><br><span class="line">-p 9000:9000 \</span><br><span class="line">-p 9001:9001 \</span><br><span class="line">-e MINIO_ROOT_USER=minioadmin \</span><br><span class="line">-e MINIO_ROOT_PASSWORD=minioadmin \</span><br><span class="line">-v /home/apps/minio/data:/data \</span><br><span class="line">-v /home/apps/minio/config:/root/.minio \</span><br><span class="line">minio/minio server /data \</span><br><span class="line">--console-address <span class="string">&quot;:9001&quot;</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>测试访问</p>
+<ul>
+<li>地址：ip:9001</li>
+<li>帐号&#x2F;密码：name&#x2F;password</li>
+</ul>
+</li>
 </ol>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://syx9527.github.io/2023/07/07/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%99%BB%E5%BD%95/" data-id="clmsxv7rp000tuwiecvmdel52" data-title="小程序登录" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="https://syx9527.github.io/2023/09/20/04.docker%E5%AE%89%E8%A3%85minio/" data-id="clmsxv7r80002uwief3na5pdt" data-title="docker安装minio" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -128,19 +135,19 @@
     
 <nav id="article-nav">
   
-    <a href="/2023/07/07/%E5%B0%86Hexo%E6%90%AD%E5%BB%BA%E5%88%B0%E8%87%AA%E5%B7%B1%E7%9A%84%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A/" id="article-nav-newer" class="article-nav-link-wrap">
+    <a href="/2023/09/20/05.%E5%AE%9E%E6%93%8D-%E5%AE%9E%E9%AA%8C%E4%B8%80-%E5%BA%94%E7%94%A8%E5%AE%B9%E5%99%A8%E5%8C%96%E8%BF%81%E7%A7%BB%E6%94%B9%E9%80%A0%E5%92%8C%E9%83%A8%E7%BD%B2/" id="article-nav-newer" class="article-nav-link-wrap">
       <strong class="article-nav-caption">前一篇</strong>
       <div class="article-nav-title">
         
-          将Hexo搭建到自己的服务器上
+          应用容器化迁移改造和部署
         
       </div>
     </a>
   
   
-    <a href="/2023/03/24/Exchangis%E6%90%AD%E5%BB%BA%E5%AE%89%E8%A3%85/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2023/09/20/03.docker%E6%9B%B4%E6%8D%A2%E9%95%9C%E5%83%8F%E6%BA%90/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">后一篇</strong>
-      <div class="article-nav-title">Exchangis搭建安装</div>
+      <div class="article-nav-title">docker更换镜像源</div>
     </a>
   
 </nav>

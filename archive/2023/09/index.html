@@ -4,21 +4,15 @@
   <meta charset="utf-8">
   
   
-  <title>小程序登录 | Hexo</title>
+  <title>归档: 2023/9 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="小程序登录">
-<meta property="og:type" content="article">
-<meta property="og:title" content="小程序登录">
-<meta property="og:url" content="https://syx9527.github.io/2023/07/07/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%99%BB%E5%BD%95/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="Hexo">
+<meta property="og:url" content="https://syx9527.github.io/archive/2023/09/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="小程序登录">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://syx9527.github.io/2023/07/07/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%99%BB%E5%BD%95/image-20230707112504718.png">
-<meta property="article:published_time" content="2023-07-07T03:22:39.000Z">
-<meta property="article:modified_time" content="2023-07-07T03:26:28.840Z">
 <meta property="article:author" content="Shaoyx">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://syx9527.github.io/2023/07/07/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%99%BB%E5%BD%95/image-20230707112504718.png">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -77,76 +71,153 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-小程序登录" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
-  <div class="article-meta">
-    <a href="/2023/07/07/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%99%BB%E5%BD%95/" class="article-date">
-  <time class="dt-published" datetime="2023-07-07T03:22:39.000Z" itemprop="datePublished">2023-07-07</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
+        <section id="main">
   
-    <h1 class="p-name article-title" itemprop="headline name">
-      小程序登录
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archive/2023" class="archive-year">2023</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2023/09/21/hello-world/" class="archive-article-date">
+  <time class="dt-published" datetime="2023-09-21T08:53:04.380Z" itemprop="datePublished">9月 21</time>
+</a>
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2023/09/21/hello-world/">Hello World</a>
     </h1>
   
 
-      </header>
-    
-    <div class="e-content article-entry" itemprop="articleBody">
-      
-        <p>小程序登录</p>
-<span id="more"></span>
-
-<h2 id="小程序登录"><a href="#小程序登录" class="headerlink" title="# 小程序登录"></a><a href="#%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%99%BB%E5%BD%95">#</a> 小程序登录</h2><p>小程序可以通过微信官方提供的登录能力方便地获取微信提供的用户身份标识，快速建立小程序内的用户体系。</p>
-<h2 id="登录流程时序"><a href="#登录流程时序" class="headerlink" title="# 登录流程时序"></a><a href="#%E7%99%BB%E5%BD%95%E6%B5%81%E7%A8%8B%E6%97%B6%E5%BA%8F">#</a> 登录流程时序</h2><p><img src="/2023/07/07/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%99%BB%E5%BD%95/image-20230707112504718.png" alt="image-20230707112504718"></p>
-<h2 id="说明"><a href="#说明" class="headerlink" title="# 说明"></a><a href="#%E8%AF%B4%E6%98%8E">#</a> 说明</h2><ol>
-<li>调用 <a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/api/open-api/login/wx.login.html">wx.login()</a> 获取 <strong>临时登录凭证code</strong> ，并回传到开发者服务器。</li>
-<li>调用 <a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/OpenApiDoc/user-login/code2Session.html">auth.code2Session</a> 接口，换取 <strong>用户唯一标识 OpenID</strong> 、 用户在微信开放平台帐号下的<strong>唯一标识UnionID</strong>（若当前小程序已绑定到微信开放平台帐号） 和 <strong>会话密钥 session_key</strong>。</li>
-</ol>
-<p>之后开发者服务器可以根据用户标识来生成自定义登录态，用于后续业务逻辑中前后端交互时识别用户身份。</p>
-<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="# 注意事项"></a><a href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9">#</a> 注意事项</h2><ol>
-<li>会话密钥 <code>session_key</code> 是对用户数据进行 <a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/signature.html">加密签名</a> 的密钥。为了应用自身的数据安全，开发者服务器<strong>不应该把会话密钥下发到小程序，也不应该对外提供这个密钥</strong>。</li>
-<li>临时登录凭证 code 只能使用一次</li>
-<li></li>
-</ol>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="https://syx9527.github.io/2023/07/07/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%99%BB%E5%BD%95/" data-id="clmsxv7rp000tuwiecvmdel52" data-title="小程序登录" class="article-share-link"><span class="fa fa-share">分享</span></a>
-      
-      
-      
-    </footer>
+    </header>
   </div>
+</article>
   
     
-<nav id="article-nav">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2023/09/21/06-%E5%AE%9E%E9%AA%8C%E4%BA%8C-%E5%BA%94%E7%94%A8K8S%E5%AE%B9%E5%99%A8%E4%BA%91%E9%83%A8%E7%BD%B2/" class="archive-article-date">
+  <time class="dt-published" datetime="2023-09-21T01:19:17.000Z" itemprop="datePublished">9月 21</time>
+</a>
+      
   
-    <a href="/2023/07/07/%E5%B0%86Hexo%E6%90%AD%E5%BB%BA%E5%88%B0%E8%87%AA%E5%B7%B1%E7%9A%84%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">前一篇</strong>
-      <div class="article-nav-title">
-        
-          将Hexo搭建到自己的服务器上
-        
-      </div>
-    </a>
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2023/09/21/06-%E5%AE%9E%E9%AA%8C%E4%BA%8C-%E5%BA%94%E7%94%A8K8S%E5%AE%B9%E5%99%A8%E4%BA%91%E9%83%A8%E7%BD%B2/">06.应用K8S容器云部署</a>
+    </h1>
   
-  
-    <a href="/2023/03/24/Exchangis%E6%90%AD%E5%BB%BA%E5%AE%89%E8%A3%85/" id="article-nav-older" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">后一篇</strong>
-      <div class="article-nav-title">Exchangis搭建安装</div>
-    </a>
-  
-</nav>
 
-  
+    </header>
+  </div>
 </article>
+  
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2023/09/20/05.%E5%AE%9E%E6%93%8D-%E5%AE%9E%E9%AA%8C%E4%B8%80-%E5%BA%94%E7%94%A8%E5%AE%B9%E5%99%A8%E5%8C%96%E8%BF%81%E7%A7%BB%E6%94%B9%E9%80%A0%E5%92%8C%E9%83%A8%E7%BD%B2/" class="archive-article-date">
+  <time class="dt-published" datetime="2023-09-20T06:47:13.000Z" itemprop="datePublished">9月 20</time>
+</a>
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2023/09/20/05.%E5%AE%9E%E6%93%8D-%E5%AE%9E%E9%AA%8C%E4%B8%80-%E5%BA%94%E7%94%A8%E5%AE%B9%E5%99%A8%E5%8C%96%E8%BF%81%E7%A7%BB%E6%94%B9%E9%80%A0%E5%92%8C%E9%83%A8%E7%BD%B2/">应用容器化迁移改造和部署</a>
+    </h1>
+  
+
+    </header>
+  </div>
+</article>
+  
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2023/09/20/04.docker%E5%AE%89%E8%A3%85minio/" class="archive-article-date">
+  <time class="dt-published" datetime="2023-09-20T06:47:08.000Z" itemprop="datePublished">9月 20</time>
+</a>
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2023/09/20/04.docker%E5%AE%89%E8%A3%85minio/">docker安装minio</a>
+    </h1>
+  
+
+    </header>
+  </div>
+</article>
+  
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2023/09/20/03.docker%E6%9B%B4%E6%8D%A2%E9%95%9C%E5%83%8F%E6%BA%90/" class="archive-article-date">
+  <time class="dt-published" datetime="2023-09-20T06:47:02.000Z" itemprop="datePublished">9月 20</time>
+</a>
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2023/09/20/03.docker%E6%9B%B4%E6%8D%A2%E9%95%9C%E5%83%8F%E6%BA%90/">docker更换镜像源</a>
+    </h1>
+  
+
+    </header>
+  </div>
+</article>
+  
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2023/09/20/02.docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" class="archive-article-date">
+  <time class="dt-published" datetime="2023-09-20T06:46:50.000Z" itemprop="datePublished">9月 20</time>
+</a>
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2023/09/20/02.docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/">docker 常用命令</a>
+    </h1>
+  
+
+    </header>
+  </div>
+</article>
+  
+    
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      <a href="/2023/09/20/01.centos%E5%AE%89%E8%A3%85docker/" class="archive-article-date">
+  <time class="dt-published" datetime="2023-09-20T06:46:41.000Z" itemprop="datePublished">9月 20</time>
+</a>
+      
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2023/09/20/01.centos%E5%AE%89%E8%A3%85docker/">centos安装Docker</a>
+    </h1>
+  
+
+    </header>
+  </div>
+</article>
+  
+  
+    </div></section>
+  
 
 
 </section>

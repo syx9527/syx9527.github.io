@@ -4,21 +4,19 @@
   <meta charset="utf-8">
   
   
-  <title>小程序登录 | Hexo</title>
+  <title>Hello World | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="description" content="小程序登录">
+  <meta name="description" content="Hello World">
 <meta property="og:type" content="article">
-<meta property="og:title" content="小程序登录">
-<meta property="og:url" content="https://syx9527.github.io/2023/07/07/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%99%BB%E5%BD%95/index.html">
+<meta property="og:title" content="Hello World">
+<meta property="og:url" content="https://syx9527.github.io/2023/09/21/hello-world/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description" content="小程序登录">
+<meta property="og:description" content="Hello World">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://syx9527.github.io/2023/07/07/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%99%BB%E5%BD%95/image-20230707112504718.png">
-<meta property="article:published_time" content="2023-07-07T03:22:39.000Z">
-<meta property="article:modified_time" content="2023-07-07T03:26:28.840Z">
+<meta property="article:published_time" content="2023-09-21T08:53:04.380Z">
+<meta property="article:modified_time" content="2023-09-20T06:52:30.219Z">
 <meta property="article:author" content="Shaoyx">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://syx9527.github.io/2023/07/07/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%99%BB%E5%BD%95/image-20230707112504718.png">
   
     <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -77,10 +75,10 @@
 </header>
 
       <div class="outer">
-        <section id="main"><article id="post-小程序登录" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+        <section id="main"><article id="post-hello-world" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
   <div class="article-meta">
-    <a href="/2023/07/07/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%99%BB%E5%BD%95/" class="article-date">
-  <time class="dt-published" datetime="2023-07-07T03:22:39.000Z" itemprop="datePublished">2023-07-07</time>
+    <a href="/2023/09/21/hello-world/" class="article-date">
+  <time class="dt-published" datetime="2023-09-21T08:53:04.380Z" itemprop="datePublished">2023-09-21</time>
 </a>
     
   </div>
@@ -91,7 +89,7 @@
         
   
     <h1 class="p-name article-title" itemprop="headline name">
-      小程序登录
+      Hello World
     </h1>
   
 
@@ -99,26 +97,27 @@
     
     <div class="e-content article-entry" itemprop="articleBody">
       
-        <p>小程序登录</p>
+        <p>Hello World</p>
 <span id="more"></span>
 
-<h2 id="小程序登录"><a href="#小程序登录" class="headerlink" title="# 小程序登录"></a><a href="#%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%99%BB%E5%BD%95">#</a> 小程序登录</h2><p>小程序可以通过微信官方提供的登录能力方便地获取微信提供的用户身份标识，快速建立小程序内的用户体系。</p>
-<h2 id="登录流程时序"><a href="#登录流程时序" class="headerlink" title="# 登录流程时序"></a><a href="#%E7%99%BB%E5%BD%95%E6%B5%81%E7%A8%8B%E6%97%B6%E5%BA%8F">#</a> 登录流程时序</h2><p><img src="/2023/07/07/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%99%BB%E5%BD%95/image-20230707112504718.png" alt="image-20230707112504718"></p>
-<h2 id="说明"><a href="#说明" class="headerlink" title="# 说明"></a><a href="#%E8%AF%B4%E6%98%8E">#</a> 说明</h2><ol>
-<li>调用 <a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/api/open-api/login/wx.login.html">wx.login()</a> 获取 <strong>临时登录凭证code</strong> ，并回传到开发者服务器。</li>
-<li>调用 <a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/OpenApiDoc/user-login/code2Session.html">auth.code2Session</a> 接口，换取 <strong>用户唯一标识 OpenID</strong> 、 用户在微信开放平台帐号下的<strong>唯一标识UnionID</strong>（若当前小程序已绑定到微信开放平台帐号） 和 <strong>会话密钥 session_key</strong>。</li>
-</ol>
-<p>之后开发者服务器可以根据用户标识来生成自定义登录态，用于后续业务逻辑中前后端交互时识别用户身份。</p>
-<h2 id="注意事项"><a href="#注意事项" class="headerlink" title="# 注意事项"></a><a href="#%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9">#</a> 注意事项</h2><ol>
-<li>会话密钥 <code>session_key</code> 是对用户数据进行 <a target="_blank" rel="noopener" href="https://developers.weixin.qq.com/miniprogram/dev/framework/open-ability/signature.html">加密签名</a> 的密钥。为了应用自身的数据安全，开发者服务器<strong>不应该把会话密钥下发到小程序，也不应该对外提供这个密钥</strong>。</li>
-<li>临时登录凭证 code 只能使用一次</li>
-<li></li>
-</ol>
+<p>Welcome to <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a target="_blank" rel="noopener" href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a target="_blank" rel="noopener" href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a target="_blank" rel="noopener" href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/writing.html">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/server.html">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/generating.html">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a target="_blank" rel="noopener" href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>
 
       
     </div>
     <footer class="article-footer">
-      <a data-url="https://syx9527.github.io/2023/07/07/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E7%99%BB%E5%BD%95/" data-id="clmsxv7rp000tuwiecvmdel52" data-title="小程序登录" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      <a data-url="https://syx9527.github.io/2023/09/21/hello-world/" data-id="clmsxv7rg000euwie14as4nug" data-title="Hello World" class="article-share-link"><span class="fa fa-share">分享</span></a>
       
       
       
@@ -128,19 +127,10 @@
     
 <nav id="article-nav">
   
-    <a href="/2023/07/07/%E5%B0%86Hexo%E6%90%AD%E5%BB%BA%E5%88%B0%E8%87%AA%E5%B7%B1%E7%9A%84%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8A/" id="article-nav-newer" class="article-nav-link-wrap">
-      <strong class="article-nav-caption">前一篇</strong>
-      <div class="article-nav-title">
-        
-          将Hexo搭建到自己的服务器上
-        
-      </div>
-    </a>
   
-  
-    <a href="/2023/03/24/Exchangis%E6%90%AD%E5%BB%BA%E5%AE%89%E8%A3%85/" id="article-nav-older" class="article-nav-link-wrap">
+    <a href="/2023/09/21/06-%E5%AE%9E%E9%AA%8C%E4%BA%8C-%E5%BA%94%E7%94%A8K8S%E5%AE%B9%E5%99%A8%E4%BA%91%E9%83%A8%E7%BD%B2/" id="article-nav-older" class="article-nav-link-wrap">
       <strong class="article-nav-caption">后一篇</strong>
-      <div class="article-nav-title">Exchangis搭建安装</div>
+      <div class="article-nav-title">06.应用K8S容器云部署</div>
     </a>
   
 </nav>

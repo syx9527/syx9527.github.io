@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>centos安装Docker | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="centos安装Docker">
+<meta property="og:type" content="article">
+<meta property="og:title" content="centos安装Docker">
+<meta property="og:url" content="https://syx9527.github.io/2023/09/20/01.centos%E5%AE%89%E8%A3%85docker/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="centos安装Docker">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://syx9527.github.io/2023/09/20/01.centos%E5%AE%89%E8%A3%85docker/a32b5cd1e9b34b9e92b1c907dd037633.png">
+<meta property="og:image" content="https://syx9527.github.io/2023/09/20/01.centos%E5%AE%89%E8%A3%85docker/4ada6a3d68364801acf5d922b7d20456.png">
+<meta property="og:image" content="https://syx9527.github.io/2023/09/20/01.centos%E5%AE%89%E8%A3%85docker/105fb8a4528042e797e5bbfc771571ec.png">
+<meta property="og:image" content="https://syx9527.github.io/2023/09/20/01.centos%E5%AE%89%E8%A3%85docker/5a6dd103c6ee49539f917580f9886eed.png">
+<meta property="og:image" content="https://syx9527.github.io/2023/09/20/01.centos%E5%AE%89%E8%A3%85docker/a74f9ef5782e48bfaaa3b6cdfbfb94c5.png">
+<meta property="og:image" content="https://syx9527.github.io/2023/09/20/01.centos%E5%AE%89%E8%A3%85docker/48635527da384659af15c5b0645059df.png">
+<meta property="og:image" content="https://syx9527.github.io/2023/09/20/01.centos%E5%AE%89%E8%A3%85docker/image-20230919162042954.png">
+<meta property="og:image" content="https://syx9527.github.io/2023/09/20/01.centos%E5%AE%89%E8%A3%85docker/9a7b806140b545c792ff58efa0842b5c.png">
+<meta property="og:image" content="https://syx9527.github.io/2023/09/20/01.centos%E5%AE%89%E8%A3%85docker/ee935fc500b14d66b5a5b773dc5cf193.png">
+<meta property="og:image" content="https://syx9527.github.io/2023/09/20/01.centos%E5%AE%89%E8%A3%85docker/5146d1717cd942c6b90b747869860e28.png">
+<meta property="og:image" content="https://syx9527.github.io/2023/09/20/01.centos%E5%AE%89%E8%A3%85docker/0c3740c15f7a85b21e8ce160cdd6ab86.png">
+<meta property="og:image" content="https://syx9527.github.io/2023/09/20/01.centos%E5%AE%89%E8%A3%85docker/331d50f556097d25240599107be1e9c2.png">
+<meta property="og:image" content="https://syx9527.github.io/2023/09/20/01.centos%E5%AE%89%E8%A3%85docker/25e02c41a0af4d01a2d67eb1472ab7c6.png">
+<meta property="og:image" content="https://syx9527.github.io/2023/09/20/01.centos%E5%AE%89%E8%A3%85docker/5f1ae6d227d54705656981c36fcd2c72.png">
+<meta property="og:image" content="https://syx9527.github.io/2023/09/20/01.centos%E5%AE%89%E8%A3%85docker/ce6769e84fee8c7033de27b49db4c051.png">
+<meta property="og:image" content="https://syx9527.github.io/2023/09/20/01.centos%E5%AE%89%E8%A3%85docker/ea5475759b529e3a93a99810aff58521.png">
+<meta property="article:published_time" content="2023-09-20T06:46:41.000Z">
+<meta property="article:modified_time" content="2023-09-20T06:51:00.511Z">
+<meta property="article:author" content="Shaoyx">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://syx9527.github.io/2023/09/20/01.centos%E5%AE%89%E8%A3%85docker/a32b5cd1e9b34b9e92b1c907dd037633.png">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS 订阅"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="搜索"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://syx9527.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-01.centos安装docker" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/09/20/01.centos%E5%AE%89%E8%A3%85docker/" class="article-date">
+  <time class="dt-published" datetime="2023-09-20T06:46:41.000Z" itemprop="datePublished">2023-09-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      centos安装Docker
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>centos安装Docker</p>
+<span id="more"></span>
+
+<p>[TOC]</p>
+<hr>
+<h2 id="1-Docker的安装"><a href="#1-Docker的安装" class="headerlink" title="1. Docker的安装"></a>1. Docker的安装</h2><p>Docker是基于Linux内核服务的轻量级开源容器产品，本系列实验我们将为大家介绍docker产品的安装，使用和案例。在本实验中，我们先来介绍docker 的安装。在centos系统中，我们一般通过yum进行软件包的安装。因此本次实验我们也通过yum来安装docker运行环境。</p>
+<h3 id="①安装docker的依赖组件"><a href="#①安装docker的依赖组件" class="headerlink" title="①安装docker的依赖组件"></a>①安装docker的依赖组件</h3><p>在安装docker之前，我们需要先通过yum来安装docker的必要的依赖组件。同时为了编译后面的配置信息格式化输出，我们同时需要安装jq工具。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">yum install -y yum-utils device-mapper-persistent-data lvm2</span><br><span class="line"></span><br><span class="line">yum install -y jq</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2023/09/20/01.centos%E5%AE%89%E8%A3%85docker/a32b5cd1e9b34b9e92b1c907dd037633.png"></p>
+<p><img src="/2023/09/20/01.centos%E5%AE%89%E8%A3%85docker/4ada6a3d68364801acf5d922b7d20456.png"></p>
+<h3 id="②添加Docker的安装来源"><a href="#②添加Docker的安装来源" class="headerlink" title="②添加Docker的安装来源"></a>②添加Docker的安装来源</h3><p> 因为docker安装包不在yum的默认源列表中，因此在安装之前我们需要通过yum-config-manager –add-repo命令向yum默认源列表中添加docker源的地址。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo</span><br></pre></td></tr></table></figure>
+
+
+
+<p><img src="/2023/09/20/01.centos%E5%AE%89%E8%A3%85docker/105fb8a4528042e797e5bbfc771571ec.png"></p>
+<p> 源添加成功后，我们可以使用yum list命令查看当前的docker源中支持的安装包版本列表。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum list docker-ce --showduplicates | <span class="built_in">sort</span> -r</span><br></pre></td></tr></table></figure>
+
+
+
+<p><img src="/2023/09/20/01.centos%E5%AE%89%E8%A3%85docker/5a6dd103c6ee49539f917580f9886eed.png"></p>
+<h3 id="③安装Docker应用"><a href="#③安装Docker应用" class="headerlink" title="③安装Docker应用"></a>③安装Docker应用</h3><p>docker依赖和docker源安装完成之后，我们就可以使用yum install docker-ce.x86_64命令来安装docker 应用，在使用yum install安装时，默认会选择最新的版本进行安装。如果需要指定安装版本也可以在命令后面加入具体的版本号，接下来我们来安装docker的3:20.10.16-3.el7版本。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install -y docker-ce.x86\_64 3:20.10.16-3.el7</span><br></pre></td></tr></table></figure>
+
+
+
+<p><img src="/2023/09/20/01.centos%E5%AE%89%E8%A3%85docker/a74f9ef5782e48bfaaa3b6cdfbfb94c5.png"></p>
+<p> 安装成功之后，我们还需要通过systemctl start命令来启动docker服务</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl start docker.service</span><br></pre></td></tr></table></figure>
+
+
+
+<p><img src="/2023/09/20/01.centos%E5%AE%89%E8%A3%85docker/48635527da384659af15c5b0645059df.png"></p>
+<h2 id="2-Docker的配置"><a href="#2-Docker的配置" class="headerlink" title="2. Docker的配置"></a>2. Docker的配置</h2><h3 id="①镜像源的配置"><a href="#①镜像源的配置" class="headerlink" title="①镜像源的配置"></a>①镜像源的配置</h3><p>通过docker拉取镜像时，默认会通过国外的镜像源进行下载，因此可以配置国内的镜像源以加快下载速度。修改docker的镜像源时，我们使用vi编辑文件 <code>/etc/docker/daemon.json </code>。注意使用vi编辑器时：</p>
+<ol>
+<li><p>需要先按i键进入编辑模式。</p>
+</li>
+<li><p>编辑完成之后按esc退出编辑模式。</p>
+</li>
+<li><p>然后按大写的ZZ保存并退出vi。</p>
+</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi /etc/docker/daemon.json</span><br></pre></td></tr></table></figure>
+
+
+
+<p>接下来将下列内容添加到文件中。</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;registry-mirrors&quot;</span> <span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="string">&quot;https://registry.docker-cn.com&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;http://hub-mirror.c.163.com&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;https://docker.mirrors.ustc.edu.cn&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;https://cr.console.aliyun.com&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="string">&quot;https://mirror.ccs.tencentyun.com&quot;</span></span><br><span class="line">  	<span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="/2023/09/20/01.centos%E5%AE%89%E8%A3%85docker/image-20230919162042954.png" alt="image-20230919162042954"></p>
+<h3 id="②镜像源修改后，需要重新启动docker服务"><a href="#②镜像源修改后，需要重新启动docker服务" class="headerlink" title="②镜像源修改后，需要重新启动docker服务"></a>②镜像源修改后，需要重新启动docker服务</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl restart docker.service</span><br></pre></td></tr></table></figure>
+
+
+
+<p>服务重启成功后，我们可以通过docker version查看docker版本信息。如果出现客户端版本信息和服务版本信息，则说明dcoker已经安装成功且服务已经启动</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker version</span><br></pre></td></tr></table></figure>
+
+
+
+<p><img src="/2023/09/20/01.centos%E5%AE%89%E8%A3%85docker/9a7b806140b545c792ff58efa0842b5c.png"></p>
+<h2 id="3-Docker的快速上手"><a href="#3-Docker的快速上手" class="headerlink" title="3. Docker的快速上手"></a>3. Docker的快速上手</h2><h3 id="①启动hello-world"><a href="#①启动hello-world" class="headerlink" title="①启动hello-world"></a>①启动hello-world</h3><p>Docker安装配置成功之后，我们就可以通过docker run命令启动轻量级的容器虚拟机。我们执行如下命令</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run hello-world</span><br></pre></td></tr></table></figure>
+
+
+
+<p><img src="/2023/09/20/01.centos%E5%AE%89%E8%A3%85docker/ee935fc500b14d66b5a5b773dc5cf193.png"></p>
+<p> 会发现屏幕上输出了Hello from Docker!信息。这个信息输出表示hello-world容器虚拟机启动成功。</p>
+<h3 id="②启动长期运行的bash容器"><a href="#②启动长期运行的bash容器" class="headerlink" title="②启动长期运行的bash容器"></a>②启动长期运行的bash容器</h3><p>在上一个步骤中，我们演示了docker最基本的用法，这种方式启动的hello-world容器，在启动之后会输出文字，在输出之后容器就会结束。</p>
+<p>接下来我们来启动一个可以长期运行的bash容器。我们在命令行中输入如下命令，运行成功后会看到命令提示行变为bash，这表示容器虚拟机已经持续运行。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -it bash</span><br></pre></td></tr></table></figure>
+
+
+
+<p><img src="/2023/09/20/01.centos%E5%AE%89%E8%A3%85docker/5146d1717cd942c6b90b747869860e28.png"></p>
+<h3 id="③bash容器的退出"><a href="#③bash容器的退出" class="headerlink" title="③bash容器的退出"></a>③bash容器的退出</h3><p>在运行的bash容器中我们可以使用一些基本的linux命令，如pwd，ls等</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">pwd</span></span><br><span class="line"><span class="built_in">ls</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="/2023/09/20/01.centos%E5%AE%89%E8%A3%85docker/0c3740c15f7a85b21e8ce160cdd6ab86.png"></p>
+<p>如果希望退出bash容器，回到宿主机，我们在控制台中输入exit命令即可。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">exit</span></span><br></pre></td></tr></table></figure>
+
+<p><img src="/2023/09/20/01.centos%E5%AE%89%E8%A3%85docker/331d50f556097d25240599107be1e9c2.png"></p>
+<h2 id="4-容器的查找和下载"><a href="#4-容器的查找和下载" class="headerlink" title="4. 容器的查找和下载"></a>4. 容器的查找和下载</h2><p>在使用docker run命令运行容器时，我们会看到在容器运行之前，出现了Status: Downloaded newer image状态。这表示在容器虚拟机第一次运行时，会首先从远程容器源服务器中下载镜像到本地，然后才能在本地运行。</p>
+<h3 id="①远程查找容器"><a href="#①远程查找容器" class="headerlink" title="①远程查找容器"></a>①远程查找容器</h3><p>当我们需要查找容器时，可以通过docker search命令在的镜像源中查找所需要的容器镜像。接下来我们来查找ubuntu容器。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker search ubuntu</span><br></pre></td></tr></table></figure>
+
+
+
+<p><img src="/2023/09/20/01.centos%E5%AE%89%E8%A3%85docker/25e02c41a0af4d01a2d67eb1472ab7c6.png"></p>
+<h3 id="②查找容器的版本信息"><a href="#②查找容器的版本信息" class="headerlink" title="②查找容器的版本信息"></a>②查找容器的版本信息</h3><p>在找到所需要的容器镜像的名称之后，通常需要进一步在docker的镜像源中查找该镜像的版本列表。由于docker本身没有直接提供查看版本的功能，因此在这里我们为大家提供了一个可以查看镜像版本的简单脚本docker-tags。我们生成docker-tags脚本并加入以下内容 ，（vi注意问题上面已写有）</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi docker-tags</span><br></pre></td></tr></table></figure>
+
+
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">curl -s -S <span class="string">&quot;https://registry.hub.docker.com/v2/repositories/library/<span class="variable">$1</span>/tags/?page=<span class="variable">$2</span>&quot;</span> |</span><br><span class="line">sed -e <span class="string">&#x27;s/,/\n/g&#x27;</span> -e <span class="string">&#x27;s/\[/\\\[\n/g&#x27;</span> |</span><br><span class="line">grep -E <span class="string">&#x27;&quot;name&quot;:|&quot;count&quot;:&#x27;</span> |</span><br><span class="line">sed -e <span class="string">&#x27;s/&quot;//g&#x27;</span> -e <span class="string">&quot;s/name:/<span class="variable">$1</span>:/g&quot;</span> -e <span class="string">&quot;s/&#123;count:/<span class="variable">$1</span>总版本数-/&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>docker-tags脚本编辑好之后，需要通过chmod修改文件权限才可以执行。在权限修改完成之后，就可以使用docker-tags脚本来查询相关镜像的最近版本信息了。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">chmod</span> 777 docker-tags </span><br><span class="line">./docker-tags ubuntu</span><br></pre></td></tr></table></figure>
+
+<h3 id="③拉取容器镜像"><a href="#③拉取容器镜像" class="headerlink" title="③拉取容器镜像"></a>③拉取容器镜像</h3><p>当我们查找到镜像的版本信息之后，就可以拉取镜像到本地了。在拉取镜像时我们可指定拉取镜像的版本，也可不指定版本默认拉取最新版本。首先我们使用docker pull命令来拉取ubuntu容器的jammy版本。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull ubuntu:jammy</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2023/09/20/01.centos%E5%AE%89%E8%A3%85docker/5f1ae6d227d54705656981c36fcd2c72.png"></p>
+<p>接下来我们来拉取ubuntu的最新版本。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull ubuntu</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2023/09/20/01.centos%E5%AE%89%E8%A3%85docker/ce6769e84fee8c7033de27b49db4c051.png"></p>
+<p>当镜像源已经拉取到本地之后，我们可以通过docker images命令来查看已经拉取到的本地镜像。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker images</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2023/09/20/01.centos%E5%AE%89%E8%A3%85docker/ea5475759b529e3a93a99810aff58521.png"></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://syx9527.github.io/2023/09/20/01.centos%E5%AE%89%E8%A3%85docker/" data-id="clmsxv7r20000uwieh3qbb5yf" data-title="centos安装Docker" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2023/09/20/02.docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">前一篇</strong>
+      <div class="article-nav-title">
+        
+          docker 常用命令
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/08/28/Linux%E6%96%B0%E5%A2%9E%E7%A1%AC%E7%9B%98%E6%89%A9%E5%AE%B9%E8%87%B3%E6%A0%B9%E7%9B%AE%E5%BD%95/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">Linux新增硬盘扩容至根目录</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/category/%E4%B8%AA%E4%BA%BA%E7%AC%94%E8%AE%B0/">个人笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/category/%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/">经验分享</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Exchangis/" rel="tag">Exchangis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/centos-7/" rel="tag">centos 7</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/idea/" rel="tag">idea</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8D%9A%E5%AE%A2/" rel="tag">博客</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AB%AF%E5%8F%A3/" rel="tag">端口</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/" rel="tag">虚拟机</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Exchangis/" style="font-size: 10px;">Exchangis</a> <a href="/tags/centos-7/" style="font-size: 10px;">centos 7</a> <a href="/tags/idea/" style="font-size: 10px;">idea</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/%E5%8D%9A%E5%AE%A2/" style="font-size: 10px;">博客</a> <a href="/tags/%E7%AB%AF%E5%8F%A3/" style="font-size: 10px;">端口</a> <a href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/" style="font-size: 10px;">虚拟机</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archive/2023/09/">九月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archive/2023/08/">八月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archive/2023/07/">七月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archive/2023/03/">三月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archive/2023/02/">二月 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/09/21/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2023/09/21/06-%E5%AE%9E%E9%AA%8C%E4%BA%8C-%E5%BA%94%E7%94%A8K8S%E5%AE%B9%E5%99%A8%E4%BA%91%E9%83%A8%E7%BD%B2/">06.应用K8S容器云部署</a>
+          </li>
+        
+          <li>
+            <a href="/2023/09/20/05.%E5%AE%9E%E6%93%8D-%E5%AE%9E%E9%AA%8C%E4%B8%80-%E5%BA%94%E7%94%A8%E5%AE%B9%E5%99%A8%E5%8C%96%E8%BF%81%E7%A7%BB%E6%94%B9%E9%80%A0%E5%92%8C%E9%83%A8%E7%BD%B2/">应用容器化迁移改造和部署</a>
+          </li>
+        
+          <li>
+            <a href="/2023/09/20/04.docker%E5%AE%89%E8%A3%85minio/">docker安装minio</a>
+          </li>
+        
+          <li>
+            <a href="/2023/09/20/03.docker%E6%9B%B4%E6%8D%A2%E9%95%9C%E5%83%8F%E6%BA%90/">docker更换镜像源</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 Shaoyx<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+  
+  <title>docker 常用命令 | Hexo</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="docker 常用命令">
+<meta property="og:type" content="article">
+<meta property="og:title" content="docker 常用命令">
+<meta property="og:url" content="https://syx9527.github.io/2023/09/20/02.docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/index.html">
+<meta property="og:site_name" content="Hexo">
+<meta property="og:description" content="docker 常用命令">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://syx9527.github.io/2023/09/20/02.docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/v2-69b9a5ff0020358e97e1c643d3e38a22_b.jpg">
+<meta property="og:image" content="https://syx9527.github.io/2023/09/20/02.docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/v2-3abd20278ddfe9582d4575b4f8a33859_b.jpg">
+<meta property="og:image" content="https://syx9527.github.io/2023/09/20/02.docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/v2-ee3867d8ac0ad5cb8fae059ba5164a75_b.jpg">
+<meta property="og:image" content="https://syx9527.github.io/2023/09/20/02.docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/v2-e5fef20a693681ce650afc14feb440c4_b.jpg">
+<meta property="og:image" content="https://syx9527.github.io/2023/09/20/02.docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/v2-a643e4d514202c9e48bc99767f536525_b.jpg">
+<meta property="og:image" content="https://syx9527.github.io/2023/09/20/02.docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/v2-2c0b695e7e0fe554a62ed944015cab1b_b.jpg">
+<meta property="og:image" content="https://syx9527.github.io/2023/09/20/02.docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/v2-6789fa046828aacd0eeb9b0af2a19908_b.jpg">
+<meta property="og:image" content="https://syx9527.github.io/2023/09/20/02.docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/v2-14bd66ee03a683d372af341c7fc5bf80_b.jpg">
+<meta property="og:image" content="https://syx9527.github.io/2023/09/20/02.docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/v2-09242f63780acd6c236b856aba1680de_b.jpg">
+<meta property="og:image" content="https://syx9527.github.io/2023/09/20/02.docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/v2-0a84366e7bb0978348bf6d084aec1982_b.jpg">
+<meta property="og:image" content="https://syx9527.github.io/2023/09/20/02.docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/v2-b4dda9b0d622a195ca0e962d319188b8_b.jpg">
+<meta property="og:image" content="https://syx9527.github.io/2023/09/20/02.docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/v2-9b6b4da2b4e31183d0a49f1c4b06c0b4_b.jpg">
+<meta property="article:published_time" content="2023-09-20T06:46:50.000Z">
+<meta property="article:modified_time" content="2023-09-21T08:33:48.807Z">
+<meta property="article:author" content="Shaoyx">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://syx9527.github.io/2023/09/20/02.docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/v2-69b9a5ff0020358e97e1c643d3e38a22_b.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="Hexo" type="application/atom+xml">
+  
+  
+    <link rel="shortcut icon" href="/favicon.png">
+  
+  
+    
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/typeface-source-code-pro@0.0.71/index.min.css">
+
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+  
+    
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.min.css">
+
+  
+  
+<meta name="generator" content="Hexo 6.3.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">Hexo</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"><span class="fa fa-bars"></span></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+        
+          <a class="nav-icon" href="/atom.xml" title="RSS 订阅"><span class="fa fa-rss"></span></a>
+        
+        <a class="nav-icon nav-search-btn" title="搜索"><span class="fa fa-search"></span></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="搜索"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="https://syx9527.github.io"></form>
+      </div>
+    </div>
+  </div>
+</header>
+
+      <div class="outer">
+        <section id="main"><article id="post-02.docker常用命令" class="h-entry article article-type-post" itemprop="blogPost" itemscope itemtype="https://schema.org/BlogPosting">
+  <div class="article-meta">
+    <a href="/2023/09/20/02.docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" class="article-date">
+  <time class="dt-published" datetime="2023-09-20T06:46:50.000Z" itemprop="datePublished">2023-09-20</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="p-name article-title" itemprop="headline name">
+      docker 常用命令
+    </h1>
+  
+
+      </header>
+    
+    <div class="e-content article-entry" itemprop="articleBody">
+      
+        <p>docker 常用命令</p>
+<span id="more"></span>
+
+
+
+<p>Docker 容器是现在几天最新兴的技术之一。Docker 容器通常用于 CI &#x2F; CD (Continuous Integration &#x2F; Continuous Deployment 持续集成 &#x2F; 持续部署) 平台中。容器是轻巧的 VM (Virtual Machines 虚拟机)，可利用基础管理程序资源 (例如 RAM，CPU，HDD 和内核) 。</p>
+<p>Docker 命令用于通过命令行管理容器和镜像。在本文中，我们将介绍 Linux 中 20 个有用的 docker 命令示例。我假设您的 Linux 系统上已经安装了 docker，并且当前用户已经添加到 docker 用户组中。</p>
+<h3 id="1-查看版本"><a href="#1-查看版本" class="headerlink" title="(1) 查看版本"></a>(1) 查看版本</h3><p>在使用 docker 容器时，第一项重要的任务是知道你的 docker 版本</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ docker --version</span><br><span class="line">Docker version 20.10.12, build e91ed57</span><br><span class="line">$</span><br></pre></td></tr></table></figure>
+
+<h3 id="2-查看系统范围内信息"><a href="#2-查看系统范围内信息" class="headerlink" title="(2) 查看系统范围内信息"></a>(2) 查看系统范围内信息</h3><p><code>docker info</code> 命令用于查看 docker 的根目录、操作系统版本、内核版本、docker 版本、RAM、CPU、docker 注册表等信息。</p>
+<p><img src="/2023/09/20/02.docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/v2-69b9a5ff0020358e97e1c643d3e38a22_b.jpg"></p>
+<p><img src="/2023/09/20/02.docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/v2-3abd20278ddfe9582d4575b4f8a33859_b.jpg"></p>
+<h3 id="3-搜索镜像"><a href="#3-搜索镜像" class="headerlink" title="(3) 搜索镜像"></a>(3) 搜索镜像</h3><p>使用 <code>docker search</code> 命令，我们可以从 docker hub 仓库中搜索镜像。假设我们想搜索最新的 nginx 镜像</p>
+<p><img src="/2023/09/20/02.docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/v2-ee3867d8ac0ad5cb8fae059ba5164a75_b.jpg"></p>
+<h3 id="4-下载镜像"><a href="#4-下载镜像" class="headerlink" title="(4) 下载镜像"></a>(4) 下载镜像</h3><p>docker pull 命令用于从 Docker hub 仓库中下载镜像</p>
+<p>docker pull 命令总是尝试下载最新版本的镜像，假设我想下载最新版本的 nginx 镜像</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">$ docker pull nginx</span><br><span class="line">Using default tag: latest</span><br><span class="line">latest: Pulling from library/nginx</span><br><span class="line">5eb5b503b376: Pull complete</span><br><span class="line">1ae07ab881bd: Pull complete</span><br><span class="line">78091884b7be: Pull complete</span><br><span class="line">091c283c6a66: Pull complete</span><br><span class="line">55de5851019b: Pull complete</span><br><span class="line">b559bad762be: Pull complete</span><br><span class="line">Digest: sha256:2834dc507516af02784808c5f48b7cbe38b8ed5d0f4837f16e78d00deb7e7767</span><br><span class="line">Status: Downloaded newer image for nginx:latest</span><br><span class="line">docker.io/library/nginx:latest</span><br><span class="line">$</span><br></pre></td></tr></table></figure>
+
+<p>下载基于版本的特定镜像，假设我们想下载 ubuntu:20.04 镜像</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ docker pull ubuntu:20.04</span><br><span class="line">20.04: Pulling from library/ubuntu</span><br><span class="line">08c01a0ec47e: Pull complete</span><br><span class="line">Digest: sha256:669e010b58baf5beb2836b253c1fd5768333f0d1dbcb834f7c07a4dc93f474be</span><br><span class="line">Status: Downloaded newer image for ubuntu:20.04</span><br><span class="line">docker.io/library/ubuntu:20.04</span><br><span class="line">$</span><br></pre></td></tr></table></figure>
+
+<h3 id="5-查看已下载的镜像"><a href="#5-查看已下载的镜像" class="headerlink" title="(5) 查看已下载的镜像"></a>(5) 查看已下载的镜像</h3><p>众所周知，docker 的根目录是 &#x2F;var&#x2F;lib&#x2F;docker，每当我们使用 docker pull 命令下载镜像时，所有镜像都将保存在 docker 的根目录中。</p>
+<p>要查看所有下载的 docker 容器镜像，请执行命令</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ docker image ls</span><br><span class="line">or</span><br><span class="line">$ docker images</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2023/09/20/02.docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/v2-e5fef20a693681ce650afc14feb440c4_b.jpg"></p>
+<h3 id="6-运行容器"><a href="#6-运行容器" class="headerlink" title="(6) 运行容器"></a>(6) 运行容器</h3><p>使用 docker run 命令启动容器，假设我想从 nginx 镜像 运行一个容器。</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker run -it -p 9000:80 --name=myapp nginx</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2023/09/20/02.docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/v2-a643e4d514202c9e48bc99767f536525_b.jpg"></p>
+<p>上面将运行一个名称为 myapp 的容器，我们还设置了 PAT 规则，如果任何请求到 docker 主机上的 9000 端口，则该请求将被重定向到 myapp 容器的 80 端口。执行命令之后我们直接获得了控制台，输入exit 可以停止 &#x2F;关闭容器，如果想从容器中退出而不停止它，请输入 ctrl+p+q</p>
+<p>现在你可以使用 curl 命令访问 9000 端口上的 nginx 应用了</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ curl http://&lt;Docker-Host-IP-Address&gt;:9000/</span><br></pre></td></tr></table></figure>
+
+<h3 id="7-分离模式运行容器"><a href="#7-分离模式运行容器" class="headerlink" title="(7) 分离模式运行容器"></a>(7) 分离模式运行容器</h3><p>我们可以在 docker run 命令中使用 -d 选项以分离模式运行容器。这里的分离模式意味着我们将在执行 docker run 命令后获得命令提示符。</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ docker run -it -d -p 9080:80 --name=myapp2 httpd</span><br><span class="line">f7dc2ece64708a9de5e53f341b0c7d17ac9189fb7c99079ad8744348bc5a6faa</span><br><span class="line">$</span><br></pre></td></tr></table></figure>
+
+<h3 id="8-查看所有运行的容器"><a href="#8-查看所有运行的容器" class="headerlink" title="(8) 查看所有运行的容器"></a>(8) 查看所有运行的容器</h3><p>执行 <code>docker ps</code> 命令查看所有正在运行的容器</p>
+<p><img src="/2023/09/20/02.docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/v2-2c0b695e7e0fe554a62ed944015cab1b_b.jpg"></p>
+<p>To view all running along with exited or stopped containers, run</p>
+<p>要查看所有的容器（包括退出或停止），请运行</p>
+<h3 id="9-访问容器控制台"><a href="#9-访问容器控制台" class="headerlink" title="(9) 访问容器控制台"></a>(9) 访问容器控制台</h3><p>使用 docker exec 命令访问容器控制台</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sysops@linuxtechi:~$ docker exec -it myapp /bin/bash</span><br><span class="line">root@3d5a0eef3e7a:/#</span><br></pre></td></tr></table></figure>
+
+<p>输入 exit 退出控制台</p>
+<h3 id="10-启动，停止，重启和杀死容器"><a href="#10-启动，停止，重启和杀死容器" class="headerlink" title="(10) 启动，停止，重启和杀死容器"></a>(10) 启动，停止，重启和杀死容器</h3><p>就像虚拟机一样，我们可以启动、停止和重启 docker 容器。</p>
+<p>停止运行的容器</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ docker stop myapp2</span><br><span class="line">myapp2</span><br></pre></td></tr></table></figure>
+
+<p>重新启动容器</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ docker restart myapp2</span><br><span class="line">myapp2</span><br><span class="line">$</span><br></pre></td></tr></table></figure>
+
+<p>杀死容器</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sysops@linuxtechi:~$ docker kill myapp2</span><br><span class="line">myapp2</span><br><span class="line">sysops@linuxtechi:~$</span><br></pre></td></tr></table></figure>
+
+<h3 id="11-删除容器"><a href="#11-删除容器" class="headerlink" title="(11) 删除容器"></a>(11) 删除容器</h3><p>Docker Container is removed or deleted using ‘docker rm‘ command. ‘docker rm’ will work only when docker is stopped &#x2F; shutdown.</p>
+<p>使用 docker rm 命令删除容器，仅当容器 停止 &#x2F; 关闭时，docker rm 才能工作。</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">$ docker ps | grep nnginx-app</span><br><span class="line"></span><br><span class="line">$ docker stop test-app</span><br><span class="line">test-app</span><br><span class="line">$ docker rm test-app</span><br><span class="line">test-app</span><br><span class="line">$</span><br></pre></td></tr></table></figure>
+
+<p>To remove a running container forcefully then use ‘-f’ option in docker rm command. Example is shown is below</p>
+<p>使用 -f 选项强制移除一个正在运行的容器</p>
+<p><img src="/2023/09/20/02.docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/v2-6789fa046828aacd0eeb9b0af2a19908_b.jpg"></p>
+<h3 id="12-删除镜像"><a href="#12-删除镜像" class="headerlink" title="(12) 删除镜像"></a>(12) 删除镜像</h3><p>就像容器一样，我们也可以删除镜像。docker rmi 命令用于删除镜像。</p>
+<p>假设我们想要删除 ubuntu:20.04 镜像</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">$ docker rmi ubuntu:20.04</span><br><span class="line">Untagged: ubuntu:20.04</span><br><span class="line">Untagged: ubuntu@sha256:669e010b58baf5beb2836b253c14f7c07a4dc93f474be</span><br><span class="line">Deleted: sha256:54c9d81cbb440897908abdcaa98674db831e40a66f704f</span><br><span class="line">Deleted: sha256:36ffdceb4c77bf34325fb695e64ea447f629593310578d2</span><br><span class="line">$</span><br></pre></td></tr></table></figure>
+
+<p>在上面的命令中，我们可以使用镜像 id 来代替名称</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker rmi 54c9d81cbb44</span><br></pre></td></tr></table></figure>
+
+<h3 id="13-保存和加载镜像"><a href="#13-保存和加载镜像" class="headerlink" title="(13) 保存和加载镜像"></a>(13) 保存和加载镜像</h3><p>使用 docker save 命令，将镜像保存到 tar 文件</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">$ docker save nginx -o mynginx.tar</span><br><span class="line">$ ls -l mynginx.tar</span><br><span class="line">-rw------- 1 sysops sysops 145931776 Feb 5 10:30 mynginx.tar</span><br><span class="line">$</span><br></pre></td></tr></table></figure>
+
+<p>使用 docker load 命令，从 tar 文件加载镜像</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ docker load -i mynginx.tar</span><br><span class="line">Loaded image: nginx:latest</span><br><span class="line">$</span><br></pre></td></tr></table></figure>
+
+<p>注意：当我们想要将 docker 镜像从一个主机传输到另一个主机时，这些命令会变得很有用。</p>
+<h3 id="14-将文件-目录复制到容器"><a href="#14-将文件-目录复制到容器" class="headerlink" title="(14) 将文件 &#x2F; 目录复制到容器"></a>(14) 将文件 &#x2F; 目录复制到容器</h3><p>我们可以使用 docker cp 命令将文件或目录从 docker 主机复制到容器中。</p>
+<p>下面我们将 mycode 目录复制到 myapp 容器中</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker cp mycode myapp:/tmp</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2023/09/20/02.docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/v2-14bd66ee03a683d372af341c7fc5bf80_b.jpg"></p>
+<h3 id="15-查看镜像构建历史"><a href="#15-查看镜像构建历史" class="headerlink" title="(15) 查看镜像构建历史"></a>(15) 查看镜像构建历史</h3><p>镜像的历史记录是指在构建镜像时执行了哪些命令，我们可以使用 docker history 命令来查看历史记录</p>
+<p><img src="/2023/09/20/02.docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/v2-09242f63780acd6c236b856aba1680de_b.jpg"></p>
+<h3 id="16-从容器中查看日志"><a href="#16-从容器中查看日志" class="headerlink" title="(16) 从容器中查看日志"></a>(16) 从容器中查看日志</h3><p>我们可以从容器中查看日志，无需登录，运行 docker logs 命令</p>
+<p>使用 -f 选项查看活动日志</p>
+<p>查看某容器最近10条日志</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker logs --tail 10 myapp</span><br></pre></td></tr></table></figure>
+
+<p><img src="/2023/09/20/02.docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/v2-0a84366e7bb0978348bf6d084aec1982_b.jpg"></p>
+<h3 id="17-查看容器资源使用统计信息"><a href="#17-查看容器资源使用统计信息" class="headerlink" title="(17) 查看容器资源使用统计信息"></a>(17) 查看容器资源使用统计信息</h3><p>使用 docker stats 命令查看所有容器的 CPU，内存和网络 I&#x2F;O 情况</p>
+<p><img src="/2023/09/20/02.docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/v2-b4dda9b0d622a195ca0e962d319188b8_b.jpg"></p>
+<p>查看特定容器的统计信息</p>
+<p>资源使用统计信息，无实时流</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker stats --no-stream</span><br></pre></td></tr></table></figure>
+
+<p>使用 docker top 命令显示容器的运行进程</p>
+<p><img src="/2023/09/20/02.docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/v2-9b6b4da2b4e31183d0a49f1c4b06c0b4_b.jpg"></p>
+<h3 id="18-查看容器-IP-地址"><a href="#18-查看容器-IP-地址" class="headerlink" title="(18) 查看容器 IP 地址"></a>(18) 查看容器 IP 地址</h3><p>使用 docker inspect 命令显示容器底层信息。我们可以通过 docker inspect 命令获取容器的 ip 地址</p>
+<p>语法如下:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker inspect -f ‘&#123;&#123;range.NetworkSettings.Networks&#125;&#125;&#123;&#123;.IPAddress&#125;&#125;&#123;&#123;end&#125;&#125;’ &lt;Container-Name&gt;</span><br></pre></td></tr></table></figure>
+
+
+
+<p>实例如下：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ docker inspect -f &#x27;&#123;&#123;range.NetworkSettings.Networks&#125;&#125;&#123;&#123;.IPAddress&#125;&#125;&#123;&#123;end&#125;&#125;&#x27; myapp</span><br><span class="line">172.17.0.2</span><br><span class="line">$</span><br></pre></td></tr></table></figure>
+
+<h3 id="19-构建镜像"><a href="#19-构建镜像" class="headerlink" title="(19) 构建镜像"></a>(19) 构建镜像</h3><p>docker 镜像是使用 docker build 命令构建的，要使用 docker build 命令，首先必须创建 Dockerfile。让我们假设 Dockerfile 是在 mycode 文件夹下创建的，然后运行以下命令来构建镜像</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ cd mycode</span><br><span class="line">$ docker build -t mynginx:v2 .</span><br></pre></td></tr></table></figure>
+
+<h3 id="20-镜像标签"><a href="#20-镜像标签" class="headerlink" title="(20) 镜像标签"></a>(20) 镜像标签</h3><p>docker tag 命令用于为镜像设置标签</p>
+<p>语法如下 :</p>
+<p>$ docker tag source_image{:tag} target_image{:tag}</p>
+<p>假设将源镜像 mariadb:latest 的标签设置为 mariadb:10.03</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">$ docker tag mariadb:latest mariadb:10.03</span><br><span class="line">$ docker images | grep -i mariadb</span><br><span class="line">mariadb 10.03 45a5a43e143a 3 days ago 410MB</span><br><span class="line">mariadb latest 45a5a43e143a 3 days ago 410MB</span><br><span class="line">$</span><br></pre></td></tr></table></figure>
+
+<p>如果希望上传镜像到私有仓库，标签应加上仓库地址，如下所示：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker tag mariadb:latest myregistry:5000/db/mariadb:10.03</span><br></pre></td></tr></table></figure>
+
+<p>使用 docker login 命令登录到私有仓库，运行 docker push 命令上传</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ docker push myregistry:5000/db/mariadb:10.03</span><br></pre></td></tr></table></figure>
+
+<h3 id="开源项目"><a href="#开源项目" class="headerlink" title="开源项目"></a>开源项目</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://gitee.com/koogua/course-tencent-cloud">course-tencent-cloud（酷瓜云课堂 - gitee仓库）</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/xiaochong0302/course-tencent-cloud">course-tencent-cloud（酷瓜云课堂 - github仓库）</a></li>
+</ul>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="https://syx9527.github.io/2023/09/20/02.docker%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4/" data-id="clmsxv7r90003uwie6se5csij" data-title="docker 常用命令" class="article-share-link"><span class="fa fa-share">分享</span></a>
+      
+      
+      
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2023/09/20/03.docker%E6%9B%B4%E6%8D%A2%E9%95%9C%E5%83%8F%E6%BA%90/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">前一篇</strong>
+      <div class="article-nav-title">
+        
+          docker更换镜像源
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2023/09/20/01.centos%E5%AE%89%E8%A3%85docker/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">后一篇</strong>
+      <div class="article-nav-title">centos安装Docker</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">分类</h3>
+    <div class="widget">
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/category/%E4%B8%AA%E4%BA%BA%E7%AC%94%E8%AE%B0/">个人笔记</a></li><li class="category-list-item"><a class="category-list-link" href="/category/%E7%BB%8F%E9%AA%8C%E5%88%86%E4%BA%AB/">经验分享</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Exchangis/" rel="tag">Exchangis</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/centos-7/" rel="tag">centos 7</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/idea/" rel="tag">idea</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/linux/" rel="tag">linux</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E5%8D%9A%E5%AE%A2/" rel="tag">博客</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%AB%AF%E5%8F%A3/" rel="tag">端口</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/" rel="tag">虚拟机</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">标签云</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Exchangis/" style="font-size: 10px;">Exchangis</a> <a href="/tags/centos-7/" style="font-size: 10px;">centos 7</a> <a href="/tags/idea/" style="font-size: 10px;">idea</a> <a href="/tags/linux/" style="font-size: 10px;">linux</a> <a href="/tags/%E5%8D%9A%E5%AE%A2/" style="font-size: 10px;">博客</a> <a href="/tags/%E7%AB%AF%E5%8F%A3/" style="font-size: 10px;">端口</a> <a href="/tags/%E8%99%9A%E6%8B%9F%E6%9C%BA/" style="font-size: 10px;">虚拟机</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">归档</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archive/2023/09/">九月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archive/2023/08/">八月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archive/2023/07/">七月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archive/2023/03/">三月 2023</a></li><li class="archive-list-item"><a class="archive-list-link" href="/archive/2023/02/">二月 2023</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">最新文章</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2023/09/21/hello-world/">Hello World</a>
+          </li>
+        
+          <li>
+            <a href="/2023/09/21/06-%E5%AE%9E%E9%AA%8C%E4%BA%8C-%E5%BA%94%E7%94%A8K8S%E5%AE%B9%E5%99%A8%E4%BA%91%E9%83%A8%E7%BD%B2/">06.应用K8S容器云部署</a>
+          </li>
+        
+          <li>
+            <a href="/2023/09/20/05.%E5%AE%9E%E6%93%8D-%E5%AE%9E%E9%AA%8C%E4%B8%80-%E5%BA%94%E7%94%A8%E5%AE%B9%E5%99%A8%E5%8C%96%E8%BF%81%E7%A7%BB%E6%94%B9%E9%80%A0%E5%92%8C%E9%83%A8%E7%BD%B2/">应用容器化迁移改造和部署</a>
+          </li>
+        
+          <li>
+            <a href="/2023/09/20/04.docker%E5%AE%89%E8%A3%85minio/">docker安装minio</a>
+          </li>
+        
+          <li>
+            <a href="/2023/09/20/03.docker%E6%9B%B4%E6%8D%A2%E9%95%9C%E5%83%8F%E6%BA%90/">docker更换镜像源</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      
+      &copy; 2023 Shaoyx<br>
+      Powered by <a href="https://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+
+<script src="/js/jquery-3.6.4.min.js"></script>
+
+
+
+  
+<script src="/fancybox/jquery.fancybox.min.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+
+  </div>
+</body>
+</html>
